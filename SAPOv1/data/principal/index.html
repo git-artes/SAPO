@@ -1,0 +1,497 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Software de An&#225;lisis de Propagaci&#243;n Outdoor</TITLE>
+<META NAME="description" CONTENT="Software de An&#225;lisis de Propagaci&#243;n Outdoor">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html97"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev_g.png"> 
+<A NAME="tex2html95"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html98"
+  HREF="node1.html">&#205;ndice General</A>
+ &nbsp <B>  <A NAME="tex2html96"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<H1 ALIGN=CENTER>
+
+<DIV ALIGN="CENTER">
+
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="407" HEIGHT="184" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="\includegraphics[width=9cm]{logo.eps}">
+
+</DIV>
+</DIV>
+<I>Software de An&#225;lisis de Propagaci&#243;n Outdoor</I></H1>
+<P ALIGN=CENTER><STRONG>Eliana Marion Katz Esquivel
+<BR>
+Federico Larroca Ponzoni
+<BR>
+Mar&#237;a Ximena Martino Vaeza
+
+<P><P>
+<BR>
+
+<P><P>
+<BR>
+
+<P><P>
+<BR>
+
+<BR>
+Tutor: 
+<BR>
+Jos&#233; Acu&#241;a
+
+<P><P>
+<BR>
+
+<P><P>
+<BR>
+
+<P><P>
+<BR>
+
+<P><P>
+<BR>
+
+<BR>
+Facultad de Ingenier&#237;a 
+<BR>
+Universidad de la Rep&#250;blica 
+<P><P>
+<BR>
+
+<P><P>
+<BR>
+
+<BR>
+Proyecto de fin de carrera, Ingenier&#237;a El&#233;ctrica 
+<BR>
+Plan 97, Telecomunicaciones</STRONG></P>
+<BR><P ALIGN=CENTER><I>Date:</I> 22 de marzo 2006</P>
+<P ALIGN=LEFT></P>
+
+@twoside @page
+ 
+ <BR>
+<BR>
+
+@twocolumn
+<DIV ALIGN="CENTER">
+<B><FONT SIZE="+2">Agradecimientos</FONT></B>
+<BR>
+</DIV>
+
+<P>
+
+<P>
+Este proyecto no hubiese sido posible sin el apoyo de muchas personas.
+<BR>
+<P>
+Queremos dedicar y brindar nuestros m&#225;s encendidos agradecimientos a
+nuestras familias. Por soportarnos todo este tiempo y estar siempre.
+<BR>
+<P>
+Tambi&#233;n a nuestro tutor Jos&#233;, por su constante asesoramiento cada vez que lo necesit&#225;bamos. 
+<BR>
+<P>
+A Gabriel Dutra, que siempre colabor&#243; con nosotros brind&#225;ndonos material de estudio e ideas para el proyecto. 
+<BR>
+<P>
+A Pedrito y V&#237;ctor, por ayudarnos y aconsejarnos con la ingenier&#237;a de software y programaci&#243;n en general. 
+<BR>
+<P>
+Muchas gracias a Paola y Laurita, por apoyarnos en la parte matem&#225;tica de los problemas y por haberse ofrecido a leer la documentaci&#243;n completa. 
+<BR>
+<P>
+Queremos agradecer a Rona, que nos ayud&#243; a hacer muchos de los dibujos que aparecen en la documentaci&#243;n. 
+<BR>
+<P>
+Tambi&#233;n a Nacho, Mart&#237;n y Pao, que nos bancaron la poca bola que les dimos en estos &#250;ltimos meses y nos brindaron su apoyo constante.
+<BR>
+<P>
+A nuestros amigos y amigas, por interesarse y acompa&#241;arnos durante
+este a&#241;o y medio.
+<BR>
+<P>
+A Mauge, por haber ``presentado'' al grupo de proyecto. 
+<BR>
+<P>
+A Jaime Wajner y Roberto Nisivoccia por habernos permitido utilizar el software de predicci&#243;n con que cuentan en ANCEL. 
+<BR>
+<P>
+A Fernando Font&#225;n, que colabor&#243; en la gesti&#243;n para realizar la mini pasant&#237;a en ANCEL. 
+<BR>
+<P>
+Y a todos aquellos que nos estamos olvidando y creen que deber&#237;an estar en esta p&#225;gina. 
+ 
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html99"
+  HREF="node1.html">&#205;ndice General</A>
+<LI><A NAME="tex2html100"
+  HREF="node2.html">Presentación del problema</A>
+<UL>
+<LI><A NAME="tex2html101"
+  HREF="node3.html">Introducción</A>
+<UL>
+<LI><A NAME="tex2html102"
+  HREF="node4.html">Motivación</A>
+<LI><A NAME="tex2html103"
+  HREF="node5.html">Objetivos</A>
+<LI><A NAME="tex2html104"
+  HREF="node6.html">Alcance</A>
+</UL>
+<LI><A NAME="tex2html105"
+  HREF="node7.html">Conceptos preliminares</A>
+<UL>
+<LI><A NAME="tex2html106"
+  HREF="node8.html">El concepto celular</A>
+<LI><A NAME="tex2html107"
+  HREF="node9.html">Caracterización de las radiobases</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html108"
+  HREF="node10.html">Fundamentos Teóricos</A>
+<UL>
+<LI><A NAME="tex2html109"
+  HREF="node11.html">Principios básicos de propagación</A>
+<UL>
+<LI><A NAME="tex2html110"
+  HREF="node12.html">Propagación en espacio libre</A>
+<LI><A NAME="tex2html111"
+  HREF="node13.html">Propagación sobre una superficie reflectora</A>
+<UL>
+<LI><A NAME="tex2html112"
+  HREF="node14.html">Propagación sobre Tierra esférica</A>
+<LI><A NAME="tex2html113"
+  HREF="node15.html">Propagación sobre Tierra plana</A>
+<LI><A NAME="tex2html114"
+  HREF="node17.html">Propagación sobre una superficie
+rugosa</A>
+</UL>
+</UL>
+<LI><A NAME="tex2html115"
+  HREF="node18.html">Propagación sobre terrenos irregulares</A>
+<UL>
+<LI><A NAME="tex2html116"
+  HREF="node19.html">Principio de Huygens</A>
+<UL>
+<LI><A NAME="tex2html117"
+  HREF="node20.html">Propagación por difracción</A>
+</UL>
+<LI><A NAME="tex2html118"
+  HREF="node21.html">Elipsoides de Fresnel</A>
+<LI><A NAME="tex2html119"
+  HREF="node22.html">Atenuación por múltiples cuchillos</A>
+<UL>
+<LI><A NAME="tex2html120"
+  HREF="node23.html">Método de Vogler</A>
+</UL>
+</UL>
+<LI><A NAME="tex2html121"
+  HREF="node24.html">Modelos de propagación</A>
+<UL>
+<LI><A NAME="tex2html122"
+  HREF="node25.html">Modelo de Okumura-Hata</A>
+<UL>
+<LI><A NAME="tex2html123"
+  HREF="node26.html">Modelo de Okumura</A>
+<LI><A NAME="tex2html124"
+  HREF="node27.html">Modelo de Okumura-Hata</A>
+<LI><A NAME="tex2html125"
+  HREF="node31.html">Modelo de Okumura-Hata COST231</A>
+</UL>
+<LI><A NAME="tex2html126"
+  HREF="node32.html">Modelo de Erceg-SUI</A>
+<LI><A NAME="tex2html127"
+  HREF="node34.html">Modelo de Walfisch-Ikegami</A>
+<UL>
+<LI><A NAME="tex2html128"
+  HREF="node35.html">Modelo de Walfisch-Bertoni</A>
+<LI><A NAME="tex2html129"
+  HREF="node36.html">Modelo COST231 Walfisch-Ikegami</A>
+<LI><A NAME="tex2html130"
+  HREF="node39.html">Modelo MOPEM</A>
+</UL>
+<LI><A NAME="tex2html131"
+  HREF="node40.html">Modelo propuesto: Vogler-Ikegami</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html132"
+  HREF="node41.html">Desarrollo de Software</A>
+<UL>
+<LI><A NAME="tex2html133"
+  HREF="node42.html">Aspectos previos al desarrollo de software</A>
+<UL>
+<LI><A NAME="tex2html134"
+  HREF="node43.html">Elección del lenguaje de programación</A>
+<LI><A NAME="tex2html135"
+  HREF="node44.html">Introducción a GIS</A>
+<UL>
+<LI><A NAME="tex2html136"
+  HREF="node45.html">Representación de datos en GIS</A>
+<LI><A NAME="tex2html137"
+  HREF="node48.html">Java y GIS</A>
+</UL>
+</UL>
+<LI><A NAME="tex2html138"
+  HREF="node51.html">Descripción general de <I>SAPO</I></A>
+<UL>
+<LI><A NAME="tex2html139"
+  HREF="node52.html">¿Qué es un proyecto en <I>SAPO</I>?</A>
+<LI><A NAME="tex2html140"
+  HREF="node53.html">Ingreso de datos del entorno</A>
+<LI><A NAME="tex2html141"
+  HREF="node54.html">Creación de una red celular</A>
+<LI><A NAME="tex2html142"
+  HREF="node55.html">Estimación de potencia mediana de señal</A>
+<LI><A NAME="tex2html143"
+  HREF="node56.html">Otras herramientas</A>
+<UL>
+<LI><A NAME="tex2html144"
+  HREF="node57.html">El Generador de Edificios</A>
+<LI><A NAME="tex2html145"
+  HREF="node58.html">Cálculo de interferencia co-canal</A>
+<LI><A NAME="tex2html146"
+  HREF="node59.html">Identificación de área de servicio</A>
+<LI><A NAME="tex2html147"
+  HREF="node60.html">Identificación de región de línea de vista</A>
+<LI><A NAME="tex2html148"
+  HREF="node61.html">Análisis del error de predicción</A>
+</UL>
+</UL>
+<LI><A NAME="tex2html149"
+  HREF="node62.html">Arquitectura de software</A>
+<UL>
+<LI><A NAME="tex2html150"
+  HREF="node63.html">Arquitectura de paquetes</A>
+<UL>
+<LI><A NAME="tex2html151"
+  HREF="node64.html">El paquete principal</A>
+<LI><A NAME="tex2html152"
+  HREF="node65.html">El paquete proyecto</A>
+<LI><A NAME="tex2html153"
+  HREF="node66.html">El paquete capas</A>
+<LI><A NAME="tex2html154"
+  HREF="node67.html">El paquete raster</A>
+<LI><A NAME="tex2html155"
+  HREF="node68.html">El paquete vectorial</A>
+<LI><A NAME="tex2html156"
+  HREF="node69.html">El paquete red</A>
+<LI><A NAME="tex2html157"
+  HREF="node70.html">El paquete predicciones</A>
+<LI><A NAME="tex2html158"
+  HREF="node71.html">El paquete ifusuario</A>
+<LI><A NAME="tex2html159"
+  HREF="node72.html">El paquete archivos</A>
+</UL>
+<LI><A NAME="tex2html160"
+  HREF="node73.html">Comportamiento dinámico</A>
+<LI><A NAME="tex2html161"
+  HREF="node74.html">Manejo de errores</A>
+</UL>
+<LI><A NAME="tex2html162"
+  HREF="node75.html">Formato de archivos</A>
+<UL>
+<LI><A NAME="tex2html163"
+  HREF="node76.html">Archivos de entrada de datos de altura de terreno</A>
+<UL>
+<LI><A NAME="tex2html164"
+  HREF="node77.html">ASCII Grid</A>
+<LI><A NAME="tex2html165"
+  HREF="node78.html">GRASS ASCII Grid</A>
+</UL>
+<LI><A NAME="tex2html166"
+  HREF="node79.html">Archivos de entrada de datos de edificaciones y manzanas</A>
+<UL>
+<LI><A NAME="tex2html167"
+  HREF="node80.html">SHP</A>
+</UL>
+<LI><A NAME="tex2html168"
+  HREF="node81.html">Archivos de entrada para generar manzanas</A>
+<LI><A NAME="tex2html169"
+  HREF="node82.html">Archivos de entrada para la importación de patrones de
+radiación</A>
+<LI><A NAME="tex2html170"
+  HREF="node83.html">Archivos de entrada-salida de predicciones</A>
+<LI><A NAME="tex2html171"
+  HREF="node84.html">Archivos de entrada-salida para el análisis de error de
+predicción</A>
+<LI><A NAME="tex2html172"
+  HREF="node85.html">Archivos de entrada-salida para el manejo de proyectos</A>
+<UL>
+<LI><A NAME="tex2html173"
+  HREF="node86.html">XML</A>
+</UL>
+</UL>
+<LI><A NAME="tex2html174"
+  HREF="node89.html">Algoritmos y cálculos implementados</A>
+<UL>
+<LI><A NAME="tex2html175"
+  HREF="node90.html">Cómputo de distancia</A>
+<LI><A NAME="tex2html176"
+  HREF="node91.html">Cálculo de ganancia de la antena trasmisora</A>
+<UL>
+<LI><A NAME="tex2html177"
+  HREF="node92.html">Ángulos relativos a la dirección de máxima propagación</A>
+<LI><A NAME="tex2html178"
+  HREF="node93.html">Búsqueda en el patrón de radiación</A>
+</UL>
+<LI><A NAME="tex2html179"
+  HREF="node94.html">Cálculo de alturas efectivas</A>
+<LI><A NAME="tex2html180"
+  HREF="node95.html">Cálculo del ángulo de orientación y ancho de la calle</A>
+<LI><A NAME="tex2html181"
+  HREF="node98.html">Cálculo de la distancia a una esquina</A>
+<LI><A NAME="tex2html182"
+  HREF="node99.html">Consideración del factor de seguridad en variables aleatorias</A>
+<LI><A NAME="tex2html183"
+  HREF="node100.html">Verificación de línea de vista</A>
+<LI><A NAME="tex2html184"
+  HREF="node101.html">Resolución de la integral de Vogler</A>
+<UL>
+<LI><A NAME="tex2html185"
+  HREF="node102.html">Estimación Numérica: Métodos QMC y RQMC</A>
+<LI><A NAME="tex2html186"
+  HREF="node105.html">Algoritmo para la evaluación de la
+integral</A>
+</UL>
+<LI><A NAME="tex2html187"
+  HREF="node106.html">Algoritmo de búsqueda del perfil</A>
+</UL>
+<LI><A NAME="tex2html188"
+  HREF="node107.html">Ejemplos de aplicación</A>
+<UL>
+<LI><A NAME="tex2html189"
+  HREF="node108.html">Cálculos asociados a una predicción</A>
+<LI><A NAME="tex2html190"
+  HREF="node109.html">Variación de las características de una antena</A>
+<LI><A NAME="tex2html191"
+  HREF="node110.html">Variación de los modelos de propagación</A>
+<LI><A NAME="tex2html192"
+  HREF="node111.html">Verificación de línea de vista</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html193"
+  HREF="node112.html">Validación y Conclusiones</A>
+<UL>
+<LI><A NAME="tex2html194"
+  HREF="node113.html">Validación</A>
+<UL>
+<LI><A NAME="tex2html195"
+  HREF="node114.html">Obtención de las medidas reales</A>
+<LI><A NAME="tex2html196"
+  HREF="node115.html">Breve descripción del entorno y las medidas</A>
+<LI><A NAME="tex2html197"
+  HREF="node116.html">Performance de los modelos</A>
+<UL>
+<LI><A NAME="tex2html198"
+  HREF="node117.html">Okumura-Hata-COST231</A>
+<LI><A NAME="tex2html199"
+  HREF="node118.html">Erceg-SUI</A>
+<LI><A NAME="tex2html200"
+  HREF="node119.html">COST231-Walfisch-Ikegami</A>
+<LI><A NAME="tex2html201"
+  HREF="node120.html">MOPEM</A>
+<LI><A NAME="tex2html202"
+  HREF="node121.html">Vogler-Ikegami</A>
+</UL>
+<LI><A NAME="tex2html203"
+  HREF="node122.html">Conclusiones de la validación</A>
+</UL>
+<LI><A NAME="tex2html204"
+  HREF="node123.html">Conclusiones</A>
+<UL>
+<LI><A NAME="tex2html205"
+  HREF="node124.html">Líneas de trabajo futuro</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html206"
+  HREF="node125.html">Anexos</A>
+<UL>
+<LI><A NAME="tex2html207"
+  HREF="node126.html">Intersección de una elipsoide con un plano</A>
+<UL>
+<LI><A NAME="tex2html208"
+  HREF="node127.html">Verificación de la intersección entre un plano y la elipsoide</A>
+<LI><A NAME="tex2html209"
+  HREF="node128.html">Intersección entre una elipsoide y un plano arbitrario</A>
+<LI><A NAME="tex2html210"
+  HREF="node129.html">Aplicación al problema de línea de vista</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html211"
+  HREF="node130.html">Bibliograf&#237;a</A>
+<LI><A NAME="tex2html212"
+  HREF="node131.html">Sobre este documento...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html97"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev_g.png"> 
+<A NAME="tex2html95"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html98"
+  HREF="node1.html">&#205;ndice General</A>
+ &nbsp <B>  <A NAME="tex2html96"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

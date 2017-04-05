@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>El paquete raster</TITLE>
+<META NAME="description" CONTENT="El paquete raster">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node68.html">
+<LINK REL="previous" HREF="node66.html">
+<LINK REL="up" HREF="node63.html">
+<LINK REL="next" HREF="node68.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1298"
+  HREF="node68.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1294"
+  HREF="node63.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1288"
+  HREF="node66.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1296"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1299"
+  HREF="node68.html">El paquete vectorial</A>
+<B> Subir:</B> <A NAME="tex2html1295"
+  HREF="node63.html">Arquitectura de paquetes</A>
+<B> Anterior:</B> <A NAME="tex2html1289"
+  HREF="node66.html">El paquete capas</A>
+ &nbsp <B>  <A NAME="tex2html1297"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION04314000000000000000">
+El paquete raster</A>
+</H2>
+
+Es necesario determinar cu&#225;l de las dos dos formas de
+representar la informaci&#243;n GIS es la m&#225;s apropiada para los
+diferentes datos que se manejan en el programa. Dado que los datos
+de altura de terreno deben abarcar toda la regi&#243;n de estudio, es
+razonable representarlos mediante un formato de datos tipo raster.
+En ese caso, el valor correspondiente a cada celda almacenar&#225; el
+promedio de alturas de terreno del &#225;rea geogr&#225;fica representada por
+dicha celda. Lo mismo sucede en el caso de las predicciones, salvo
+que all&#237; el valor de las celdas ser&#225; la potencia mediana calculada
+para el sector representado por la celda.
+
+GeoTools dispone de una herramienta para el manejo de datos del tipo
+raster, que se denomina <I>org.geotools.gc.GridCoverage</I>. Un
+GridCoverage permite almacenar una grilla de datos (usualmente en
+dos dimensiones), y referenciarlos mediante coordenadas. Est&#225;
+delimitado por un rect&#225;ngulo (llamado <I>envelope</I>), y es capaz
+de devolver un valor en cada uno de los puntos dentro de dicho
+rect&#225;ngulo. Por ejemplo, si el envelope es de 10 m <IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.png"
+ ALT="$ \times$"> 10 m y
+la matriz de datos es de 10 <IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.png"
+ ALT="$ \times$"> 10, el &#225;rea total se dividir&#225;
+en 100 cuadrados de 1 m<IMG
+ WIDTH="11" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img251.png"
+ ALT="$ ^2$">, y dentro de cada uno de estos cuadrados
+los puntos del GridCoverage tendr&#225;n el mismo valor.
+
+Para la representaci&#243;n de los datos tipo raster se cre&#243; la clase
+<I>Grilla</I>, creada para solventar algunas dificultades de acceso
+a los datos que implicaba el trabajar directamente con el
+GridCoverage. La misma contiene, entre otros atributos, uno de la
+clase <I>java.awt.image.WritableRaster</I> con los datos y el
+GridCoverage correspondiente; adem&#225;s provee una serie de m&#233;todos
+&#250;tiles e implementa la interfaz ElementoCapa, que le permite ser
+integrado al mapa. No es trivial la creaci&#243;n de un <I>feature</I> a
+partir de datos del tipo raster, ya que es un concepto asociado
+directamente con una geometr&#237;a. La soluci&#243;n para poder hacerlo
+consiste en crear un pol&#237;gono (m&#225;s espec&#237;ficamente un rect&#225;ngulo),
+que representa el contorno de la grilla, y agregarle un atributo de
+tipo GridCoverage para as&#237; formar el feature necesario para
+constituir la capa.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1298"
+  HREF="node68.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1294"
+  HREF="node63.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1288"
+  HREF="node66.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1296"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1299"
+  HREF="node68.html">El paquete vectorial</A>
+<B> Subir:</B> <A NAME="tex2html1295"
+  HREF="node63.html">Arquitectura de paquetes</A>
+<B> Anterior:</B> <A NAME="tex2html1289"
+  HREF="node66.html">El paquete capas</A>
+ &nbsp <B>  <A NAME="tex2html1297"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

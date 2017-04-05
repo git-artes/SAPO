@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>XML y JAVA</TITLE>
+<META NAME="description" CONTENT="XML y JAVA">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node88.html">
+<LINK REL="previous" HREF="node86.html">
+<LINK REL="up" HREF="node86.html">
+<LINK REL="next" HREF="node88.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1547"
+  HREF="node88.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1543"
+  HREF="node86.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1537"
+  HREF="node86.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1545"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1548"
+  HREF="node88.html">XML y SAPO</A>
+<B> Subir:</B> <A NAME="tex2html1544"
+  HREF="node86.html">XML</A>
+<B> Anterior:</B> <A NAME="tex2html1538"
+  HREF="node86.html">XML</A>
+ &nbsp <B>  <A NAME="tex2html1546"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION04471100000000000000">
+XML y JAVA</A>
+</H3>
+
+Dado que los documentos XML son documentos de texto plano, pueden
+ser representados en programas de Java como una combinaci&#243;n de
+<I>strings</I> (secuencia de caracteres). Otros tipos de datos,
+como ser <I>int</I> o <I>double</I> pueden convertirse a su
+representaci&#243;n en <I>strings</I> para ser tratados.
+
+Para evitar las dificultades que implica analizar una entrada XML,
+la mayor&#237;a de los programas se apoyan en <I>parsers</I> XML para
+leer los documentos. Un parser es una biblioteca de software capaz
+de leer un documento y chequear que est&#233; bien formado. Las
+aplicaciones utilizan los m&#233;todos definidos en la API
+(<I>Application Performance Interface</I>) del parser para recibir o
+solicitar informaci&#243;n que el parser obtiene del documento XML.
+Existen dos grandes APIs est&#225;ndar para el procesamiento de
+documentos XML con Java: la <I>Simple API for XML</I> (SAX) y la
+<I>Document Object Model</I> (DOM) [<A
+ HREF="node130.html#parsersXML">45</A>], ambas en
+diferentes versiones. Tambi&#233;n existen otras, como ser JDOM, dom4j,
+ElectricXML, y XMLPULL [<A
+ HREF="node130.html#parsersXML">45</A>].
+
+Para guardar un proyecto en <I>SAPO</I> se opt&#243; por la biblioteca
+API SAX, principalmente por tratarse de un est&#225;ndar, por su
+eficiencia y por su escalabilidad.
+
+SAX, la <I>Simple API for XML</I>, es el est&#225;ndar m&#225;s reconocido
+de las APIs de XML. Es la m&#225;s completa y la m&#225;s correcta a la vez.
+Las clases e interfaces en SAX modelan el parser, el flujo de datos
+desde donde se lee el documento y la aplicaci&#243;n cliente que recibe
+los datos del parser. Sin embargo, ninguna clase modela el documento
+XML en s&#237; mismo, sino que el parser alimenta a la aplicaci&#243;n cliente
+con el contenido. Esto hace que SAX sea muy r&#225;pido y eficiente en el
+uso de la memoria (ya que no tiene que guardar el documento entero
+en memoria), lo cual presenta una ventaja frente a otras bibliotecas
+en lo que se refiere a documentos XML extensos.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1547"
+  HREF="node88.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1543"
+  HREF="node86.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1537"
+  HREF="node86.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1545"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1548"
+  HREF="node88.html">XML y SAPO</A>
+<B> Subir:</B> <A NAME="tex2html1544"
+  HREF="node86.html">XML</A>
+<B> Anterior:</B> <A NAME="tex2html1538"
+  HREF="node86.html">XML</A>
+ &nbsp <B>  <A NAME="tex2html1546"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Cálculo de la distancia a una esquina</TITLE>
+<META NAME="description" CONTENT="Cálculo de la distancia a una esquina">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node99.html">
+<LINK REL="previous" HREF="node95.html">
+<LINK REL="up" HREF="node89.html">
+<LINK REL="next" HREF="node99.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1694"
+  HREF="node99.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1690"
+  HREF="node89.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1684"
+  HREF="node97.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1692"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1695"
+  HREF="node99.html">Consideración del factor de</A>
+<B> Subir:</B> <A NAME="tex2html1691"
+  HREF="node89.html">Algoritmos y cálculos implementados</A>
+<B> Anterior:</B> <A NAME="tex2html1685"
+  HREF="node97.html">Ancho de la calle</A>
+ &nbsp <B>  <A NAME="tex2html1693"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04550000000000000000">
+C&#225;lculo de la distancia a una esquina</A>
+</H1>
+
+El modelo de propagaci&#243;n para entornos urbanos de peque&#241;as
+microceldas (MOPEM) incorpora en el c&#225;lculo de atenuaci&#243;n la
+distancia desde el m&#243;vil a las esquinas (<!-- MATH
+ $d_{esq1}, d_{esq2}$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.png"
+ ALT="$ d_{esq1}, d_{esq2}$">) como
+fue detallado en la secci&#243;n <A HREF="node39.html#mopem">5.3.3</A>. Por esta raz&#243;n, se
+desarroll&#243; un algoritmo que dada la ubicaci&#243;n del m&#243;vil, la
+ubicaci&#243;n de la radiobase y el trazado de manzanas, devuelve las
+distancias a las dos esquinas de la cuadra m&#225;s pr&#243;xima al m&#243;vil.
+
+Para lograr esto, se toman las mismas hip&#243;tesis que para el
+c&#225;lculo de orientaci&#243;n: se descartan las posiciones del m&#243;vil que
+se hallan dentro de la superficie de la manzana y se consideran
+para el c&#225;lculo &#250;nicamente las manzanas pr&#243;ximas al m&#243;vil
+(resultantes de la intersecci&#243;n con un c&#237;rculo de centro en el
+m&#243;vil y radio fijo).
+
+Al igual que para el algoritmo de c&#225;lculo de orientaci&#243;n se procede
+a continuaci&#243;n a encontrar la cuadra m&#225;s pr&#243;xima dentro de todas las
+manzanas cercanas pero adem&#225;s interesa ahora la manzana que contiene
+dicha cuadra. Una vez obtenida la cuadra m&#225;s cercana, se mide la
+distancia del m&#243;vil a la misma y se halla el punto m&#225;s cercano
+perteneciente a la cuadra (<IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img303.png"
+ ALT="$ X$">).
+
+Teniendo en cuenta que al ser una cuadra un segmento de recta es
+posible obtener las coordenadas de sus extremos, resultar&#237;a l&#243;gico
+pensar que restar&#237;a medir la distancia de <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img303.png"
+ ALT="$ X$"> a los dos extremos de
+la cuadra m&#225;s cercana para culminar con el algoritmo. Sin embargo,
+este procedimiento llevar&#237;a a resultados err&#243;neos ya que como se
+describi&#243; en la secci&#243;n <A HREF="node68.html#paqueteVectorial">8.1.5</A>, cada manzana es
+representada por un pol&#237;gono con un n&#250;mero arbitrario de v&#233;rtices y
+no siempre &#233;stos se corresponden con esquinas de la misma. Por lo
+tanto, se opt&#243; por considerar una esquina a aquel punto
+perteneciente a dos cuadras adyacentes que conforman un &#225;ngulo mayor
+a 30^&cir#circ; entre s&#237; (ver figura <A HREF="node98.html#esquinas">10.5</A>).
+
+<DIV ALIGN="CENTER"><A NAME="esquinas"></A><A NAME="2462"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 10.5:</STRONG>
+Determinaci&#243;n de las esquinas de una manzana</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="226" HEIGHT="205" ALIGN="BOTTOM" BORDER="0"
+ SRC="img305.png"
+ ALT="\includegraphics[width=5cm]{Software/esquinas.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Es as&#237; que para obtener las esquinas m&#225;s pr&#243;ximas al m&#243;vil, se
+parti&#243; de la cuadra m&#225;s cercana ya obtenida y se fue calculando el
+&#225;ngulo entre cada cuadra y la siguiente hasta que este resultara
+mayor a 30^&cir#circ;. A continuaci&#243;n se describe el c&#225;lculo del &#225;ngulo
+entre dos cuadras consecutivas:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="194" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img306.png"
+ ALT="$\displaystyle \alpha_i = \arctan{\left(\frac{y_{i+1}-y_{i}}{x_{i+1}-x_i}\right)}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="228" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img307.png"
+ ALT="$\displaystyle \alpha_{i+1} = \arctan{\left(\frac{y_{i+2}-y_{i+1}}{x_{i+2}-x_{i+1}}\right)}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="125" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img308.png"
+ ALT="$\displaystyle \Delta \alpha = \alpha_{i+1} - \alpha_i$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde <!-- MATH
+ $(x_i, y_i)$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$ (x_i, y_i)$"> y <!-- MATH
+ $(x_{i+1},y_{i+1})$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img310.png"
+ ALT="$ (x_{i+1},y_{i+1})$"> son las coordenadas de la
+primera cuadra, <!-- MATH
+ $(x_{i+1},y_{i+1})$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img310.png"
+ ALT="$ (x_{i+1},y_{i+1})$"> y <!-- MATH
+ $(x_{i+2},y_{i+2})$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img311.png"
+ ALT="$ (x_{i+2},y_{i+2})$"> las
+coordenadas de la siguiente y <!-- MATH
+ $\Delta \alpha$
+ -->
+<IMG
+ WIDTH="30" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img312.png"
+ ALT="$ \Delta \alpha$"> el &#225;ngulo entre
+ambas. Cuando <!-- MATH
+ $\Delta \alpha$
+ -->
+<IMG
+ WIDTH="30" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img312.png"
+ ALT="$ \Delta \alpha$"> resulte mayor a 30^&cir#circ; se detendr&#225; la
+iteraci&#243;n y la esquina estar&#225; dada por <!-- MATH
+ $(x_i, y_i)$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$ (x_i, y_i)$">. Cabe destacar
+que esta misma iteraci&#243;n se reitera luego en el otro sentido para
+encontrar la segunda esquina m&#225;s pr&#243;xima al m&#243;vil <!-- MATH
+ $((x_{i2},
+y_{i2}))$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.png"
+ ALT="$ ((x_{i2},
+y_{i2}))$">.
+
+Una vez obtenidas las esquinas resta calcular la distancia entre <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img303.png"
+ ALT="$ X$">
+y <!-- MATH
+ $(x_i, y_i)$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$ (x_i, y_i)$"> y entre <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img303.png"
+ ALT="$ X$"> y <!-- MATH
+ $((x_{i2}, y_{i2}))$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.png"
+ ALT="$ ((x_{i2},
+y_{i2}))$"> (<IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.png"
+ ALT="$ d_{esq1}$"> y
+<IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img236.png"
+ ALT="$ d_{esq2}$">).
+     <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1694"
+  HREF="node99.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1690"
+  HREF="node89.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1684"
+  HREF="node97.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1692"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1695"
+  HREF="node99.html">Consideración del factor de</A>
+<B> Subir:</B> <A NAME="tex2html1691"
+  HREF="node89.html">Algoritmos y cálculos implementados</A>
+<B> Anterior:</B> <A NAME="tex2html1685"
+  HREF="node97.html">Ancho de la calle</A>
+ &nbsp <B>  <A NAME="tex2html1693"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

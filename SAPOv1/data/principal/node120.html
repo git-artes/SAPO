@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MOPEM</TITLE>
+<META NAME="description" CONTENT="MOPEM">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node121.html">
+<LINK REL="previous" HREF="node119.html">
+<LINK REL="up" HREF="node116.html">
+<LINK REL="next" HREF="node121.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1984"
+  HREF="node121.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1980"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1974"
+  HREF="node119.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1982"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1985"
+  HREF="node121.html">Vogler-Ikegami</A>
+<B> Subir:</B> <A NAME="tex2html1981"
+  HREF="node116.html">Performance de los modelos</A>
+<B> Anterior:</B> <A NAME="tex2html1975"
+  HREF="node119.html">COST231-Walfisch-Ikegami</A>
+ &nbsp <B>  <A NAME="tex2html1983"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION05134000000000000000">
+MOPEM</A>
+</H2>
+
+La creaci&#243;n del modelo de propagaci&#243;n para entornos urbanos de
+peque&#241;os macroceldas (MOPEM) se bas&#243; en una zona urbana de
+Montevideo a una frecuencia en el entorno de 900 MHz, lo cual a
+priori indicar&#237;a similares caracter&#237;sticas al escenario aqu&#237;
+presente en el estudio de propagaci&#243;n en el centro de Munich. Sin
+embargo, una diferencia no menor es que en el modelo Mopem la altura
+de la radiobase se considera mayor que las alturas de las
+edificaciones circundantes, hip&#243;tesis que no se cumple siempre en el
+caso de Munich. De todas formas, se procedi&#243; a realizar la
+comparaci&#243;n con las medidas reales imponiendo que el t&#233;rmino en la
+ecuaci&#243;n de <IMG
+ WIDTH="42" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.png"
+ ALT="$ L_{msd}$"> que realiza la diferencia entre la altura de
+la radiobase y el promedio de las alturas de los edificios
+circundantes (ver secci&#243;n <A HREF="node39.html#mopem">5.3.3</A>) sea cero cuando la altura de
+la radiobase sea menor a &#233;stas.
+
+En la tabla <A HREF="node120.html#tablaComp:mopem">12.5</A> se resumen los resultados de la
+implementaci&#243;n del modelo con los par&#225;metros por defecto en las tres
+rutas del centro de Munich y para una mejor evaluaci&#243;n del
+comportamiento se puede visualizar en la figura <A HREF="node120.html#figCompMopem">12.7</A>
+la comparaci&#243;n de la estimaci&#243;n con las medidas reales en la ruta 0.
+Se observa al igual que en el caso de COST231-WI una sobreestimaci&#243;n
+de las p&#233;rdidas en los trayectos involucrados respecto a las medidas
+reales. Partiendo de la base que no se est&#225; dentro de las hip&#243;tesis
+del modelo (la altura de la radiobase es menor a la de los edificios
+circundantes), y que tampoco se considera un factor correctivo para
+estos casos, se puede concluir que los resultados fueron bastante
+favorables.
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="3247"></A>
+<TABLE>
+<CAPTION><STRONG>Tabla 12.5:</STRONG>
+Media y desviaci&#243;n est&#225;ndar del error para el modelo de
+Mopem</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">Ruta</TD>
+<TD ALIGN="CENTER"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img337.png"
+ ALT="$ \mu$"> (dB)</TD>
+<TD ALIGN="CENTER"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.png"
+ ALT="$ \sigma$"> (dB)</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route00</I></TD>
+<TD ALIGN="CENTER">-7.93</TD>
+<TD ALIGN="CENTER">9.25</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route01</I></TD>
+<TD ALIGN="CENTER">-10.43</TD>
+<TD ALIGN="CENTER">9.39</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route02</I></TD>
+<TD ALIGN="CENTER">-11.66</TD>
+<TD ALIGN="CENTER">10.32</TD>
+</TR>
+</TABLE>
+<A NAME="tablaComp:mopem"></A>
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+Si se compara el comportamiento con los resultados obtenidos con el
+modelo COST231-WI, en el cual se basa Mopem, se observan valores muy
+similares en lo que respecta a la varianza, pero una media mayor en
+el error. Sin embargo, es importante destacar que Mopem, a
+diferencia de &#233;ste, no realiza la distinci&#243;n entre los casos LOS y
+NLOS, lo cual mejorar&#237;a los resultados en la presente zona de
+estudio, aunque se traducir&#237;a tambi&#233;n en mayores tiempos de c&#225;lculo.
+
+<DIV ALIGN="CENTER"><A NAME="figCompMopem"></A><A NAME="3253"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 12.7:</STRONG>
+Comparaci&#243;n entre las medidas y las estimaciones para la
+ruta 0 del modelo de Mopem</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="406" HEIGHT="283" ALIGN="BOTTOM" BORDER="0"
+ SRC="img413.png"
+ ALT="\includegraphics[width=9cm]{Conclusion/compMOPruta0.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Finalmente, tomando como referencia los resultados de aplicar el
+modelo en la zona donde se ajust&#243;, donde se obtuvo un error de 0 dB
+y una varianza de 5.1 dB, se observa una diferencia significativa en
+la media del error mientras que el valor de la varianza no se
+encuentra tan alejado. Estas diferencias son f&#225;cilmente atribuibles
+a que el entorno del centro de Munich difiere de aquel donde se
+ajust&#243; el modelo a pesar de tratarse ambos de entornos urbanos, y se
+le suma a esto el hecho de que la radiobase en el escenario original
+se encontraba por encima de las edificaciones circundantes.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1984"
+  HREF="node121.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1980"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1974"
+  HREF="node119.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1982"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1985"
+  HREF="node121.html">Vogler-Ikegami</A>
+<B> Subir:</B> <A NAME="tex2html1981"
+  HREF="node116.html">Performance de los modelos</A>
+<B> Anterior:</B> <A NAME="tex2html1975"
+  HREF="node119.html">COST231-Walfisch-Ikegami</A>
+ &nbsp <B>  <A NAME="tex2html1983"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

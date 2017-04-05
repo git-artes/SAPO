@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Factores correctivos</TITLE>
+<META NAME="description" CONTENT="Factores correctivos">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node32.html">
+<LINK REL="up" HREF="node32.html">
+<LINK REL="next" HREF="node34.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html777"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html773"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html769"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html775"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html778"
+  HREF="node34.html">Modelo de Walfisch-Ikegami</A>
+<B> Subir:</B> <A NAME="tex2html774"
+  HREF="node32.html">Modelo de Erceg-SUI</A>
+<B> Anterior:</B> <A NAME="tex2html770"
+  HREF="node32.html">Modelo de Erceg-SUI</A>
+ &nbsp <B>  <A NAME="tex2html776"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION03320100000000000000">
+Factores correctivos</A>
+</H3>
+
+En la ecuaci&#243;n (<A HREF="node32.html#Aerceg">5.2</A>) se considera la dependencia de la
+p&#233;rdida de camino con la frecuencia, pero no se toman en cuenta las
+variaciones por p&#233;rdidas de difracci&#243;n para frecuencias distintas a
+1.9 GHz. Esto puede corregirse agregando un t&#233;rmino a la ecuaci&#243;n
+(<A HREF="node32.html#PLerceg">5.1</A>) debido a las p&#233;rdidas por difracci&#243;n, bas&#225;ndose en
+los resultados presentados en [<A
+ HREF="node130.html#ercegFC1">20</A>][<A
+ HREF="node130.html#ercegFC2">21</A>] para
+entornos suburbanos
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="150" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img174.png"
+ ALT="$\displaystyle C_f = 6\log(f/1900)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+siendo <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$ f$"> la frecuencia en MHz.
+
+El modelo fue originalmente desarrollado para el caso en que la
+altura del m&#243;vil es de 2 m, pero puede ser extendido a otras
+condiciones en base a los aportes de [<A
+ HREF="node130.html#ercegFC3">22</A>], adicionando
+otro factor correctivo a la ecuaci&#243;n (<A HREF="node32.html#PLerceg">5.1</A>)
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="399" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img175.png"
+ ALT="$\displaystyle C_h = \left\{ \begin{array}{l} -10.8\log(h_r/2) \qquad \text{par...
+... A y B}\  -20.0\log(h_r/2) \qquad \text{para categoría C} \end{array}\right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde <IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ h_r$"> es la altura (sobre el terreno) de la antena m&#243;vil en
+metros.
+
+Finalmente, la ecuaci&#243;n de p&#233;rdida de camino incluyendo los factores
+correctivos puede escribirse como:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="192" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img176.png"
+ ALT="$\displaystyle PL_{total} = PL + C_f + C_h$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+El rango de validez de los par&#225;metros es:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="463" HEIGHT="93" ALIGN="BOTTOM" BORDER="0"
+ SRC="img177.png"
+ ALT="\begin{gather*}\begin{array}{cl} 450 \text{ MHz}\leqslant f \leqslant 11.2 \tex...
+...text{ km} &amp; \text{distancia entre el móvil y la base} \end{array}\end{gather*}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html777"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html773"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html769"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html775"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html778"
+  HREF="node34.html">Modelo de Walfisch-Ikegami</A>
+<B> Subir:</B> <A NAME="tex2html774"
+  HREF="node32.html">Modelo de Erceg-SUI</A>
+<B> Anterior:</B> <A NAME="tex2html770"
+  HREF="node32.html">Modelo de Erceg-SUI</A>
+ &nbsp <B>  <A NAME="tex2html776"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

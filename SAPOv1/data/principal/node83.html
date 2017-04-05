@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Archivos de entrada-salida de predicciones</TITLE>
+<META NAME="description" CONTENT="Archivos de entrada-salida de predicciones">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node84.html">
+<LINK REL="previous" HREF="node82.html">
+<LINK REL="up" HREF="node75.html">
+<LINK REL="next" HREF="node84.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1498"
+  HREF="node84.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1494"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1488"
+  HREF="node82.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1496"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1499"
+  HREF="node84.html">Archivos de entrada-salida para</A>
+<B> Subir:</B> <A NAME="tex2html1495"
+  HREF="node75.html">Formato de archivos</A>
+<B> Anterior:</B> <A NAME="tex2html1489"
+  HREF="node82.html">Archivos de entrada para</A>
+ &nbsp <B>  <A NAME="tex2html1497"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04450000000000000000"></A><A NAME="formatoPredicciones"></A>
+<BR>
+Archivos de entrada-salida de predicciones
+</H1>
+
+Para guardar los resultados de las predicciones se opt&#243; por utilizar
+los mismos formatos de archivo que en el caso de los datos de altura
+de terreno, por ser ambos de tipo raster.
+
+<UL>
+<LI>ASCII grid
+</LI>
+<LI>ASCII grid comprimido con gzip
+</LI>
+<LI>GRASS ASCII grid
+</LI>
+<LI>GRASS ASCII grid comprimido con gzip
+</LI>
+</UL>
+Cada predicci&#243;n est&#225; formada por los resultados correspondientes a
+varias antenas; para el almacenamiento en disco se decidi&#243; guardar
+un archivo por cada una de ellas. Los mismos son guardados en una
+carpeta con el nombre que el usuario elija para almacenar la
+predicci&#243;n, y cada uno lleva el nombre de la antena a la cual est&#225;
+asociado. Al momento de abrir una predicci&#243;n, el usuario selecciona
+la carpeta, <I>SAPO</I> lee autom&#225;ticamente todos los archivos
+dentro de ella y reconstruye la predicci&#243;n total, computando los
+valores que corresponde en todos los puntos del terreno y
+despleg&#225;ndolos en pantalla.
+
+<BR><HR>
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

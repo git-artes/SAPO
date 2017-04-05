@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Manejo de errores</TITLE>
+<META NAME="description" CONTENT="Manejo de errores">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node73.html">
+<LINK REL="up" HREF="node62.html">
+<LINK REL="next" HREF="node75.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1378"
+  HREF="node75.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1374"
+  HREF="node62.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1370"
+  HREF="node73.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1376"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1379"
+  HREF="node75.html">Formato de archivos</A>
+<B> Subir:</B> <A NAME="tex2html1375"
+  HREF="node62.html">Arquitectura de software</A>
+<B> Anterior:</B> <A NAME="tex2html1371"
+  HREF="node73.html">Comportamiento dinámico</A>
+ &nbsp <B>  <A NAME="tex2html1377"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04330000000000000000">
+Manejo de errores</A>
+</H1>
+
+<I>SAPO</I>, como toda aplicaci&#243;n que interact&#250;a con agentes
+externos, se encuentra propenso a que se generen errores de distinta
+&#237;ndole en tiempos de ejecuci&#243;n. La interacci&#243;n con el usuario puede
+provocar situaciones que impidan el correcto funcionamiento del
+software, y estas situaciones deben ser contempladas a los efectos
+de impedir la realizaci&#243;n de c&#225;lculos sobre bases err&#243;neas.
+
+Para esto se utiliz&#243; el manejo de excepciones que proporciona Java.
+Esta t&#233;cnica, tambi&#233;n presente en otros lenguajes, permite controlar
+el flujo de ejecuci&#243;n del programa ante situaciones anormales y
+almacenar informaci&#243;n de las mismas que pueda ser de ayuda para su
+soluci&#243;n, otorg&#225;ndole robustez a los programas. Si se produce un
+error, la aplicaci&#243;n no deber&#237;a abortar, sino que debe lanzar una
+excepci&#243;n para luego capturarla y resolver la situaci&#243;n.
+
+Se implementaron varias excepciones para servir de contingencia ante
+diversas situaciones espec&#237;ficas de <I>SAPO</I>, otros casos se
+cubrieron utilizando excepciones propias del lenguaje, como por
+ejemplo las relativas a la lectura y/o escritura de archivos
+(<I>IOException</I>). Todas ellas son objetos que heredan de la
+clase <I>java.lang.Exception</I>, y se ubican dentro del paquete que
+contiene la clase que las genera (es decir, la que contiene el o los
+m&#233;todos que lanzan la excepci&#243;n).
+
+Por ejemplo, la excepci&#243;n
+<I>ifusuario.menues.RadiobaseMalIngresadaException</I> es lanzada
+por la ventana que sirve de interfaz para la creaci&#243;n de una nueva
+radiobase, en caso que el nombre que ingresa el usuario sea vac&#237;o o
+la altura no sea un valor num&#233;rico. Luego al ser creada, si la
+altura es negativa se genera una
+<I>red.RadiobaseMalDefinidaException</I> y finalmente, cuando la
+radiobase es agregada al sitio, si en el mismo ya existe otra con el
+mismo nombre se provoca una <I>red.RadiobaseRepetidaException</I>.
+
+La respuesta del programa ante estas situaciones es la de mostrar
+un mensaje al usuario avisando de las razones que provocaron el
+error, permiti&#233;ndole al mismo repetir el procedimiento.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1378"
+  HREF="node75.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1374"
+  HREF="node62.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1370"
+  HREF="node73.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1376"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1379"
+  HREF="node75.html">Formato de archivos</A>
+<B> Subir:</B> <A NAME="tex2html1375"
+  HREF="node62.html">Arquitectura de software</A>
+<B> Anterior:</B> <A NAME="tex2html1371"
+  HREF="node73.html">Comportamiento dinámico</A>
+ &nbsp <B>  <A NAME="tex2html1377"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

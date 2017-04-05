@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Modelo MOPEM</TITLE>
+<META NAME="description" CONTENT="Modelo MOPEM">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node36.html">
+<LINK REL="up" HREF="node34.html">
+<LINK REL="next" HREF="node40.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html852"
+  HREF="node40.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html848"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html844"
+  HREF="node38.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html850"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html853"
+  HREF="node40.html">Modelo propuesto: Vogler-Ikegami</A>
+<B> Subir:</B> <A NAME="tex2html849"
+  HREF="node34.html">Modelo de Walfisch-Ikegami</A>
+<B> Anterior:</B> <A NAME="tex2html845"
+  HREF="node38.html">Caso NLOS</A>
+ &nbsp <B>  <A NAME="tex2html851"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION03333000000000000000"></A><A NAME="mopem"></A>
+<BR>
+Modelo MOPEM
+</H2>
+
+El modelo de propagaci&#243;n para entornos urbanos de peque&#241;as
+macroceldas (MOPEM) surge como resultado de un proyecto de fin de
+carrera de estudiantes de la Facultad de Ingenier&#237;a de la
+Universidad de la Rep&#250;blica [<A
+ HREF="node130.html#mopemproy">26</A>]. Este grupo present&#243; un
+modelo de propagaci&#243;n para entornos densamente urbanos en la banda
+de 850 a 900 MHz tomando como escenario de medici&#243;n dos zonas
+urbanas de Montevideo, Pocitos y Punta Carretas.
+
+El modelo est&#225; basado en el modelo COST231-WI anteriormente descrito
+y en el an&#225;lisis de rayos por difracci&#243;n m&#250;ltiple. Sin embargo,
+revisa la hip&#243;tesis de considerar las filas de edificios como
+pantallas infinitas, tomando en cuenta los cortes en las filas de
+edificios en el cruce de calles. Este modelo considera la
+dependencia con la orientaci&#243;n de la calle respecto a la direcci&#243;n
+de propagaci&#243;n, la variabilidad de la se&#241;al a lo largo de la calle
+por efecto de pantallas finitas y la influencia de la altura del
+terreno. Para ello, incorpora en la estimaci&#243;n de la atenuaci&#243;n la
+cota del terreno, la presencia de las esquinas (que adapta la
+hip&#243;tesis de pantallas infinitas en la difracci&#243;n de m&#250;ltiple
+pantalla) como elementos significativos y la incidencia del &#225;ngulo
+de orientaci&#243;n de la calle en la continuidad del modelo a los
+efectos de aumentar la exactitud de la estimaci&#243;n.
+
+Es as&#237; que expresa la atenuaci&#243;n como la suma de cuatro t&#233;rminos
+independientes: la p&#233;rdida por propagaci&#243;n en el espacio libre
+<!-- MATH
+ $L_{B_{EL}}$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.png"
+ ALT="$ L_{B_{EL}}$">, la p&#233;rdida por difracci&#243;n desde el techo del &#250;ltimo
+edificio a la calle donde se encuentra el m&#243;vil <IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img205.png"
+ ALT="$ L_{rts}$">, la
+p&#233;rdida por difracci&#243;n multipantalla <IMG
+ WIDTH="42" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.png"
+ ALT="$ L_{msd}$"> y el t&#233;rmino
+<IMG
+ WIDTH="36" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img228.png"
+ ALT="$ L_{esq}$"> de correcci&#243;n por el mencionado efecto de levantar la
+hip&#243;tesis de multipantallas infinitas.
+
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="304" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img229.png"
+ ALT="$\displaystyle L_{MOPEM} = L_{B_{EL}} +L_{rts}+L_{msd}+L_{esq}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+El t&#233;rmino <!-- MATH
+ $L_{B_{EL}}$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.png"
+ ALT="$ L_{B_{EL}}$"> comprende la propagaci&#243;n en espacio libre y
+es el mismo que fue considerado en la ecuaci&#243;n (<A HREF="node38.html#Lb">5.12</A>) en el
+modelo de COST-WI detallado en la secci&#243;n <A HREF="node36.html#costwi">5.3.2</A>. Al t&#233;rmino
+<IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img205.png"
+ ALT="$ L_{rts}$"> que representa la p&#233;rdida desde el &#250;ltimo edificio
+difractante hasta el receptor m&#243;vil, el modelo MOPEM le agrega dos
+nuevos enfoques: la consideraci&#243;n de la cota del terreno incluida en
+la altura del m&#243;vil y el promedio de edificaciones y una nueva
+funci&#243;n del &#225;ngulo de orientaci&#243;n, resultando en:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="490" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img230.png"
+ ALT="$\displaystyle L_{rts}=1.87 -10\log w+10\log f + 10.4\log (h-h_r)+L_{ori_{MOPEM}}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde la funci&#243;n del &#225;ngulo hallada emp&#237;ricamente, presenta la
+siguiente formulaci&#243;n:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="565" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img231.png"
+ ALT="$\displaystyle L_{ori_{MOPEM}}= -2.8 \left(\frac{\phi}{45}\right)^{4}+ 13.2\lef...
+...)^{3}-29.5\left(\frac{\phi}{45}\right)^{2}+30.3\left(\frac{\phi}{45}\right)-3.5$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+El t&#233;rmino <IMG
+ WIDTH="49" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img232.png"
+ ALT="$ L{msd}$">, modela la p&#233;rdida por difracci&#243;n multipantalla,
+y es ajustado emp&#237;ricamente con la distancia consiguiendo una mayor
+aplicabilidad del modelo MOPEM a la zona de estudio escogida durante
+el desarrollo del proyecto, resultando en:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="633" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img233.png"
+ ALT="$\displaystyle L_{msd} = 54-18\log[1+(h_t-h)]+\left[-4+0.7\left(\frac{f}{925}-1\right)\right ]\log f+27.7\log d -9\log b$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Finalmente, <IMG
+ WIDTH="36" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img228.png"
+ ALT="$ L_{esq}$"> es un t&#233;rmino adicional considerado como un
+t&#233;rmino de correcci&#243;n por el efecto de pantallas finitas, modelando
+la variaci&#243;n de la se&#241;al a lo largo de la cuadra.
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="302" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.png"
+ ALT="$\displaystyle L_{esq} = -11.32+3.3\log d_{esq1}+\log d_{esq2}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde <IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.png"
+ ALT="$ d_{esq1}$"> y <IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img236.png"
+ ALT="$ d_{esq2}$">, son las distancias desde la ubicaci&#243;n
+del receptor a cada una de las esquinas de la calle considerada.
+Esta expresi&#243;n es v&#225;lida para puntos que disten a m&#225;s de 7 m de ambas
+esquinas.
+
+El error medio del modelo para la zona de estudio considerada en el
+proyecto fue de 0 dB y la desviaci&#243;n est&#225;ndar del mismo fue de 5.1
+dB.
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html852"
+  HREF="node40.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html848"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html844"
+  HREF="node38.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html850"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html853"
+  HREF="node40.html">Modelo propuesto: Vogler-Ikegami</A>
+<B> Subir:</B> <A NAME="tex2html849"
+  HREF="node34.html">Modelo de Walfisch-Ikegami</A>
+<B> Anterior:</B> <A NAME="tex2html845"
+  HREF="node38.html">Caso NLOS</A>
+ &nbsp <B>  <A NAME="tex2html851"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

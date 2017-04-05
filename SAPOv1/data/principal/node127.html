@@ -1,0 +1,534 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Verificación de la intersección entre un plano y la elipsoide</TITLE>
+<META NAME="description" CONTENT="Verificación de la intersección entre un plano y la elipsoide">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node128.html">
+<LINK REL="previous" HREF="node126.html">
+<LINK REL="up" HREF="node126.html">
+<LINK REL="next" HREF="node128.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2066"
+  HREF="node128.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2062"
+  HREF="node126.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2056"
+  HREF="node126.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2064"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html2067"
+  HREF="node128.html">Intersección entre una elipsoide</A>
+<B> Subir:</B> <A NAME="tex2html2063"
+  HREF="node126.html">Intersección de una elipsoide</A>
+<B> Anterior:</B> <A NAME="tex2html2057"
+  HREF="node126.html">Intersección de una elipsoide</A>
+ &nbsp <B>  <A NAME="tex2html2065"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION06110000000000000000">
+Verificaci&#243;n de la intersecci&#243;n entre un plano y la elipsoide</A>
+</H1>
+El primer paso para hallar la intersecci&#243;n de la elispsoide con un
+plano arbitrario es verificar que la misma efectivamente exista,
+para lo cual se deben hacer algunas consideraciones previas.
+
+<P>
+En general, para cualquier superficie definida por la ecuaci&#243;n
+<!-- MATH
+ $F(x,y,z)=0$
+ -->
+<IMG
+ WIDTH="107" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.png"
+ ALT="$ F(x,y,z)=0$">, el plano tangente en el punto
+<!-- MATH
+ $(\bar{x},\bar{y},\bar{z})$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img427.png"
+ ALT="$ (\bar{x},\bar{y},\bar{z})$"> perteneciente a la superficie es:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="323" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img428.png"
+ ALT="$\displaystyle \frac{\partial F}{\partial x}(x-\bar{x})+\frac{\partial F}{\partial y}(y-\bar{y})+\frac{\partial F}{\partial z}(z-\bar{z})=0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Donde cada derivada parcial se eval&#250;a en
+<!-- MATH
+ $(\bar{x},\bar{y},\bar{z})$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img427.png"
+ ALT="$ (\bar{x},\bar{y},\bar{z})$">. 
+<BR>
+<P>
+Para el caso de una elipsoide <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \varepsilon$">,
+<!-- MATH
+ $F(x,y,z)=\frac{x²}{a²}+\frac{y²}{b²}+\frac{z²}{c²}-1$
+ -->
+<IMG
+ WIDTH="223" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img429.png"
+ ALT="$ F(x,y,z)=\frac{x²}{a²}+\frac{y²}{b²}+\frac{z²}{c²}-1$">, por lo que
+el plano tangente resulta:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="305" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img430.png"
+ ALT="$\displaystyle \frac{2\bar{x}(x-\bar{x})}{a²}+\frac{2\bar{y}(y-\bar{y})}{b²}+\frac{2\bar{z}(z-\bar{z})}{c²} = 1$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Esta ecuaci&#243;n en vista de (<A HREF="node126.html#ecuacionElipsoide">A.1</A>), se reduce a:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="145" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img431.png"
+ ALT="$\displaystyle \frac{\bar{x}x}{a²}+\frac{\bar{y}y}{b²}+\frac{\bar{z}z}{c²}=1$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="planoTgElipsoide">(A.2)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Sea un punto <!-- MATH
+ $P=(\xi,\eta,\varsigma)$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img432.png"
+ ALT="$ P=(\xi,\eta,\varsigma)$"> que se encuentra en el plano
+tangente definido por (<A HREF="node127.html#planoTgElipsoide">A.2</A>). Por lo tanto, <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img433.png"
+ ALT="$ P$">
+puede estar fuera o sobre <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \varepsilon$">; y si se encuentra fuera la
+recta que une <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img433.png"
+ ALT="$ P$"> con <!-- MATH
+ $(\bar{x},\bar{y},\bar{z})$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img427.png"
+ ALT="$ (\bar{x},\bar{y},\bar{z})$"> es tangencial a
+<!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \varepsilon$"> en <!-- MATH
+ $(\bar{x},\bar{y},\bar{z})$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img427.png"
+ ALT="$ (\bar{x},\bar{y},\bar{z})$">. Sustituyendo en
+(<A HREF="node127.html#planoTgElipsoide">A.2</A>) resulta:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="144" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img434.png"
+ ALT="$\displaystyle \frac{\bar{x}\xi}{a²}+\frac{\bar{y}\eta}{b²}+\frac{\bar{z}\varsigma}{c²}=1$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Por lo tanto, cada recta que pasa por <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img433.png"
+ ALT="$ P$"> que es tangencial a
+<!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \varepsilon$">, la instersecta en <!-- MATH
+ $(\bar{x},\bar{y},\bar{z})$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img427.png"
+ ALT="$ (\bar{x},\bar{y},\bar{z})$">, que
+adem&#225;s de pertenecer a <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \varepsilon$"> pertenece al plano
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="143" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img435.png"
+ ALT="$\displaystyle \frac{\xi x}{a²}+\frac{\eta y}{b²}+\frac{\varsigma z}{c²}=1$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="planoPolar">(A.3)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+que es claro que siempre se intersecta con <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \varepsilon$">.
+
+<P>
+Para cualquier punto <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img433.png"
+ ALT="$ P$"> (tanto fuera, sobre o dentro de la
+elipsoide), se define el <I>plano polar</I> a la elipsoide
+<!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \varepsilon$"> tal como aparece en (<A HREF="node127.html#planoPolar">A.3</A>); el punto <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img433.png"
+ ALT="$ P$">
+se denomina <I>polo</I> de dicho plano. En el caso particular que
+el polo pertenezca a <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \varepsilon$">, entonces por
+(<A HREF="node127.html#planoTgElipsoide">A.2</A>) y (<A HREF="node127.html#planoPolar">A.3</A>) el plano polar ser&#225;
+tangencial a <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \varepsilon$"> en <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img433.png"
+ ALT="$ P$">.
+
+<P>
+Ahora bien, un plano arbitrario de ecuaci&#243;n
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="140" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img436.png"
+ ALT="$\displaystyle lx+my+nz = f$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="plano">(A.4)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+es el plano polar del punto <!-- MATH
+ $P=(\xi,\eta,\varsigma)$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img432.png"
+ ALT="$ P=(\xi,\eta,\varsigma)$">, donde la
+ecuaci&#243;n (<A HREF="node127.html#plano">A.4</A>) es <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$ f$"> veces la ecuaci&#243;n (<A HREF="node127.html#planoPolar">A.3</A>),
+por lo que el punto <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img433.png"
+ ALT="$ P$"> puede escribirse de la forma:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="249" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img437.png"
+ ALT="$\displaystyle P=(\xi,\eta,\varsigma) = \left(\frac{a²l}{f}, \frac{b²m}{f}, \frac{c²n}{f}\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+El punto <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img433.png"
+ ALT="$ P$"> est&#225; fuera de <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \varepsilon$"> si y s&#243;lo si su plano polar
+se intersecta con <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \varepsilon$">. Por lo tanto, el plano
+(<A HREF="node127.html#plano">A.4</A>) intersecta la <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \varepsilon$"> s&#237; y s&#243;lo s&#237;:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="439" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img438.png"
+ ALT="$\displaystyle 1&lt;\left(\frac{\xi}{a}\right)^2+\left(\frac{\eta}{b}\right)^2+\lef...
+...rac{al}{f}\right)^2 + \left(\frac{bm}{f}\right)^2 + \left(\frac{cn}{f}\right)^2$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+En definitiva, el plano (<A HREF="node127.html#plano">A.4</A>) intersecta <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \varepsilon$">, si y
+s&#243;lo si
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="188" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img439.png"
+ ALT="$\displaystyle a²l²+b²m²+n²c² &gt; f²$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+y es tangente a ella s&#237; y s&#243;lo s&#237;
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="189" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img440.png"
+ ALT="$\displaystyle a²l²+b²m²+n²c² = f²$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Pero si dividimos la ecuaci&#243;n (<A HREF="node127.html#plano">A.4</A>) por <!-- MATH
+ $h=\sqrt{l²+m²+n²}$
+ -->
+<IMG
+ WIDTH="148" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img441.png"
+ ALT="$ h=\sqrt{l²+m²+n²}$">
+si <!-- MATH
+ $f \geqslant 0$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img442.png"
+ ALT="$ f \geqslant 0$"> y en caso contrario por <IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img443.png"
+ ALT="$ -h$">, el plano pasa a
+ser igualmente especificado por la ecuaci&#243;n escalada:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="139" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img444.png"
+ ALT="$\displaystyle \lambda x + \mu y + \nu z = h$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="planoNormalizado">(A.5)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="273" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img445.png"
+ ALT="$\displaystyle \lambda = \frac{l}{k}, \quad \mu = \frac{m}{k}, \quad \nu = \frac{n}{k}, \quad h = \frac{f}{k}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+De esta forma, <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.png"
+ ALT="$ h$"> es el largo del vector normal al plano desde el
+origen, y adem&#225;s dicho vector tiene la direcci&#243;n del vector
+unitario <!-- MATH
+ $(\lambda, \mu, \nu)$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img446.png"
+ ALT="$ (\lambda, \mu, \nu)$">. Ahora el punto <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img433.png"
+ ALT="$ P$"> puede volver a
+ser especificado por:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="248" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img447.png"
+ ALT="$\displaystyle P=(\xi,\eta,\varsigma) = \left(\frac{a²\lambda}{h}, \frac{b²\mu}{h}, \frac{c²\nu}{h}\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+por lo que el plano (<A HREF="node127.html#planoNormalizado">A.5</A>) intersecta
+<!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \varepsilon$"> si y s&#243;lo si
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="188" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img448.png"
+ ALT="$\displaystyle h² &lt; a²\lambda²+b²\mu²+c²\nu²$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+&#201;sta es la condici&#243;n que se utiliz&#243; para verificar si un plano
+normal al vector  <!-- MATH
+ $h\times (\lambda, \mu, \nu)$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img449.png"
+ ALT="$ h\times (\lambda, \mu, \nu)$"> intersecta al
+elispoide <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \varepsilon$">. De ahora en adelante, se supondr&#225; que se
+trabaja con planos que intersectan la elipsoide.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2066"
+  HREF="node128.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2062"
+  HREF="node126.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2056"
+  HREF="node126.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2064"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html2067"
+  HREF="node128.html">Intersección entre una elipsoide</A>
+<B> Subir:</B> <A NAME="tex2html2063"
+  HREF="node126.html">Intersección de una elipsoide</A>
+<B> Anterior:</B> <A NAME="tex2html2057"
+  HREF="node126.html">Intersección de una elipsoide</A>
+ &nbsp <B>  <A NAME="tex2html2065"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

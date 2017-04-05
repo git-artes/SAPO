@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Obtención de las medidas reales</TITLE>
+<META NAME="description" CONTENT="Obtención de las medidas reales">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node115.html">
+<LINK REL="previous" HREF="node113.html">
+<LINK REL="up" HREF="node113.html">
+<LINK REL="next" HREF="node115.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1907"
+  HREF="node115.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1903"
+  HREF="node113.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1897"
+  HREF="node113.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1905"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1908"
+  HREF="node115.html">Breve descripción del entorno</A>
+<B> Subir:</B> <A NAME="tex2html1904"
+  HREF="node113.html">Validación</A>
+<B> Anterior:</B> <A NAME="tex2html1898"
+  HREF="node113.html">Validación</A>
+ &nbsp <B>  <A NAME="tex2html1906"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION05110000000000000000">
+Obtenci&#243;n de las medidas reales</A>
+</H1>
+
+El grupo de trabajo COST 231, durante la revisi&#243;n de los modelos
+desarrollados, llev&#243; a cabo un conjunto de medidas de atenuaci&#243;n en
+parte del centro de Munich, Alemania. Dichas medidas fueron usadas
+en el reporte final para medir la exactitud de algunos de los
+modelos desarrollados y otros del tipo <I>ray-tracing</I> a manera
+de contraste. Para que la comunidad cient&#237;fica tenga la oportunidad
+de comparar sus propios modelos contra medidas reales sin tener la
+necesidad de realizar una costosa (tanto en tiempo como en dinero)
+campa&#241;a de medidas, las hizo disponibles en una p&#225;gina web, en
+conjunto con los datos topogr&#225;ficos correspondientes a la zona
+[<A
+ HREF="node130.html#medidasMunich">52</A>].
+
+Los datos se encuentran en formato ASCII y est&#225;n separados en tres
+secciones. La primera contiene la informaci&#243;n de la altura y
+disposici&#243;n de cada edificio, as&#237; como la altura del terreno
+subyacente al mismo. La segunda contiene las coordenadas de los
+puntos donde se realizaron las medidas de atenuaci&#243;n, cada uno con
+un identificador, y la &#250;ltima contiene la medida de atenuaci&#243;n en
+cada coordenada. Es decir, no se cuenta con la informaci&#243;n de cota
+del terreno en toda la zona ni de disposici&#243;n de las manzanas en
+forma directa.
+
+Para hallar la cota del terreno en todo punto, es necesario asignar
+un valor de altura en aquellos puntos donde no haya edificaciones.
+La convenci&#243;n en GeoTools es que el valor asignado en la grilla
+corresponde con el valor en el centro del rect&#225;ngulo, por lo que se
+decidi&#243; asignar el valor de altura correspondiente al edificio m&#225;s
+cercano a dicho punto. Aunque se podr&#237;an haber realizado algoritmos
+m&#225;s sofisticados (como interpolar valores), la distancia entre
+cualquier punto y alg&#250;n edificio es siempre lo suficientemente
+peque&#241;a para que la diferencia entre ambos sea despreciable. En la
+construcci&#243;n del trazado de las manzanas se utiliz&#243; un m&#233;todo simple
+pero efectivo; una vez visualizados los edificios era a simple vista
+evidente la disposici&#243;n de las manzanas, por lo que simplemente se
+construy&#243; a mano. Algoritmos m&#225;s complicados, pero autom&#225;ticos,
+hubiesen podido utilizarse, pero el tiempo que consumir&#237;a tanto
+implementarlos, utilizarlos como validarlos ser&#237;a mucho mayor que el
+que llev&#243; este m&#233;todo ``artesanal''.
+
+Las medidas se tomaron en tres recorridos distintos, identificados
+como <I>route00</I> (970 puntos), <I>route01</I> (355 puntos) y
+<I>route02</I> (1031 puntos). El resultado de la construcci&#243;n de los
+datos topogr&#225;ficos, as&#237; como los tres caminos pueden apreciarse en
+la figura <A HREF="node114.html#rutas">12.1</A>. Curvas con los valores de las medidas se
+pueden apreciar en la figura <A HREF="node114.html#medidas">12.2</A>, donde se muestra la
+atenuaci&#243;n en funci&#243;n de cada coordenada, siguiendo el sentido del
+recorrido.
+
+<DIV ALIGN="CENTER"><A NAME="rutas"></A><A NAME="3106"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 12.1:</STRONG>
+El entorno donde se realizaron las medidas y los tres
+recorridos</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="405" HEIGHT="573" ALIGN="BOTTOM" BORDER="0"
+ SRC="img399.png"
+ ALT="\includegraphics[width=9cm]{Conclusion/recorridosConTexto.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV ALIGN="CENTER"><A NAME="medidas"></A><A NAME="3335"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 12.2:</STRONG>
+Las medidas de las distintas rutas. (a)<I>route00</I> (b)<I>route01</I> (c)<I>route02</I></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="213" HEIGHT="152" ALIGN="BOTTOM" BORDER="0"
+ SRC="img400.png"
+ ALT="\includegraphics[width=4.7cm]{Conclusion/route00.eps}">
+<IMG
+ WIDTH="212" HEIGHT="150" ALIGN="BOTTOM" BORDER="0"
+ SRC="img401.png"
+ ALT="\includegraphics[width=4.7cm]{Conclusion/route01.eps}">
+<IMG
+ WIDTH="213" HEIGHT="150" ALIGN="BOTTOM" BORDER="0"
+ SRC="img402.png"
+ ALT="\includegraphics[width=4.7cm]{Conclusion/route02.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Existen adem&#225;s comparaciones entre los modelos analizados en el
+informe de COST231 [<A
+ HREF="node130.html#cost231Hata">16</A>] y estas medidas. El mismo
+contiene una tabla con la varianza y media del error en la
+predicci&#243;n de los distintos modelos, as&#237; como gr&#225;ficas comparativas
+entre las distintas predicciones y las medidas reales. En particular
+est&#225;n revisados el modelo de Walfisch-Ikegami (seccion <A HREF="node34.html#wi">5.3</A>) y
+el modelo Uni-Valencia
+[<A
+ HREF="node130.html#valencia1">53</A>][<A
+ HREF="node130.html#valencia2">54</A>][<A
+ HREF="node130.html#valencia3">55</A>] basado en el
+trabajo de Saunders y Bonar [<A
+ HREF="node130.html#Saunder+Bonar">47</A>] que utiliza el
+m&#233;todo de Vogler para estimar la difracci&#243;n por m&#250;ltiples cuchillos.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1907"
+  HREF="node115.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1903"
+  HREF="node113.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1897"
+  HREF="node113.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1905"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1908"
+  HREF="node115.html">Breve descripción del entorno</A>
+<B> Subir:</B> <A NAME="tex2html1904"
+  HREF="node113.html">Validación</A>
+<B> Anterior:</B> <A NAME="tex2html1898"
+  HREF="node113.html">Validación</A>
+ &nbsp <B>  <A NAME="tex2html1906"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

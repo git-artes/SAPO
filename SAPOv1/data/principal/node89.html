@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Algoritmos y cálculos implementados</TITLE>
+<META NAME="description" CONTENT="Algoritmos y cálculos implementados">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node107.html">
+<LINK REL="previous" HREF="node75.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node90.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1569"
+  HREF="node90.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1565"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1559"
+  HREF="node88.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1567"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1570"
+  HREF="node90.html">Cómputo de distancia</A>
+<B> Subir:</B> <A NAME="tex2html1566"
+  HREF="node41.html">Desarrollo de Software</A>
+<B> Anterior:</B> <A NAME="tex2html1560"
+  HREF="node88.html">XML y SAPO</A>
+ &nbsp <B>  <A NAME="tex2html1568"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04500000000000000000"></A><A NAME="cap:implementacion"></A>
+<BR>
+Algoritmos y c&#225;lculos implementados
+</H1>
+    En el presente cap&#237;tulo se detallan las implementaciones hechas en
+<I>SAPO</I> para diferentes algoritmos utilizados en el c&#225;lculo de
+la potencia mediana de se&#241;al, algunos comunes a todos los modelos
+(como el c&#243;mputo de la distancia o de la ganancia), otros m&#225;s
+complejos requeridos por modelos particulares. Por ejemplo, el
+COST231 Walfisch-Ikegami necesita la verificaci&#243;n de l&#237;nea de vista
+y el c&#225;lculo del &#225;ngulo de orientaci&#243;n de la calle; el modelo MOPEM
+agrega el c&#225;lculo de la distancia a las esquinas m&#225;s cercanas. El
+m&#233;todo de Vogler exige la resoluci&#243;n de la integral de atenuaci&#243;n
+por m&#250;ltiples cuchillos, as&#237; como la identificaci&#243;n del perfil de
+cuchillos a considerar.
+
+El c&#225;lculo de la potencia mediana de se&#241;al en un punto cualquiera
+<IMG
+ WIDTH="44" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img257.png"
+ ALT="$ (x,y)$"> del mapa se obtiene aplicando la f&#243;rmula:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="307" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img271.png"
+ ALT="$\displaystyle P_r(x,y) (dB)= P_t + G_t(x,y) - PL(x,y)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde <IMG
+ WIDTH="63" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img272.png"
+ ALT="$ P_r(x,y)$"> es la potencia de recepci&#243;n en el punto <IMG
+ WIDTH="44" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img257.png"
+ ALT="$ (x,y)$">,
+<IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ P_t$"> es la potencia de trasmisi&#243;n de la antena en dBm, <IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ G_t$"> es la
+ganancia de la antena trasmisora (que se calcula seg&#250;n se explicar&#225;
+en la secci&#243;n <A HREF="node91.html#calcGanancia">10.2</A>) y <IMG
+ WIDTH="29" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img273.png"
+ ALT="$ PL$"> es la f&#243;rmula de p&#233;rdida de
+camino espec&#237;fica del modelo de propagaci&#243;n. La antena receptora se
+considera isotr&#243;pica, por esto su ganancia no se incluye en la
+ecuaci&#243;n.
+
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1571"
+  HREF="node90.html">Cómputo de distancia</A>
+<LI><A NAME="tex2html1572"
+  HREF="node91.html">Cálculo de ganancia de la antena trasmisora</A>
+<UL>
+<LI><A NAME="tex2html1573"
+  HREF="node92.html">Ángulos relativos a la dirección de máxima propagación</A>
+<LI><A NAME="tex2html1574"
+  HREF="node93.html">Búsqueda en el patrón de radiación</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1575"
+  HREF="node94.html">Cálculo de alturas efectivas</A>
+<LI><A NAME="tex2html1576"
+  HREF="node95.html">Cálculo del ángulo de orientación y ancho de la calle</A>
+<UL>
+<LI><A NAME="tex2html1577"
+  HREF="node96.html">Ángulo de orientación de la calle</A>
+<LI><A NAME="tex2html1578"
+  HREF="node97.html">Ancho de la calle</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1579"
+  HREF="node98.html">Cálculo de la distancia a una esquina</A>
+<LI><A NAME="tex2html1580"
+  HREF="node99.html">Consideración del factor de seguridad en variables aleatorias</A>
+<LI><A NAME="tex2html1581"
+  HREF="node100.html">Verificación de línea de vista</A>
+<LI><A NAME="tex2html1582"
+  HREF="node101.html">Resolución de la integral de Vogler</A>
+<UL>
+<LI><A NAME="tex2html1583"
+  HREF="node102.html">Estimación Numérica: Métodos QMC y RQMC</A>
+<UL>
+<LI><A NAME="tex2html1584"
+  HREF="node103.html">Método QMC</A>
+<LI><A NAME="tex2html1585"
+  HREF="node104.html">Método RQMC</A>
+</UL>
+<LI><A NAME="tex2html1586"
+  HREF="node105.html">Algoritmo para la evaluación de la
+integral</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1587"
+  HREF="node106.html">Algoritmo de búsqueda del perfil</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1569"
+  HREF="node90.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1565"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1559"
+  HREF="node88.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1567"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1570"
+  HREF="node90.html">Cómputo de distancia</A>
+<B> Subir:</B> <A NAME="tex2html1566"
+  HREF="node41.html">Desarrollo de Software</A>
+<B> Anterior:</B> <A NAME="tex2html1560"
+  HREF="node88.html">XML y SAPO</A>
+ &nbsp <B>  <A NAME="tex2html1568"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

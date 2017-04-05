@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>XML</TITLE>
+<META NAME="description" CONTENT="XML">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node85.html">
+<LINK REL="up" HREF="node85.html">
+<LINK REL="next" HREF="node87.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1533"
+  HREF="node87.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1529"
+  HREF="node85.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1525"
+  HREF="node85.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1531"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1534"
+  HREF="node87.html">XML y JAVA</A>
+<B> Subir:</B> <A NAME="tex2html1530"
+  HREF="node85.html">Archivos de entrada-salida para</A>
+<B> Anterior:</B> <A NAME="tex2html1526"
+  HREF="node85.html">Archivos de entrada-salida para</A>
+ &nbsp <B>  <A NAME="tex2html1532"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION04471000000000000000"></A><A NAME="xml"></A>
+<BR>
+XML
+</H2>
+
+XML, es el <I>Extensible Markup Language</I>, y consiste en un
+conjunto de reglas para definir etiquetas sem&#225;nticas que permiten
+organizar un documento en diferentes partes para futuro
+procesamiento. Es una recomendaci&#243;n de la W3C (<I>World Wide Web
+Consortium</I>) quien lanz&#243; en febrero de 1988 y contin&#250;a manteniendo
+hasta hoy la versi&#243;n 1.0 como la especificaci&#243;n oficial
+[<A
+ HREF="node130.html#recomendacionXML">44</A>].
+
+XML es un metalenguaje que define la sintaxis utilizada para definir
+otros lenguajes de etiquetas (<IMG
+ WIDTH="51" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img270.png"
+ ALT="$ &lt;..&gt;$">) estructurados. Los documentos
+XML se componen de unidades de almacenamiento llamadas entidades
+(<I>entities</I>), que contienen datos analizados (<I>parsed</I>) o
+sin analizar (<I>unparsed</I>). Los datos analizados se componen de
+caracteres, algunos de los cuales forman los datos del documento y
+el resto forman las etiquetas. Las etiquetas codifican la
+descripci&#243;n de la estructura l&#243;gica y de almacenamiento del
+documento.
+
+Existen dos tipos de documentos XML:
+
+<UL>
+<LI>``Bien formados" (<I>well-formed</I>): son todos los que cumplen las especificaciones del
+lenguaje respecto a las reglas sint&#225;cticas y de estructura
+jer&#225;rquica, sin estar sujetos a elementos fijados en un DTD
+(<I>Document Type Definition</I>) <A NAME="tex2html53"
+  HREF="footnode.html#foot2220"><SUP>9.3</SUP></A>.
+</LI>
+<LI>``V&#225;lidos" (<I>valid</I>): adem&#225;s de estar bien formados, siguen una estructura
+y una sem&#225;ntica determinada por un DTD (por ejemplo HTML).
+</LI>
+</UL>
+
+En el caso de <I>SAPO</I>, luego de analizadas las exigencias que
+la herramienta de software impone sobre el formato para guardar un
+proyecto, se opt&#243; por trabajar con documentos XML ``bien formados",
+tomando en cuenta que el DTD es opcional en la utilizaci&#243;n del
+lenguaje XML y que se adec&#250;a a aplicaciones de mayor complejidad que
+la que exige <I>SAPO</I> en el guardado de un proyecto.
+
+Se detallan a continuaci&#243;n las principales ventajas del lenguaje XML
+que influyeron en la elecci&#243;n de dicho formato para guardar un
+proyecto en <I>SAPO</I>.
+
+<UL>
+<LI><I>Texto plano</I>: Al no tratarse de un formato binario,
+se pueden crear y editar archivos desde un editor est&#225;ndar de texto.
+Esto facilita la b&#250;squeda y la correcci&#243;n de errores en un programa,
+y es &#250;til para el almacenamiento de peque&#241;as a grandes cantidades de
+datos, lo cual garantiza una completa escalabilidad.
+</LI>
+<LI><I>Identificaci&#243;n de datos</I>: XML permite tener
+conocimiento del tipo de datos almacenado al tener la informaci&#243;n
+identificada mediante etiquetas. De esta forma, los datos podr&#225;n ser
+procesados por diversos programas y utilizados en diferentes
+aplicaciones.
+</LI>
+<LI><I>Procesamiento sencillo</I>: El hecho de que sea obligatorio
+que los documentos XML est&#233;n bien formados hace que sea simple crear
+un programa para el procesamiento de datos, por lo que existen
+varios <I>parsers</I> para procesar m&#225;s f&#225;cilmente la informaci&#243;n.
+</LI>
+<LI><I>Estructura jer&#225;rquica</I>: Permite que sea m&#225;s sencillo
+acceder y modificar la informaci&#243;n en el documento dado que los
+datos se encuentran ordenados.
+</LI>
+</UL>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1535"
+  HREF="node87.html">XML y JAVA</A>
+<LI><A NAME="tex2html1536"
+  HREF="node88.html">XML y <I>SAPO</I></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1533"
+  HREF="node87.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1529"
+  HREF="node85.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1525"
+  HREF="node85.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1531"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1534"
+  HREF="node87.html">XML y JAVA</A>
+<B> Subir:</B> <A NAME="tex2html1530"
+  HREF="node85.html">Archivos de entrada-salida para</A>
+<B> Anterior:</B> <A NAME="tex2html1526"
+  HREF="node85.html">Archivos de entrada-salida para</A>
+ &nbsp <B>  <A NAME="tex2html1532"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Okumura-Hata-COST231</TITLE>
+<META NAME="description" CONTENT="Okumura-Hata-COST231">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node118.html">
+<LINK REL="previous" HREF="node116.html">
+<LINK REL="up" HREF="node116.html">
+<LINK REL="next" HREF="node118.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1948"
+  HREF="node118.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1944"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1938"
+  HREF="node116.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1946"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1949"
+  HREF="node118.html">Erceg-SUI</A>
+<B> Subir:</B> <A NAME="tex2html1945"
+  HREF="node116.html">Performance de los modelos</A>
+<B> Anterior:</B> <A NAME="tex2html1939"
+  HREF="node116.html">Performance de los modelos</A>
+ &nbsp <B>  <A NAME="tex2html1947"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION05131000000000000000">
+Okumura-Hata-COST231</A>
+</H2>
+
+El primero y m&#225;s sencillo de los modelos es el de
+Okumura-Hata-COST231. Para la comparaci&#243;n se utiliz&#243; una
+implementaci&#243;n con los par&#225;metros por defecto para el caso de ciudad
+grande, tipo de &#225;rea urbana, frecuencia menor que 1500 Mhz y sin
+utilizar alturas efectivas pues el terreno es bastante regular. Si
+bien el modelo fue dise&#241;ado para ser utilizado en macroceldas, donde
+la altura del transmisor est&#225; por encima de los edificios
+circundantes (al contrario del entorno de estudio), se compar&#243; el
+modelo con las medidas reales. Fue una sorpresa encontrar que las
+predicciones arrojadas por el modelo son similares a las medidas,
+sobre todo en la ruta 2. Los datos sobre el error para cada ruta se
+pueden ver en el cuadro <A HREF="node117.html#tablaComp:oh">12.1</A>.
+
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="3142"></A>
+<TABLE>
+<CAPTION><STRONG>Tabla 12.1:</STRONG>
+Media y desviaci&#243;n est&#225;ndar del error para el modelo de Okumura-Hata-COST231</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">Ruta</TD>
+<TD ALIGN="CENTER"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img337.png"
+ ALT="$ \mu$"> (dB)</TD>
+<TD ALIGN="CENTER"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.png"
+ ALT="$ \sigma$"> (dB)</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route00</I></TD>
+<TD ALIGN="CENTER">10.32</TD>
+<TD ALIGN="CENTER">9.53</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route01</I></TD>
+<TD ALIGN="CENTER">4.95</TD>
+<TD ALIGN="CENTER">6.74</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route02</I></TD>
+<TD ALIGN="CENTER">3.62</TD>
+<TD ALIGN="CENTER">8.86</TD>
+</TR>
+</TABLE>
+<A NAME="tablaComp:oh"></A>
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+Si se analiza con mayor detenimiento la comparaci&#243;n, se puede
+verificar que las predicciones son mejores cuanto m&#225;s cercano est&#233;
+el m&#243;vil a la base. El modelo, al estar dise&#241;ado para radiobases por
+encima de los edificios, no toma en cuenta la mayor atenuaci&#243;n
+debida a las edificaciones circundantes a la base m&#225;s altas que
+&#233;sta, por lo cual tiende a subestimar las p&#233;rdidas. Esto queda m&#225;s
+claro si se observa la gr&#225;fica comparativa entre las medidas y las
+predicciones en el camino 0 (ver figura <A HREF="node117.html#figCompOH">12.3</A>). Se puede
+apreciar como al comienzo, cuando la cantidad de edificaciones entre
+el m&#243;vil y la base es mayor, la subestimaci&#243;n es mayor que sobre el
+final (salvo en aquellos puntos correspondientes a la zona con l&#237;nea
+de vista), donde las edificaciones son menos y por lo tanto la
+atenuaci&#243;n en ese sentido es menor y la predicci&#243;n m&#225;s precisa.
+
+<DIV ALIGN="CENTER"><A NAME="figCompOH"></A><A NAME="3149"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 12.3:</STRONG>
+Comparaci&#243;n entre las medidas y las estimaciones para la ruta 0 del modelo Okumura-Hata-COST231</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="408" HEIGHT="289" ALIGN="BOTTOM" BORDER="0"
+ SRC="img403.png"
+ ALT="\includegraphics[width=9cm]{Conclusion/compOH.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1948"
+  HREF="node118.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1944"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1938"
+  HREF="node116.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1946"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1949"
+  HREF="node118.html">Erceg-SUI</A>
+<B> Subir:</B> <A NAME="tex2html1945"
+  HREF="node116.html">Performance de los modelos</A>
+<B> Anterior:</B> <A NAME="tex2html1939"
+  HREF="node116.html">Performance de los modelos</A>
+ &nbsp <B>  <A NAME="tex2html1947"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

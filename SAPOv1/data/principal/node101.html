@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Resolución de la integral de Vogler</TITLE>
+<META NAME="description" CONTENT="Resolución de la integral de Vogler">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node106.html">
+<LINK REL="previous" HREF="node100.html">
+<LINK REL="up" HREF="node89.html">
+<LINK REL="next" HREF="node102.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1730"
+  HREF="node102.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1726"
+  HREF="node89.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1720"
+  HREF="node100.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1728"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1731"
+  HREF="node102.html">Estimación Numérica: Métodos QMC</A>
+<B> Subir:</B> <A NAME="tex2html1727"
+  HREF="node89.html">Algoritmos y cálculos implementados</A>
+<B> Anterior:</B> <A NAME="tex2html1721"
+  HREF="node100.html">Verificación de línea de</A>
+ &nbsp <B>  <A NAME="tex2html1729"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04580000000000000000"></A> <A NAME="implVogler"></A>
+<BR>
+Resoluci&#243;n de la integral de Vogler
+</H1>
+
+En la secci&#243;n <A HREF="node23.html#vogler">4.3.1</A> se present&#243; la soluci&#243;n propuesta por
+Vogler para el c&#225;lculo de atenuaci&#243;n por m&#250;ltiples cuchillos, quien
+plantea que la misma puede ser obtenida mediante la resoluci&#243;n de la
+integral (<A HREF="node23.html#integralVogler">4.3</A>). Para dicha resoluci&#243;n no se
+aplicar&#225; el m&#233;todo propuesto por el propio Vogler, sino que se
+evaluar&#225; la integral directamente utilizando t&#233;cnicas num&#233;ricas
+(bas&#225;ndose en [<A
+ HREF="node130.html#Saunder+Bonar">47</A>]), por considerarse un m&#233;todo m&#225;s
+sencillo.
+
+Si realizamos el siguiente cambio de variable:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="117" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img324.png"
+ ALT="$\displaystyle u_m = x_m-\beta_m$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+La integral (<A HREF="node23.html#integralVogler">4.3</A>) se transforma en:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="477" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img325.png"
+ ALT="$\displaystyle A_N = C_N\pi^{-N/2}e^{\sigma_N}\int_0^{\infty}\cdots\int_0^{\infty}e^A\left(cosB-jsinB\right)du_1\cdots du_N$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="448" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img326.png"
+ ALT="$\displaystyle A=\sum\limits^{N-1}\limits_{m=1}\left[2\alpha_mu_mu_{m+1}-u_m^2-\sqrt{2}u_mb_m\right]-u^2_N-\sqrt{2}u_Nb_N$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="197" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img327.png"
+ ALT="$\displaystyle B=\sum\limits^{N}\limits_{m=1}\left[\sqrt{2}u_mb_m+b_m^2\right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+El par&#225;metro <IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img328.png"
+ ALT="$ b_m$"> se define como <!-- MATH
+ $\beta_m/\sqrt{j}$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img329.png"
+ ALT="$ \beta_m/\sqrt{j}$">; por lo tanto a
+partir de ahora se evaluar&#225; la importancia de un cuchillo
+directamente por su <IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img328.png"
+ ALT="$ b_m$"> asociado.
+
+Antes de aplicar los m&#233;todos num&#233;ricos elegidos al caso de esta
+integral en particular, ser&#237;a conveniente realizar una breve
+explicaci&#243;n de los mismos, ver los conceptos detr&#225;s de ellos,
+algunas propiedades y algunas implementaciones particulares.
+
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1732"
+  HREF="node102.html">Estimación Numérica: Métodos QMC y RQMC</A>
+<UL>
+<LI><A NAME="tex2html1733"
+  HREF="node103.html">Método QMC</A>
+<LI><A NAME="tex2html1734"
+  HREF="node104.html">Método RQMC</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1735"
+  HREF="node105.html">Algoritmo para la evaluación de la
+integral</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1730"
+  HREF="node102.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1726"
+  HREF="node89.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1720"
+  HREF="node100.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1728"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1731"
+  HREF="node102.html">Estimación Numérica: Métodos QMC</A>
+<B> Subir:</B> <A NAME="tex2html1727"
+  HREF="node89.html">Algoritmos y cálculos implementados</A>
+<B> Anterior:</B> <A NAME="tex2html1721"
+  HREF="node100.html">Verificación de línea de</A>
+ &nbsp <B>  <A NAME="tex2html1729"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

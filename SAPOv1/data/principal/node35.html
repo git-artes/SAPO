@@ -1,0 +1,370 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Modelo de Walfisch-Bertoni</TITLE>
+<META NAME="description" CONTENT="Modelo de Walfisch-Bertoni">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node36.html">
+<LINK REL="previous" HREF="node34.html">
+<LINK REL="up" HREF="node34.html">
+<LINK REL="next" HREF="node36.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html806"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html802"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html796"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html804"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html807"
+  HREF="node36.html">Modelo COST231 Walfisch-Ikegami</A>
+<B> Subir:</B> <A NAME="tex2html803"
+  HREF="node34.html">Modelo de Walfisch-Ikegami</A>
+<B> Anterior:</B> <A NAME="tex2html797"
+  HREF="node34.html">Modelo de Walfisch-Ikegami</A>
+ &nbsp <B>  <A NAME="tex2html805"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION03331000000000000000">
+Modelo de Walfisch-Bertoni</A>
+</H2>
+
+Hasta la publicaci&#243;n del paper de Walfisch y
+Bertoni&nbsp;[<A
+ HREF="node130.html#walfischbertoni">23</A>] los modelos de propagaci&#243;n en
+entornos urbanos eran ajustes a curvas con el agregado de factores
+de correcci&#243;n heur&#237;sticos. No se entend&#237;an los mecanismos de
+propagaci&#243;n subyacentes, sobre todo los que ten&#237;an que ver con la
+propagaci&#243;n sobre las edificaciones presentes. Ellos desarrollaron
+un modelo que, aunque como se ver&#225; m&#225;s adelante supone hip&#243;tesis a
+veces demasiado restrictivas e irreales, tiene una base te&#243;rica
+basada principalmente en la p&#233;rdida por difracci&#243;n en m&#250;ltiples
+cuchillos (basado en una teor&#237;a distinta de la explicada en la
+secci&#243;n <A HREF="node23.html#vogler">4.3.1</A>), y considera que los mecanismos de propagaci&#243;n
+dominantes en un entorno urbano son los que se ilustran en la figura <A HREF="node35.html#perfilWI">5.3</A>.
+
+<DIV ALIGN="CENTER"><A NAME="perfilWI"></A><A NAME="1239"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.3:</STRONG>
+Mecanismos de propagaci&#243;n dominantes en un entorno urbano
+seg&#250;n Walfisch y Bertoni</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="496" HEIGHT="174" ALIGN="BOTTOM" BORDER="0"
+ SRC="img178.png"
+ ALT="\includegraphics[width=11cm]{Teorico/perfil_wi.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Basados en trabajos anteriores
+[<A
+ HREF="node130.html#kosono">24</A>][<A
+ HREF="node130.html#okumura">14</A>][<A
+ HREF="node130.html#hata">15</A>], concluyen que los caminos
+principales hacia el m&#243;vil son aquel que se propaga sobre los
+edificios y difracta en el &#250;ltimo (el camino 1 en la figura
+<A HREF="node35.html#perfilWI">5.3</A>) y aquel que se refleja desde el siguiente hacia el
+m&#243;vil (camino 2). Existen otros caminos para arribar al receptor
+(por ejemplo los caminos 3 y 4), pero estos se consideran
+despreciables en su aporte total a la potencia.
+
+Los edificios est&#225;n aleatoriamente ubicados y no est&#225;n alineados
+desde una calle hacia otra o con el trayecto radiobase-m&#243;vil, por lo
+tanto la propagaci&#243;n entre edificios no produce una contribuci&#243;n
+mayor a la se&#241;al recibida. El modelo representa los edificios como
+una serie de cuchillos y toma en cuenta aquellos que, para un valor
+dado de <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$ \alpha$"> (ver figura), penetran la primer zona de Fresnel.
+La p&#233;rdida por difracci&#243;n es entonces calculada mediante m&#233;todos
+num&#233;ricos. Para resolver el problema de la difracci&#243;n sobre varios
+edificios ubicados en el camino de propagaci&#243;n y que tienen
+influencia en la misma, en particular para valores de <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$ \alpha$">
+peque&#241;os, es necesario realizar una serie de aproximaciones. Algunas
+de &#233;stas son que todas las filas de edificios tienen la misma
+altura, que la propagaci&#243;n es perpendicular a la fila de edificios y
+que se considera la polarizaci&#243;n vertical.
+
+Para determinar el campo difractado en el nivel de la calle, es
+necesario establecer el campo incidente en el techo del edificio m&#225;s
+pr&#243;ximo al m&#243;vil. Walfisch y Bertoni muestran que para un n&#250;mero
+grande de edificios esto se puede obtener como:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="195" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img179.png"
+ ALT="$\displaystyle Q(\alpha) \approx 0.1\left(\frac{\alpha\sqrt{b/\lambda}}{0.03}\right)^{0.9}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="potenciaWI">(5.3)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Esta es una adici&#243;n a la dependencia con <IMG
+ WIDTH="32" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img180.png"
+ ALT="$ d^{-1}$"> del campo
+irradiado, otorgando una dependencia total con <IMG
+ WIDTH="41" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img181.png"
+ ALT="$ d^{-1.9}$">. Esto
+resume una dependencia de la potencia de la se&#241;al recibida con
+<IMG
+ WIDTH="42" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img182.png"
+ ALT="$ d^{-3.8}$">, muy cercana a la de la
+propagaci&#243;n sobre el plano de la Tierra (<IMG
+ WIDTH="31" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img183.png"
+ ALT="$ d^{-4}$">) que es com&#250;nmente utilizada
+en los modelos emp&#237;ricos. Es as&#237; que la p&#233;rdida total consiste en
+tres factores: la p&#233;rdida entre antenas en espacio libre, la p&#233;rdida
+por difracci&#243;n por m&#250;ltiples cuchillos hasta el edificio m&#225;s cercano
+al m&#243;vil y la p&#233;rdida por difracci&#243;n desde este punto hasta el m&#243;vil
+a la altura de la calle. Asumiendo antenas isotr&#243;picas, el primero
+de estos factores es la p&#233;rdida b&#225;sica definida en el capitulo
+<A HREF="node12.html#vacio">3.1</A>:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="298" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$\displaystyle L_{B_{EL}} (dB) = 32.44 + 20 \log f + 20 \log d$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="propvacio">(5.4)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+La ecuaci&#243;n (<A HREF="node35.html#potenciaWI">5.3</A>) es utilizada para hallar <IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img184.png"
+ ALT="$ Q(\alpha)$">,
+y <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$ \alpha$"> (expresado en radianes) est&#225; dado por:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="138" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img185.png"
+ ALT="$\displaystyle \alpha = \frac{h_t - h}{d}-\frac{d}{2r_e}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="alfa">(5.5)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde <!-- MATH
+ $r_e \simeq 8.5\times 10^{3}$
+ -->
+<IMG
+ WIDTH="111" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img186.png"
+ ALT="$ r_e \simeq 8.5\times 10^{3}$"> km es el radio efectivo de la
+Tierra.
+
+La p&#233;rdida de camino asociada a la difracci&#243;n al nivel de la calle
+depende de la existencia de edificios en la cercan&#237;a del m&#243;vil. Para
+las antenas receptoras cerca del nivel de la calle, una simple
+aproximaci&#243;n a este proceso se obtiene asumiendo que una fila de
+edificios se comporta como una pantalla absorbente en el centro de
+la fila. En dicho caso, la amplitud del campo en el m&#243;vil se obtiene
+multiplicando el campo en el techo por el siguiente factor:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="370" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img187.png"
+ ALT="$\displaystyle \frac{\sqrt{\lambda}}{2\pi} \frac{1}{\left[(\frac{d}{2})^{2}+(h-...
+...right]^{1/4}}\left[\frac{-1}{\gamma-\alpha}+\frac{1}{2\pi+\gamma-\alpha}\right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="factor">(5.6)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde <I>h</I> es la altura de los edificios y <I><IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ h_r$"></I> es
+la altura de la antena del m&#243;vil como muestra la figura
+<A HREF="node35.html#perfilWI">5.3</A>. Los &#225;ngulos <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$ \alpha$"> y <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$ \gamma$"> est&#225;n expresados en
+radianes con:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="183" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img188.png"
+ ALT="$\displaystyle \gamma= \arctan[2(h-h_r)/b]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="gamma">(5.7)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+La expresi&#243;n (<A HREF="node35.html#factor">5.6</A>) puede simplificarse descartando <!-- MATH
+ $1/(2\pi
++ \gamma - \alpha )$
+ -->
+<IMG
+ WIDTH="117" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img189.png"
+ ALT="$ 1/(2\pi
++ \gamma - \alpha )$"> al compararlo con <!-- MATH
+ $1/(\gamma - \alpha)$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img190.png"
+ ALT="$ 1/(\gamma - \alpha)$"> y
+asumiendo que <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$ \alpha$"> es peque&#241;o al compararlo con <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$ \gamma$">.
+
+El hecho de que haya <I>fading</I> en la se&#241;al recibida en el
+m&#243;vil indica que la componente del campo recibido debido a las
+reflexiones en los edificios pr&#243;ximos al m&#243;vil es de una amplitud
+similar a la recibida por la difracci&#243;n directa desde los techos de
+los edificios pr&#243;ximos a &#233;l. Sin embargo, estas dos componentes
+tienen fases aleatorias, entonces el valor rms (<I>root mean
+square</I>) del campo total es la suma de los valores rms de cada
+componente individual. En este caso, la componente primaria del
+campo es mayor a la componente secundaria (debida a m&#250;ltiples
+caminos) por un factor <IMG
+ WIDTH="27" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.png"
+ ALT="$ \sqrt{2}$">. Combinando las ecuaciones
+(<A HREF="node35.html#propvacio">5.4</A>) y (<A HREF="node35.html#gamma">5.7</A>) con el factor <IMG
+ WIDTH="27" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.png"
+ ALT="$ \sqrt{2}$">, se
+obtiene una expresi&#243;n de la reducci&#243;n del campo sobre aquel obtenido
+entre las mismas antenas separadas una distancia <I>d</I> en
+espacio libre. Expresada en dB, &#233;sta es una expresi&#243;n del exceso de
+p&#233;rdida de propagaci&#243;n sobre la p&#233;rdida en espacio libre y est&#225; dada
+por:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="576" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img192.png"
+ ALT="$\displaystyle L_{ex} = 57.1 + A + \log f + 18 \log d - 18 \log(h_t - h) - 18 \log \left(1 - \frac{d^{2}}{17(h_t - h)}\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="perdexceso">(5.8)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde el &#250;ltimo t&#233;rmino en (<A HREF="node35.html#perdexceso">5.8</A>) considera la curvatura
+de la Tierra y puede descartarse en la mayor&#237;a de los casos. La
+influencia de la geometr&#237;a de los edificios est&#225; contenida en el
+t&#233;rmino:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="300" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img193.png"
+ ALT="$\displaystyle A = 5\log \left[\left(\frac{d}{2}^{2}\right) + (h - h_r)^{2}\right] - 9\log d$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="A">(5.9)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+La p&#233;rdida total se halla sumando <IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img194.png"
+ ALT="$ L_{ex}$"> a la p&#233;rdida de
+propagaci&#243;n en vac&#237;o <!-- MATH
+ $L_{B_{EL}}$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.png"
+ ALT="$ L_{B_{EL}}$"> para antenas isotr&#243;picas.
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="191" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img196.png"
+ ALT="$\displaystyle L_{WB}(dB) = L_{B_{EL}} + L_{ex}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html806"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html802"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html796"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html804"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html807"
+  HREF="node36.html">Modelo COST231 Walfisch-Ikegami</A>
+<B> Subir:</B> <A NAME="tex2html803"
+  HREF="node34.html">Modelo de Walfisch-Ikegami</A>
+<B> Anterior:</B> <A NAME="tex2html797"
+  HREF="node34.html">Modelo de Walfisch-Ikegami</A>
+ &nbsp <B>  <A NAME="tex2html805"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

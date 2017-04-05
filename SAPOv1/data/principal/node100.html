@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Verificación de línea de vista</TITLE>
+<META NAME="description" CONTENT="Verificación de línea de vista">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node101.html">
+<LINK REL="previous" HREF="node99.html">
+<LINK REL="up" HREF="node89.html">
+<LINK REL="next" HREF="node101.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1718"
+  HREF="node101.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1714"
+  HREF="node89.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1708"
+  HREF="node99.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1716"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1719"
+  HREF="node101.html">Resolución de la integral</A>
+<B> Subir:</B> <A NAME="tex2html1715"
+  HREF="node89.html">Algoritmos y cálculos implementados</A>
+<B> Anterior:</B> <A NAME="tex2html1709"
+  HREF="node99.html">Consideración del factor de</A>
+ &nbsp <B>  <A NAME="tex2html1717"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04570000000000000000"></A><A NAME="LOS"></A>
+<BR>
+Verificaci&#243;n de l&#237;nea de vista
+</H1>
+
+<P>
+Como se vio en la secci&#243;n <A HREF="node21.html#fresnel">4.2</A>, la existencia o no de l&#237;nea
+de vista entre dos antenas no depende &#250;nicamente de que la l&#237;nea que
+las une est&#233; libre de obst&#225;culos. Se debe verificar que los mismos
+no penetren en la elipse de revoluci&#243;n definida por focos en ambas
+antenas y radio <IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img321.png"
+ ALT="$ \lambda/2$">. Por lo tanto, el software debe ser
+capaz de verificar si la intersecci&#243;n entre el volumen ocupado por
+dicha elipse de revoluci&#243;n y los obst&#225;culos presentes en el entorno
+es vac&#237;a o no.
+
+<P>
+Dado que el software se desarroll&#243; para entornos urbanos y
+suburbanos, &#250;nicamente fueron considerados obst&#225;culos a las
+edificaciones presentes. Es decir, se despreci&#243; la posibilidad de
+que el terreno por s&#237; solo obstaculice la visi&#243;n de una antena.
+Verificar que &#250;nicamente el terreno obstaculice o no la visi&#243;n es
+una complicaci&#243;n innecesaria para el entorno considerado, ya que la
+mayor&#237;a se encuentra edificada y por lo tanto considerada.
+
+<P>
+Otra hip&#243;tesis adicional, como se explic&#243; en la secci&#243;n
+<A HREF="node68.html#paqueteVectorial">8.1.5</A>, es que los posibles obst&#225;culos son prismas
+rectos, todos con bases horizontales (ver figura <A HREF="node100.html#ejemplo">10.6</A>).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="ejemplo"></A><A NAME="2566"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 10.6:</STRONG>
+Ejemplo de disposici&#243;n de edificaciones y la elipsoide a
+tomar en cuenta para la verificaci&#243;n de LOS</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="226" HEIGHT="182" ALIGN="BOTTOM" BORDER="0"
+ SRC="img322.png"
+ ALT="\includegraphics[width=5cm]{Software/elipsoidesEdificios.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Aunque estas hip&#243;tesis simplifican el problema, la complicaci&#243;n
+principal reside en que el techo puede tomar cualquier forma,
+inclusive no convexa, y obviamente sus caras pueden tener cualquier
+orientaci&#243;n respecto a la recta que une ambos focos del elipsoide,
+que como se ver&#225; m&#225;s adelante tiene una importancia fundamental.
+Antes de continuar, vale la pena aclarar que de ahora en adelante
+cuando se refiera a las edificaciones, &#233;stas ser&#225;n &#250;nicamente las
+candidatas a intersectar con la elipse de revoluci&#243;n. Por candidatas
+se consideran aquellas edificaciones que se encuentren a una
+distancia menor del segmento que une los focos que el eje menor de
+la elipsoide. En realidad, y para simplificar esta b&#250;squeda inicial
+de candidatos, se medir&#225; la distancia entre las edificaciones y la
+recta en el plano horizontal (es decir en la proyecci&#243;n).
+
+<P>
+La primera y m&#225;s simple soluci&#243;n ser&#237;a poder verificar directamente
+si alguna de las edificaciones presentes intersecta con la elipse de
+revoluci&#243;n. Para poder realizar esto, se deber&#237;a contar con un
+biblioteca que maneje formas en tres dimensiones. Como se vio, la
+biblioteca JTS, aunque es una biblioteca sumamente completa y
+poderosa, &#250;nicamente realiza operaciones entre geometr&#237;as en el
+plano. Por lo tanto, esta primera soluci&#243;n es inviable y se deben
+buscar soluciones que &#250;nicamente utilicen operaciones entre
+geometr&#237;as en dos dimensiones.
+
+<P>
+Una soluci&#243;n de este tipo bastante frecuente es la de suponer que
+las paredes de las edificaciones son &#250;nicamente cuatro, est&#225;n
+alineadas con la recta que une los focos o perpendiculares a ella,
+y adem&#225;s la proyecci&#243;n del techo y el segmento que forman los
+focos sobre el plano horizontal se intersectan. Si tal fuera el
+caso, la soluci&#243;n ser&#237;a bastante sencilla. El primer paso ser&#237;a
+encontrar la intersecci&#243;n entre el plano vertical que pasa por el
+segmento y las edificaciones. Esto definir&#237;a un perfil de alturas;
+luego habr&#237;a que verificar que no existe ning&#250;n punto en dicho
+perfil de alturas que se encuentre dentro de la elipse formada por
+la intersecci&#243;n entre dicho plano y la elipse de revoluci&#243;n (ver
+figura <A HREF="node100.html#casoPavo">10.7</A>). Pero las simplificaciones supuestas son
+demasiado restrictivas. Por ejemplo, si existe una edificaci&#243;n que
+no corta el segmento, su elipse no ser&#237;a la misma que para el
+resto. Pero a&#250;n peor, si las paredes estuvieran alineadas en
+cualquier sentido, podr&#237;a suceder que la zona m&#225;s comprometida (y
+con la cual deber&#237;a realizarse el perfil) no sea la que se
+intersecta con el segmento. Algo similar suceder&#237;a si las
+edificaciones tomaran cualquier forma, por ejemplo c&#243;ncava.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="casoPavo"></A><A NAME="2574"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 10.7:</STRONG>
+Ejemplo de edificaciones de base rectangular alineadas con
+el eje mayor de la elipsoide. (b) Perfil de alturas equivalente</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="452" HEIGHT="177" ALIGN="BOTTOM" BORDER="0"
+ SRC="img323.png"
+ ALT="\includegraphics[width=10cm]{Software/PerfilCasoPavoElipsoides.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+La soluci&#243;n desarrollada para el problema es la siguiente. Cada
+cara de cada prisma define un plano. La intersecci&#243;n de dicho
+plano con la elipse de revoluci&#243;n define una elipse. Si esta
+elipse se intersecta con la cara, entonces el prisma se intersecta
+con la elipse de revoluci&#243;n y por lo tanto no existe l&#237;nea de
+vista. En caso contrario se contin&#250;a con las sucesivas caras del
+prisma y con todos los prismas presentes. Si ninguno de los
+prismas intersecta la elipse de revoluci&#243;n, entonces existe l&#237;nea
+de vista.
+
+<P>
+Esta soluci&#243;n, aunque robusta, presenta dos problemas. El primero y
+m&#225;s cr&#237;tico es el tiempo de c&#225;lculo. Por cada punto donde se quiera
+verificar la existencia de l&#237;nea de vista se deben hallar los
+par&#225;metros que definen la elipsoide de Fresnel, luego por cada pared
+de cada edificio presente se debe intersectar la elipsoide con el
+plano definido por la pared y hallar la elipse as&#237; definida, y por
+&#250;ltimo se debe verificar si dicha elipse se intersecta o no con la
+pared. El segundo contratiempo es que intersectar una elipsoide con
+un plano arbitrario no es un problema sencillo (la forma de hallar
+dicha intersecci&#243;n puede verse en el anexo <A HREF="node126.html#anexo:elipsoides">A</A>)
+que conlleva tres rotaciones si adem&#225;s la elipsoide tambi&#233;n es
+arbitraria. Esto degrada a&#250;n m&#225;s la performance temporal del
+algoritmo.
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1718"
+  HREF="node101.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1714"
+  HREF="node89.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1708"
+  HREF="node99.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1716"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1719"
+  HREF="node101.html">Resolución de la integral</A>
+<B> Subir:</B> <A NAME="tex2html1715"
+  HREF="node89.html">Algoritmos y cálculos implementados</A>
+<B> Anterior:</B> <A NAME="tex2html1709"
+  HREF="node99.html">Consideración del factor de</A>
+ &nbsp <B>  <A NAME="tex2html1717"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

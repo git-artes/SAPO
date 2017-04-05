@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Cálculo de alturas efectivas</TITLE>
+<META NAME="description" CONTENT="Cálculo de alturas efectivas">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node95.html">
+<LINK REL="previous" HREF="node91.html">
+<LINK REL="up" HREF="node89.html">
+<LINK REL="next" HREF="node95.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1646"
+  HREF="node95.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1642"
+  HREF="node89.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1636"
+  HREF="node93.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1644"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1647"
+  HREF="node95.html">Cálculo del ángulo de</A>
+<B> Subir:</B> <A NAME="tex2html1643"
+  HREF="node89.html">Algoritmos y cálculos implementados</A>
+<B> Anterior:</B> <A NAME="tex2html1637"
+  HREF="node93.html">Búsqueda en el patrón</A>
+ &nbsp <B>  <A NAME="tex2html1645"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04530000000000000000">
+C&#225;lculo de alturas efectivas</A>
+</H1>
+
+El modelo de Okumura-Hata utiliza el concepto de alturas efectivas
+como una forma de tomar en cuenta los efectos de reflexi&#243;n y
+dispersi&#243;n. La definici&#243;n original de Okumura de altura efectiva
+consiste en considerar la misma sobre el promedio de alturas del
+terreno entre 3 km y 15 km desde la radiobase hacia el m&#243;vil. Sin
+embargo se ha mostrado [<A
+ HREF="node130.html#hybrid">46</A>] que existen otras definiciones
+m&#225;s eficientes. En la implementaci&#243;n de <I>SAPO</I> se decidi&#243;
+utilizar el siguiente criterio; como primera opci&#243;n se considera la
+altura efectiva de la radiobase y del m&#243;vil como la distancia a la
+recta resultado de ajustar mediante regresi&#243;n lineal el perfil de
+alturas de terreno entre la radiobase y el m&#243;vil (recta <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img300.png"
+ ALT="$ r$"> en la
+figura <A HREF="node94.html#alturasEff">10.3</A>). Si alguna de las alturas obtenidas se
+encuentra fuera del rango v&#225;lido seg&#250;n las hip&#243;tesis del modelo, en
+ese caso se consideran directamente las sobre el nivel del terreno
+(alturas relativas).
+
+La utilizaci&#243;n de este algoritmo es opcional y configurable por el
+usuario; en caso de no habilitarse las alturas consideradas ser&#225;n
+las relativas. Si se cuenta con un terreno llano la aplicaci&#243;n del
+algoritmo incrementa los tiempos de c&#225;lculo y no repercute
+considerablemente en los resultados.
+
+<DIV ALIGN="CENTER"><A NAME="alturasEff"></A><A NAME="2347"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 10.3:</STRONG>
+Definici&#243;n de alturas efectivas</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="248" HEIGHT="127" ALIGN="BOTTOM" BORDER="0"
+ SRC="img301.png"
+ ALT="\includegraphics[width=5.5cm]{Software/alturasEfectivas.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1646"
+  HREF="node95.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1642"
+  HREF="node89.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1636"
+  HREF="node93.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1644"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1647"
+  HREF="node95.html">Cálculo del ángulo de</A>
+<B> Subir:</B> <A NAME="tex2html1643"
+  HREF="node89.html">Algoritmos y cálculos implementados</A>
+<B> Anterior:</B> <A NAME="tex2html1637"
+  HREF="node93.html">Búsqueda en el patrón</A>
+ &nbsp <B>  <A NAME="tex2html1645"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

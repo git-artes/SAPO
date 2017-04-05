@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>El paquete ifusuario</TITLE>
+<META NAME="description" CONTENT="El paquete ifusuario">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node72.html">
+<LINK REL="previous" HREF="node70.html">
+<LINK REL="up" HREF="node63.html">
+<LINK REL="next" HREF="node72.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1346"
+  HREF="node72.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1342"
+  HREF="node63.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1336"
+  HREF="node70.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1344"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1347"
+  HREF="node72.html">El paquete archivos</A>
+<B> Subir:</B> <A NAME="tex2html1343"
+  HREF="node63.html">Arquitectura de paquetes</A>
+<B> Anterior:</B> <A NAME="tex2html1337"
+  HREF="node70.html">El paquete predicciones</A>
+ &nbsp <B>  <A NAME="tex2html1345"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION04318000000000000000">
+El paquete ifusuario</A>
+</H2>
+
+Mediante este paquete se provee una interfaz gr&#225;fica que interact&#250;a
+directamente con el usuario del software. Se busc&#243; que la misma sea
+amigable para el usuario y f&#225;cil de usar.
+
+Como se dijo anteriormente, los dos elementos m&#225;s importantes que
+conforman la ventana principal del programa son el explorador y el
+mapa. La implementaci&#243;n del explorador se hizo mediante la
+estructura de clases que se muestra en la figura
+<A HREF="node71.html#clases_explorador">8.11</A>.
+
+<DIV ALIGN="CENTER"><A NAME="clases_explorador"></A><A NAME="1992"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 8.11:</STRONG>
+Diagrama parcial de clases del paquete
+ifusuario</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="633" HEIGHT="636" ALIGN="BOTTOM" BORDER="0"
+ SRC="img260.png"
+ ALT="\includegraphics[width=14cm]{Software/explorador.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+El mapa est&#225; constituido por la siguientes capas:
+
+<UL>
+<LI>Capa de alturas de terreno
+</LI>
+<LI>Capa de manzanas
+</LI>
+<LI>Capa de edificios
+</LI>
+<LI>Capa de sitios
+</LI>
+<LI>Capa de sitio seleccionado
+</LI>
+<LI>Capa de resultados
+</LI>
+</UL>
+En el caso del Generador de Edificios se define un nuevo mapa, que
+carece de la capa de alturas y de sitios e incluye capas destinadas
+al edificio, la cuadra y la esquina seleccionados.
+
+Existe una clase que es la encargada de la manipulaci&#243;n de las
+capas, que se llama <I>ContenedorMapa</I>. Esta clase interact&#250;a con
+los otros paquetes, de los que puede recibir informaci&#243;n (una
+<I>FeatureCollection</I>, una lista de sitios, los resultados de una
+predicci&#243;n, etc.) y a partir de ella crear la capa correspondiente
+en el mapa (ver figura <A HREF="node71.html#clases_mapa">8.12</A>).
+
+<DIV ALIGN="CENTER"><A NAME="clases_mapa"></A><A NAME="2004"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 8.12:</STRONG>
+Diagrama parcial de clases del paquete
+ifusuario</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="588" HEIGHT="830" ALIGN="BOTTOM" BORDER="0"
+ SRC="img261.png"
+ ALT="\includegraphics[width=13cm]{Software/mapa.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Tanto el ContenedorMapa como el Explorador pueden generar acciones
+por s&#237; mismas como reacci&#243;n ante eventos provocados por el usuario
+mediante el rat&#243;n; para ello deben implementar la interfaz
+<I>java.awt.event.MouseListener</I>.
+
+El sub-paquete <I>ifusuario.menues</I> contiene las ventanas y
+men&#250;es que intercambian informaci&#243;n con el usuario. Por ejemplo, las
+ventanas que permiten la creaci&#243;n o edici&#243;n de objetos (canales de
+frecuencia, modelos de antenas, sitios, radiobases, antenas, etc.).
+&#201;stas recogen la informaci&#243;n que ingresa el usuario y chequean que
+sea v&#225;lida, por ejemplo que el formato de los datos sea el correcto
+o que no haya par&#225;metros vac&#237;os. En caso de encontrar un error
+arrojan una excepci&#243;n e informan al usuario; en otro caso crean el
+objeto correspondiente, que luego es tomado por la clase Principal,
+quien contin&#250;a con el procedimiento.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1346"
+  HREF="node72.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1342"
+  HREF="node63.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1336"
+  HREF="node70.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1344"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1347"
+  HREF="node72.html">El paquete archivos</A>
+<B> Subir:</B> <A NAME="tex2html1343"
+  HREF="node63.html">Arquitectura de paquetes</A>
+<B> Anterior:</B> <A NAME="tex2html1337"
+  HREF="node70.html">El paquete predicciones</A>
+ &nbsp <B>  <A NAME="tex2html1345"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

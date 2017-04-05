@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Archivos de entrada de datos de altura de terreno</TITLE>
+<META NAME="description" CONTENT="Archivos de entrada de datos de altura de terreno">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node79.html">
+<LINK REL="previous" HREF="node75.html">
+<LINK REL="up" HREF="node75.html">
+<LINK REL="next" HREF="node77.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1415"
+  HREF="node77.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1411"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1405"
+  HREF="node75.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1413"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1416"
+  HREF="node77.html">ASCII Grid</A>
+<B> Subir:</B> <A NAME="tex2html1412"
+  HREF="node75.html">Formato de archivos</A>
+<B> Anterior:</B> <A NAME="tex2html1406"
+  HREF="node75.html">Formato de archivos</A>
+ &nbsp <B>  <A NAME="tex2html1414"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04410000000000000000">
+Archivos de entrada de datos de altura de terreno</A>
+</H1>
+
+Si bien GeoTools dispone de una herramienta para el manejo de datos
+del tipo raster (GridCoverage), en la distribuci&#243;n de GeoTools 2.0.0
+no existe ninguna interfaz que permita la lectura y/o escritura
+de archivos con este tipo de informaci&#243;n. Por este motivo se tuvo
+que buscar otras herramientas, y se encontr&#243; que la distribuci&#243;n
+2.1.0 (no existente al momento de comenzar el desarrollo del
+presente proyecto) s&#237; soportaba algunos formatos de archivo, que se
+listan a continuaci&#243;n:
+
+<UL>
+<LI>Formato ArcInfo ASCII Grid y GRASS ASCII Grid,
+soportados tanto para lectura como para escritura, con y sin
+compresi&#243;n.
+</LI>
+<LI>Formato World (im&#225;genes geo-referenciadas), tanto para lectura como para
+escritura.
+</LI>
+<LI>GeoTIFF (im&#225;genes tiff geo-referenciadas), s&#243;lo para lectura y
+a&#250;n en desarrollo.
+</LI>
+<LI>WMS (OGC <I>Web Mapping Server client</I>), s&#243;lo para lectura y
+a&#250;n en desarrollo.
+</LI>
+</UL>
+Es as&#237; que se evalu&#243; la posibilidad de migrar de una versi&#243;n de
+GeoTools a la otra, pero, dadas las grandes diferencias e
+incompatibilidades entre ambas distribuciones, se lleg&#243; a la
+conclusi&#243;n de que no val&#237;a la pena por la cantidad de tiempo a
+invertir en dicha migraci&#243;n, dado lo avanzado de la programaci&#243;n
+hasta ese momento. La soluci&#243;n se encontr&#243; importando de la revisi&#243;n
+2.1.0 &#250;nicamente las bibliotecas espec&#237;ficas que permitan satisfacer
+los requerimientos necesarios. Es de inter&#233;s, adem&#225;s de ser capaces
+de leer archivos, poder escribirlos, a fin de guardar los resultados
+de las predicciones en el mismo formato, como se ver&#225; m&#225;s adelante.
+Es por esto que se eligi&#243;, entre los arriba listados, los formatos
+ArcInfo ASCII Grid y GRASS ASCII Grid (con y sin compresi&#243;n) que son
+de una enorme sencillez. Para su soporte fue necesario importar la
+biblioteca <I>org.geotools.data.arcgrid</I> (gt2-arcgrid-2.1.x.jar)
+e integrarla para que funcione en conjunto con la distribuci&#243;n
+2.0.0. Se encontraron en ciertas clases algunos problemas
+espec&#237;ficos (en la lectura de archivos con salto de l&#237;nea, en el
+establecimiento de los valores m&#225;ximos y m&#237;nimos del raster,etc.)
+que se pudieron corregir creando clases hijas<A NAME="tex2html50"
+  HREF="footnode.html#foot2252"><SUP>9.1</SUP></A> y
+sobreescribiendo los m&#233;todos necesarios con los arreglos
+correspondientes. Todo esto fue posible gracias a que se utiliz&#243; una
+herramienta de c&#243;digo abierto, una de las razones m&#225;s importantes
+por las cuales se eligi&#243; GeoTools, lo que otorga gran flexibilidad.
+
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1417"
+  HREF="node77.html">ASCII Grid</A>
+<LI><A NAME="tex2html1418"
+  HREF="node78.html">GRASS ASCII Grid</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1415"
+  HREF="node77.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1411"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1405"
+  HREF="node75.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1413"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1416"
+  HREF="node77.html">ASCII Grid</A>
+<B> Subir:</B> <A NAME="tex2html1412"
+  HREF="node75.html">Formato de archivos</A>
+<B> Anterior:</B> <A NAME="tex2html1406"
+  HREF="node75.html">Formato de archivos</A>
+ &nbsp <B>  <A NAME="tex2html1414"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

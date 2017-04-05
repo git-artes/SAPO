@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Búsqueda en el patrón de radiación</TITLE>
+<META NAME="description" CONTENT="Búsqueda en el patrón de radiación">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node92.html">
+<LINK REL="up" HREF="node91.html">
+<LINK REL="next" HREF="node94.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1634"
+  HREF="node94.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1630"
+  HREF="node91.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1626"
+  HREF="node92.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1632"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1635"
+  HREF="node94.html">Cálculo de alturas efectivas</A>
+<B> Subir:</B> <A NAME="tex2html1631"
+  HREF="node91.html">Cálculo de ganancia de</A>
+<B> Anterior:</B> <A NAME="tex2html1627"
+  HREF="node92.html">Ángulos relativos a la</A>
+ &nbsp <B>  <A NAME="tex2html1633"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION04522000000000000000">
+B&#250;squeda en el patr&#243;n de radiaci&#243;n</A>
+</H2>
+
+La informaci&#243;n del patr&#243;n de radiaci&#243;n consiste en una lista
+ordenada de &#225;ngulos que var&#237;an entre 0 y 360 grados, con sus
+respectivas ganancias relativas (el primer valor es el de 0 grados -
+0 dB, que corresponde a la direcci&#243;n de m&#225;xima propagaci&#243;n).
+
+Es necesario determinar qu&#233; valor de ganancia tomar en el caso de un
+&#225;ngulo que no se encuentre en dicha lista. Una opci&#243;n podr&#237;a ser
+tomar el valor correspondiente al &#225;ngulo m&#225;s cercano, pero esta
+posibilidad se descart&#243; por ser poco precisa en caso de contar con
+un n&#250;mero peque&#241;o de datos, opt&#225;ndose por usar interpolaci&#243;n lineal.
+Para buscar los valores de ganancia entre los cuales hay que
+interpolar, se implement&#243; un algoritmo de forma de tratar de hacer
+r&#225;pida la b&#250;squeda en el patr&#243;n de radiaci&#243;n, sin tener que recorrer
+la lista de datos innecesariamente. Para esto se bas&#243; en la idea que
+el c&#225;lculo de atenuaci&#243;n se hace punto por punto en el mapa, por lo
+que los valores de los &#225;ngulos no diferir&#225;n mucho de un punto a
+otro. Si en la b&#250;squeda anterior se determin&#243; que el &#225;ngulo estaba
+entre el &#237;ndice <IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img292.png"
+ ALT="$ i$"> e (<IMG
+ WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.png"
+ ALT="$ i+1$">) de la tabla, se empezar&#225; a buscar en
+ese intervalo, y no desde el principio. En caso de que el &#225;ngulo no
+est&#233; comprendido se determinar&#225; si es menor o mayor, luego de
+acuerdo a eso el &#237;ndice <IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img292.png"
+ ALT="$ i$"> se incrementar&#225; o decrementar&#225; y se
+volver&#225; a buscar. Este procedimiento se repite hasta encontrar el
+intervalo en donde interpolar. Hay que tener en cuenta que la
+b&#250;squeda en el patr&#243;n de radiaci&#243;n es circular, o sea, el &#250;ltimo
+dato es seguido del primero, y en ese caso es necesario sumar a
+aqu&#233;l 360 grados para evitar discontinuidades al hacer el c&#225;lculo de
+interpolaci&#243;n. Dicho c&#225;lculo es:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="237" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img294.png"
+ ALT="$\displaystyle G = G_i + \frac{G_{i+1}-G_i}{\alpha_{i+1}-\alpha_i}\cdot(\alpha - \alpha_i)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img295.png"
+ ALT="$ G$"> es la ganancia a calcular para el &#225;ngulo <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$ \alpha$">, y,
+<IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img296.png"
+ ALT="$ G_{i+1}$"> y <IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img297.png"
+ ALT="$ G_i$"> son las ganancias en los &#225;ngulos <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img298.png"
+ ALT="$ \alpha_i$"> y
+<!-- MATH
+ $\alpha_{i+1}$
+ -->
+<IMG
+ WIDTH="37" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.png"
+ ALT="$ \alpha_{i+1}$"> respectivamente, obtenidas del patr&#243;n de radiaci&#243;n.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1634"
+  HREF="node94.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1630"
+  HREF="node91.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1626"
+  HREF="node92.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1632"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1635"
+  HREF="node94.html">Cálculo de alturas efectivas</A>
+<B> Subir:</B> <A NAME="tex2html1631"
+  HREF="node91.html">Cálculo de ganancia de</A>
+<B> Anterior:</B> <A NAME="tex2html1627"
+  HREF="node92.html">Ángulos relativos a la</A>
+ &nbsp <B>  <A NAME="tex2html1633"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

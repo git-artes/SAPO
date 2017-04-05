@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Ingreso de datos del entorno</TITLE>
+<META NAME="description" CONTENT="Ingreso de datos del entorno">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node54.html">
+<LINK REL="previous" HREF="node52.html">
+<LINK REL="up" HREF="node51.html">
+<LINK REL="next" HREF="node54.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1108"
+  HREF="node54.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1104"
+  HREF="node51.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1098"
+  HREF="node52.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1106"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1109"
+  HREF="node54.html">Creación de una red</A>
+<B> Subir:</B> <A NAME="tex2html1105"
+  HREF="node51.html">Descripción general de SAPO</A>
+<B> Anterior:</B> <A NAME="tex2html1099"
+  HREF="node52.html">¿Qué es un proyecto</A>
+ &nbsp <B>  <A NAME="tex2html1107"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04220000000000000000">
+Ingreso de datos del entorno</A>
+</H1>
+
+Previo a la realizaci&#243;n del c&#225;lculo de la predicci&#243;n de potencia, es
+necesario ingresar al software la informaci&#243;n topogr&#225;fica de la zona
+en cuesti&#243;n, as&#237; como los datos de c&#243;mo se conforma la red. Lo
+primero puede hacerse con diferentes niveles de detalle, de acuerdo
+a la base de datos que disponga el usuario, aunque se obtendr&#225;n
+mejores resultados cuanto m&#225;s informaci&#243;n del entorno se posea.
+Sobre todo en un entorno urbano, puede ser muy &#250;til la
+especificaci&#243;n detallada de las edificaciones, ya que como se vio en
+las secciones anteriores, las mismas tienen gran influencia en la
+propagaci&#243;n. Es as&#237; que se pueden especificar tres tipos de datos:
+
+<UL>
+<LI><B>Datos de Altura de terreno.</B> Consiste en un mapa de elevaciones,
+que especifique para toda el &#225;rea geogr&#225;fica los valores de altura sobre el nivel
+del mar. Cuanto mayor sea la resoluci&#243;n de dicho mapa, mayor
+exactitud podr&#225; obtenerse en los resultados. Esta informaci&#243;n es
+necesaria para la aplicaci&#243;n de todos los modelos, por lo cual es de
+car&#225;cter obligatorio.
+</LI>
+<LI><B>Datos de trazado de manzanas.</B> Consiste en la informaci&#243;n de
+la distribuci&#243;n de las manzanas y calles a lo largo del territorio (se considera que
+el l&#237;mite entre las manzanas y las calles es el l&#237;mite de las edificaciones,
+y no el cord&#243;n de la vereda). Estos datos son requeridos por ciertos modelos, por ejemplo,
+aquellos que incluyan en sus c&#225;lculos la orientaci&#243;n de la calle en
+relaci&#243;n a la direcci&#243;n de m&#225;xima propagaci&#243;n de la antena
+radiobase, o la distancia del punto en cuesti&#243;n a las esquinas m&#225;s
+cercanas.
+</LI>
+<LI><B>Datos de edificaciones.</B> Consiste en la informaci&#243;n de ubicaci&#243;n,
+forma, disposici&#243;n y altura de las edificaciones presentes. Cierto
+modelo de propagaci&#243;n puede requerir de dicho nivel de detalle para
+arrojar resultados confiables. Sin embargo, en otros casos, a falta
+de informaci&#243;n precisa, puede ingresarse un &#250;nico edificio por
+manzana que abarque toda el &#225;rea de la misma y tenga como altura la
+altura promedio de todas las edificaciones u otro valor que pueda
+ser representativo.
+</LI>
+</UL>
+
+<DIV ALIGN="CENTER"><A NAME="pantallaGral"></A><A NAME="1832"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 7.1:</STRONG>
+Pantalla principal de <I>SAPO</I></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="633" HEIGHT="443" ALIGN="BOTTOM" BORDER="0"
+ SRC="img243.png"
+ ALT="\includegraphics[width=14cm]{Software/pantallaGeneralPS.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Esta informaci&#243;n es importada al programa desde archivos (los
+formatos soportados se describir&#225;n en el cap&#237;tulo
+<A HREF="node75.html#cap:formatos">9</A>), y en el caso de los datos de edificaciones
+existe tambi&#233;n la posibilidad de ingresarlos mediante una interfaz
+gr&#225;fica incluida en <I>SAPO</I>. Una vez cargada, la informaci&#243;n
+es almacenada en diferentes niveles o capas y desplegada en un mapa
+digital (ver figura <A HREF="node53.html#pantallaGral">7.1</A>). En todo momento el usuario
+tiene la posibilidad de ver u ocultar cualquiera de las capas que se
+despliegan en pantalla. Adem&#225;s aparece una barra indicativa de la
+escala, as&#237; como la posici&#243;n y altura del punto sobre el cual est&#225;
+posicionado el rat&#243;n en cada instante.
+
+<I>SAPO</I> trabaja con coordenadas planas (proyectadas), como por
+ejemplo coordenadas UTM<A NAME="tex2html28"
+  HREF="footnode.html#foot1833"><SUP>7.1</SUP></A>, aunque no tienen por qu&#233; ser necesariamente
+globales. Como unidad de distancia se utiliza el metro.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1108"
+  HREF="node54.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1104"
+  HREF="node51.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1098"
+  HREF="node52.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1106"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1109"
+  HREF="node54.html">Creación de una red</A>
+<B> Subir:</B> <A NAME="tex2html1105"
+  HREF="node51.html">Descripción general de SAPO</A>
+<B> Anterior:</B> <A NAME="tex2html1099"
+  HREF="node52.html">¿Qué es un proyecto</A>
+ &nbsp <B>  <A NAME="tex2html1107"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

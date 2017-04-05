@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Algoritmo de búsqueda del perfil</TITLE>
+<META NAME="description" CONTENT="Algoritmo de búsqueda del perfil">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node101.html">
+<LINK REL="up" HREF="node89.html">
+<LINK REL="next" HREF="node107.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1790"
+  HREF="node107.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1786"
+  HREF="node89.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1782"
+  HREF="node105.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1788"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1791"
+  HREF="node107.html">Ejemplos de aplicación</A>
+<B> Subir:</B> <A NAME="tex2html1787"
+  HREF="node89.html">Algoritmos y cálculos implementados</A>
+<B> Anterior:</B> <A NAME="tex2html1783"
+  HREF="node105.html">Algoritmo para la evaluación</A>
+ &nbsp <B>  <A NAME="tex2html1789"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04590000000000000000"></A><A NAME="perfil"></A>
+<BR>
+Algoritmo de b&#250;squeda del perfil
+</H1>
+
+Como se vio en la secci&#243;n <A HREF="node40.html#vi">5.4</A> es necesario encontrar el perfil
+de alturas dada la ubicaci&#243;n del m&#243;vil y la base, y la disposici&#243;n y
+forma de las edificaciones presentes. Se entiende por perfil a un
+conjunto de pantallas (semiplanos) paralelas entre el transmisor y
+el receptor. Por lo tanto, &#233;ste queda completamente definido por la
+altura de cada elemento del perfil (que incluye adem&#225;s de las
+pantallas, el receptor y el transmisor) y la distancia entre ellos
+(ver la figura <A HREF="node23.html#perfilVogler">4.6</A> en la secci&#243;n <A HREF="node23.html#vogler">4.3.1</A>). Con
+dicho perfil se calcular&#225; la integral de Vogler (secci&#243;n
+<A HREF="node23.html#vogler">4.3.1</A>) y se estimar&#225; el par&#225;metro <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img166.png"
+ ALT="$ b$"> del modelo de
+Walfisch-Ikegami (secci&#243;n <A HREF="node34.html#wi">5.3</A>) y MOPEM (secci&#243;n <A HREF="node39.html#mopem">5.3.3</A>).
+
+Los edificios que ser&#225;n tomados en cuenta para el perfil ser&#225;n
+&#250;nicamente aquellos que tengan alguna influencia no despreciable
+en la atenuaci&#243;n, es decir, est&#233;n a menos de un determinado
+porcentaje del primer radio de Fresnel de la l&#237;nea que une el
+transmisor y el receptor. Si se quieren &#250;nicamente aquellas
+edificaciones que est&#233;n a menos del <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img379.png"
+ ALT="$ p$">% del primer radio de
+Fresnel, se debe multiplicar el radio de la primera elipsoide de
+Fresnel por el factor <!-- MATH
+ $\left(\frac{p}{100}\right)^2$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img380.png"
+ ALT="$ \left(\frac{p}{100}\right)^2$"> y hallar la
+elipsoide con este nuevo radio. Esto se deduce f&#225;cilmente de las
+siguientes ecuaciones:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="217" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img381.png"
+ ALT="$\displaystyle r_1 = \sqrt{\frac{\lambda d_1d_2}{d_1+d_2}} = \sqrt{\frac{2rd_1d_2}{d_1+d_2}}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="220" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img382.png"
+ ALT="$\displaystyle \Rightarrow \frac{p}{100}r_1 = \sqrt{\frac{2r\left(\frac{p}{100}\right)^2d_1d_2}{d_1+d_2}}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img300.png"
+ ALT="$ r$"> es el radio de la primera elipsoide de Fresnel.
+
+Est&#225; claro que la altura de un elemento del perfil coincidir&#225; con
+su altura relativa respecto al terreno m&#225;s la altura de dicho
+terreno. Por lo tanto, identificados los elementos del perfil y
+sus alturas, resta asignarles una posici&#243;n dentro del mismo.
+
+No existe consenso sobre como asignar posiciones dentro del perfil.
+Por ejemplo, es muy utilizado ubicar la pantalla en el centro del
+edificio [<A
+ HREF="node130.html#screen">51</A>]. Esta puede no ser la ubicaci&#243;n m&#225;s
+representativa, ya que puede suceder que sea una de las esquinas del
+edificio la que intersect&#243; al elipsoide. Tratando de evitar estos
+casos, el algoritmo adoptado fue el siguiente. En la b&#250;squeda de
+aquellos edificios que intersectan en la primera elipsoide de
+Fresnel reducida, se pueden hallar cu&#225;les paredes del mismo son las
+que intersectan al elipsoide. Se tomar&#225; el punto de la recta que une
+el transmisor y el receptor que est&#233; m&#225;s cercano a dichas paredes y
+se promediar&#225;n coordenada a coordenada. El resultado del promedio,
+ser&#225; el punto que se tome para ubicar la pantalla en el perfil.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1790"
+  HREF="node107.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1786"
+  HREF="node89.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1782"
+  HREF="node105.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1788"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1791"
+  HREF="node107.html">Ejemplos de aplicación</A>
+<B> Subir:</B> <A NAME="tex2html1787"
+  HREF="node89.html">Algoritmos y cálculos implementados</A>
+<B> Anterior:</B> <A NAME="tex2html1783"
+  HREF="node105.html">Algoritmo para la evaluación</A>
+ &nbsp <B>  <A NAME="tex2html1789"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

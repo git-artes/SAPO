@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>El paquete vectorial</TITLE>
+<META NAME="description" CONTENT="El paquete vectorial">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node69.html">
+<LINK REL="previous" HREF="node67.html">
+<LINK REL="up" HREF="node63.html">
+<LINK REL="next" HREF="node69.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1310"
+  HREF="node69.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1306"
+  HREF="node63.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1300"
+  HREF="node67.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1308"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1311"
+  HREF="node69.html">El paquete red</A>
+<B> Subir:</B> <A NAME="tex2html1307"
+  HREF="node63.html">Arquitectura de paquetes</A>
+<B> Anterior:</B> <A NAME="tex2html1301"
+  HREF="node67.html">El paquete raster</A>
+ &nbsp <B>  <A NAME="tex2html1309"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION04315000000000000000"></A><A NAME="paqueteVectorial"></A>
+<BR>
+El paquete vectorial
+</H2>
+
+El caso de los datos de manzanas y edificaciones es un poco
+diferente, y en general no suelen almacenarse como raster. En este
+caso es m&#225;s conveniente usar alg&#250;n formato del tipo vectorial,
+represent&#225;ndolos por medio de geometr&#237;as y asociar mediante
+atributos la informaci&#243;n que sea de inter&#233;s almacenar. Para esto se
+utiliz&#243; la biblioteca JTS (ver secci&#243;n <A HREF="node50.html#bibJTS">6.2.2</A>).
+
+Para el manejo de datos de edificaciones, se eligi&#243; representar las
+mismas mediante un feature en el cual la geometr&#237;a es un pol&#237;gono
+que corresponde con la proyecci&#243;n del edificio en el plano
+horizontal, y como atributo un valor num&#233;rico que representa la
+altura. Se est&#225; asumiendo que la edificaci&#243;n ser&#225; un prisma, en el
+cual tanto la base como el techo son paralelos al plano horizontal y
+tienen la misma proyecci&#243;n, pudiendo &#233;sta adquirir cualquier forma,
+no teniendo que ser necesariamente convexa. Esta representaci&#243;n
+excluye alg&#250;n tipo de formas irregulares, pero simplifica
+enormemente el problema, siendo que no es de importancia la forma
+exacta de las edificaciones. En caso de contar, por ejemplo, con una
+vivienda de techo a dos aguas, el usuario deber&#225; tomar alg&#250;n
+criterio y determinar una altura equivalente.
+
+Para la representaci&#243;n de las manzanas se utiliz&#243; una representaci&#243;n
+mediante pol&#237;gonos. Estos pueden tener cualquier forma, siendo la
+&#250;nica limitaci&#243;n que las aristas (cuadras) sean l&#237;neas rectas. El
+n&#250;mero de v&#233;rtices es arbitrario. En la figura <A HREF="node68.html#edifYmanzanas">8.5</A>
+se puede visualizar un ejemplo de un trazado de manzana v&#225;lido.
+
+<DIV ALIGN="CENTER"><A NAME="edifYmanzanas"></A><A NAME="2015"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 8.5:</STRONG>
+Ejemplo de trazado de manzanas y edificaciones aceptado por
+<I>SAPO</I></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="181" HEIGHT="214" ALIGN="BOTTOM" BORDER="0"
+ SRC="img252.png"
+ ALT="\includegraphics[width=4cm]{Software/edifYmanzanas.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV ALIGN="CENTER"><A NAME="1924"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 8.6:</STRONG>
+Diagrama parcial de clases del paquete vectorial</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="587" HEIGHT="271" ALIGN="BOTTOM" BORDER="0"
+ SRC="img253.png"
+ ALT="\includegraphics[width=13cm]{Software/vectorial.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1310"
+  HREF="node69.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1306"
+  HREF="node63.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1300"
+  HREF="node67.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1308"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1311"
+  HREF="node69.html">El paquete red</A>
+<B> Subir:</B> <A NAME="tex2html1307"
+  HREF="node63.html">Arquitectura de paquetes</A>
+<B> Anterior:</B> <A NAME="tex2html1301"
+  HREF="node67.html">El paquete raster</A>
+ &nbsp <B>  <A NAME="tex2html1309"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

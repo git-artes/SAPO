@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Algoritmo para la evaluación de la integral</TITLE>
+<META NAME="description" CONTENT="Algoritmo para la evaluación de la integral">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node102.html">
+<LINK REL="up" HREF="node101.html">
+<LINK REL="next" HREF="node106.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1780"
+  HREF="node106.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1776"
+  HREF="node101.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1772"
+  HREF="node104.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1778"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1781"
+  HREF="node106.html">Algoritmo de búsqueda del</A>
+<B> Subir:</B> <A NAME="tex2html1777"
+  HREF="node101.html">Resolución de la integral</A>
+<B> Anterior:</B> <A NAME="tex2html1773"
+  HREF="node104.html">Método RQMC</A>
+ &nbsp <B>  <A NAME="tex2html1779"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION04582000000000000000"></A><A NAME="algVogler"></A>
+<BR>
+Algoritmo para la evaluaci&#243;n de la
+integral
+</H2>
+
+En definitiva, para la evaluaci&#243;n de la integral y en una primera
+instancia, el procedimiento es el siguiente. Se genera una
+secuencia de Korobov (con los valores recomendados de <IMG
+ WIDTH="73" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img368.png"
+ ALT="$ n=4093$"> y
+<IMG
+ WIDTH="71" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img369.png"
+ ALT="$ a=1397$"> o <IMG
+ WIDTH="73" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img370.png"
+ ALT="$ n=2039$"> y <IMG
+ WIDTH="71" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img371.png"
+ ALT="$ a=1487$">). A partir de ella se generan, por
+ejemplo, 10 secuencias mediante el m&#233;todo RQMC con las cuales se
+obtienen 10 estimaciones de la integral. El promedio de dichas
+estimaciones ser&#225; lo que se tome como el valor definitivo de la
+integral (los resultados para un ejemplo sencillo se pueden
+apreciar en la figura <A HREF="node105.html#ejemplo1">10.10</A>).
+
+<DIV ALIGN="CENTER"><A NAME="ejemplo1"></A><A NAME="2748"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 10.10:</STRONG>
+Resultado del algoritmo inicial para r=[50 50], h=[0 u 0]
+y f=800 Mhz. (r es el vector de separaciones y h es el vector de
+alturas)</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="360" HEIGHT="251" ALIGN="BOTTOM" BORDER="0"
+ SRC="img372.png"
+ ALT="\includegraphics[width=8cm]{Software/ejemplo1.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Pero hay un problema; Vogler [<A
+ HREF="node130.html#Vogler_viejo">12</A>] advierte que cuando
+alg&#250;n obst&#225;culo es demasiado peque&#241;o (su <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img166.png"
+ ALT="$ b$"> asociado es muy
+peque&#241;o), su serie necesita de muchos t&#233;rminos para converger. En
+este caso, esto se traduce a que cuando alg&#250;n obst&#225;culo es
+despreciable se necesitar&#237;a un <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img354.png"
+ ALT="$ n$"> muy grande (ver figura
+<A HREF="node105.html#error">10.11</A>).
+
+<DIV ALIGN="CENTER"><A NAME="error"></A><A NAME="2757"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 10.11:</STRONG>
+Un ejemplo donde uno de los cuchillos se vuelve
+despreciable (r=[10000 5000 10000], h=[0 0 u 0] y f=100 Mhz).</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="361" HEIGHT="251" ALIGN="BOTTOM" BORDER="0"
+ SRC="img373.png"
+ ALT="\includegraphics[width=8cm]{Software/ejemploFalla.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Por lo tanto cuando el <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img166.png"
+ ALT="$ b$"> asociado a alg&#250;n cuchillo es negativo,
+habr&#225; que verificar que el m&#233;todo sea confiable. El algoritmo
+dise&#241;ado es el siguiente:
+
+<OL>
+<LI><A NAME="paso1"></A> Se calcula el valor de la integral mediante el
+m&#233;todo RQMC ya comentado.
+
+</LI>
+<LI>Se construye un intervalo de confianza para la media con las
+distintas estimaciones obtenidas en el paso anterior, con
+determinado nivel de confianza (por ejemplo, 95%).
+
+</LI>
+<LI>Considerando que el radio del intervalo de confianza es una
+medida de la incertidumbre sobre el valor de la media (es decir,
+lo que se desea estimar), si dicho radio es mayor que un
+porcentaje arbitrario de la media (por ejemplo, 10%), entonces se
+determina cu&#225;l es el cuchillo de menor importancia (menor <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img166.png"
+ ALT="$ b$">), se
+quita del perfil y se vuelve al paso <A HREF="node105.html#paso1">1</A> con este nuevo
+perfil.
+</LI>
+</OL>
+
+<DIV ALIGN="CENTER"><A NAME="errorCorregido"></A><A NAME="2768"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 10.12:</STRONG>
+Un ejemplo donde uno de los cuchillos se vuelve
+despreciable y se aplica el algoritmo (r=[10000 5000 10000], h=[0 0
+u 0] y f=100 Mhz).</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="360" HEIGHT="251" ALIGN="BOTTOM" BORDER="0"
+ SRC="img374.png"
+ ALT="\includegraphics[width=8cm]{Software/ejemploFallaCorregida.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Este algoritmo en la pr&#225;ctica ha funcionado satisfactoriamente.
+Aunque hay valores que se fijan muy ``artesanalmente'' (por ejemplo
+el margen sobre la media y el nivel de confianza), se han encontrado
+valores que por lo general funcionan (comparar, como ejemplo, figura
+<A HREF="node105.html#errorCorregido2">10.13</A> con la que aparece en [<A
+ HREF="node130.html#FastVogler">50</A>]).
+
+Otras t&#233;cnicas m&#225;s estrictas desde el punto de vista matem&#225;tico
+podr&#237;an haber sido utilizadas. Por ejemplo, se podr&#237;a haber hecho un
+test de hip&#243;tesis sobre la media para verificar que sea la correcta.
+Esto es, se realiza una primera tirada de estimaciones con el m&#233;todo
+RQMC con la cual se construye el intervalo de confianza, luego se
+realiza otra tirada distinta y se verifica que esta nueva media est&#233;
+dentro del intervalo de confianza. Esto es m&#225;s correcto que lo
+realizado, pero tiene dos inconvenientes. El primero y m&#225;s
+importante es que toma m&#225;s tiempo pues hay que realizar dos tiradas
+del m&#233;todo RQMC. El otro problema surge cuando la integral converge
+al valor correcto en todas las tiradas, en cuyo caso el intervalo de
+confianza queda muy peque&#241;o y es muy dif&#237;cil que la nueva media
+tambi&#233;n est&#233; en dicho intervalo. O sea, descarta cuchillos cuando
+deber&#237;a finalizar.
+
+Por lo tanto, los par&#225;metros que definen el t&#233;rmino
+<!-- MATH
+ $L_{msd\_Vogler}$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img375.png"
+ ALT="$ L_{msd\_Vogler}$"> (ver la f&#243;rmula que aparece en la secci&#243;n
+<A HREF="node40.html#vi">5.4</A>) son el nivel de confianza del test de hip&#243;tesis, el m&#225;ximo
+margen de error en porcentaje de la media y la cantidad de
+repeticiones que se desea hacer del m&#233;todo RQMC. Adem&#225;s, para
+acelerar los c&#225;lculos se agrega una cantidad de cuchillos m&#225;xima a
+ser considerada.
+
+<DIV ALIGN="CENTER"><A NAME="errorCorregido2"></A><A NAME="2779"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 10.13:</STRONG>
+Ejemplo con la siguiente configuraci&#243;n: r = [15 15 10 10 15
+15], h = [20 20 20 u 20 20 20] y f=1800 Mhz).</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="360" HEIGHT="251" ALIGN="BOTTOM" BORDER="0"
+ SRC="img376.png"
+ ALT="\includegraphics[width=8cm]{Software/ejemploFallaCorregida2.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Para verificar que el m&#233;todo funcione correctamente, se compararon
+los resultados obtenidos con resoluciones anal&#237;ticas de la
+integral de Vogler realizadas por &#233;l mismo en casos particulares
+sencillos (tres cuchillos alineados con el transmisor y el
+receptor con distancias entre ellos variable). Los resultados
+pueden verse en la figura <A HREF="node105.html#comparacionVogler">10.14</A>, donde se pueden
+apreciar que el error es despreciable en todos los casos.
+
+<DIV ALIGN="CENTER"><A NAME="comparacionVogler"></A><A NAME="2788"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 10.14:</STRONG>
+Comparaci&#243;n entre anal&#237;tica y estimaci&#243;n con r=[100-u, u,
+u, 100-u]</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="316" HEIGHT="224" ALIGN="BOTTOM" BORDER="0"
+ SRC="img377.png"
+ ALT="\includegraphics[width=7cm]{Software/errorVogler.eps}">
+<IMG
+ WIDTH="317" HEIGHT="218" ALIGN="BOTTOM" BORDER="0"
+ SRC="img378.png"
+ ALT="\includegraphics[width=7cm]{Software/compVogler.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1780"
+  HREF="node106.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1776"
+  HREF="node101.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1772"
+  HREF="node104.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1778"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1781"
+  HREF="node106.html">Algoritmo de búsqueda del</A>
+<B> Subir:</B> <A NAME="tex2html1777"
+  HREF="node101.html">Resolución de la integral</A>
+<B> Anterior:</B> <A NAME="tex2html1773"
+  HREF="node104.html">Método RQMC</A>
+ &nbsp <B>  <A NAME="tex2html1779"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>ASCII Grid</TITLE>
+<META NAME="description" CONTENT="ASCII Grid">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node78.html">
+<LINK REL="previous" HREF="node76.html">
+<LINK REL="up" HREF="node76.html">
+<LINK REL="next" HREF="node78.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1429"
+  HREF="node78.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1425"
+  HREF="node76.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1419"
+  HREF="node76.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1427"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1430"
+  HREF="node78.html">GRASS ASCII Grid</A>
+<B> Subir:</B> <A NAME="tex2html1426"
+  HREF="node76.html">Archivos de entrada de</A>
+<B> Anterior:</B> <A NAME="tex2html1420"
+  HREF="node76.html">Archivos de entrada de</A>
+ &nbsp <B>  <A NAME="tex2html1428"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION04411000000000000000">
+ASCII Grid</A>
+</H2>
+
+El formato ASCII Grid (.asc o .grd) es un formato definido por la
+ESRI (<I>Environmental Systems Research Institute</I>), el proveedor
+l&#237;der de sistemas GIS a nivel mundial [<A
+ HREF="node130.html#esri">42</A>]. Fue desarrollado
+originalmente para ArcInfo, software muy popular a nivel comercial;
+sin embargo ha sido ampliamente difundido y hoy en d&#237;a es soportado
+por un gran n&#250;mero de paquetes de software. Al ser un formato ASCII,
+es f&#225;cilmente legible (puede ser editable mediante cualquier editor
+de texto); adem&#225;s, al tener la posibilidad de ser comprimido, es
+capaz de guardar gran cantidad de informaci&#243;n en un archivo de
+tama&#241;o razonable. Consiste en un encabezado que contiene la
+informaci&#243;n geogr&#225;fica y la resoluci&#243;n, seguido de los datos
+de altura, que se leen de izquierda a derecha comenzando por la fila
+que corresponde con el l&#237;mite m&#225;s al norte. Aqu&#237; se muestra un
+ejemplo de un encabezado v&#225;lido: <TT>
+<DIV ALIGN="LEFT">
+ncols 150
+<BR>
+nrows 250
+<BR>
+xllcorner -156.08749650000
+<BR>
+yllcorner 18.870890200000
+<BR>
+cellsize 0.00833300
+<BR>
+nodata_value -9999
+
+</DIV></TT>
+
+<UL>
+<LI><I>ncols</I> y <I>nrows</I> se refieren respectivamente al n&#250;mero de columnas
+y filas en la grilla; deben estar seguidos por un valor entero.
+</LI>
+<LI><I>xllcorner</I> e <I>yllcorner</I> corresponden al borde m&#225;s al este y m&#225;s al
+sur de la grilla respectivamente.
+</LI>
+<LI><I>cellsize</I> es la resoluci&#243;n del raster.
+</LI>
+<LI><I>nodata_value</I> indica el valor que representa la ausencia de
+datos. Es opcional, por lo cual no debe asumirse su presencia. El
+valor por defecto es -9999.
+</LI>
+</UL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1429"
+  HREF="node78.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1425"
+  HREF="node76.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1419"
+  HREF="node76.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1427"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1430"
+  HREF="node78.html">GRASS ASCII Grid</A>
+<B> Subir:</B> <A NAME="tex2html1426"
+  HREF="node76.html">Archivos de entrada de</A>
+<B> Anterior:</B> <A NAME="tex2html1420"
+  HREF="node76.html">Archivos de entrada de</A>
+ &nbsp <B>  <A NAME="tex2html1428"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

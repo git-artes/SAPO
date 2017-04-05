@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Cálculos asociados a una predicción</TITLE>
+<META NAME="description" CONTENT="Cálculos asociados a una predicción">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node109.html">
+<LINK REL="previous" HREF="node107.html">
+<LINK REL="up" HREF="node107.html">
+<LINK REL="next" HREF="node109.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1816"
+  HREF="node109.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1812"
+  HREF="node107.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1806"
+  HREF="node107.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1814"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1817"
+  HREF="node109.html">Variación de las características</A>
+<B> Subir:</B> <A NAME="tex2html1813"
+  HREF="node107.html">Ejemplos de aplicación</A>
+<B> Anterior:</B> <A NAME="tex2html1807"
+  HREF="node107.html">Ejemplos de aplicación</A>
+ &nbsp <B>  <A NAME="tex2html1815"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04610000000000000000">
+C&#225;lculos asociados a una predicci&#243;n</A>
+</H1>
+
+Como primer ejemplo de aplicaci&#243;n se considerar&#225;n dos radiobases con
+antenas isotr&#243;picas ubicadas geogr&#225;ficamente en distintos sitios de
+una superficie ondulada.
+
+<DIV ALIGN="CENTER"><A NAME="potencia"></A><A NAME="potencia"></A><A NAME="2982"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 11.1:</STRONG>
+Valores de potencia</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="407" HEIGHT="309" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="\includegraphics[width=9cm]{Conclusion/potencia2.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+En la pr&#225;ctica, este escenario corresponder&#237;a a una zona rural dada
+la ausencia de edificaciones y calles.
+
+En la figura <A HREF="node108.html#potencia">11.1</A> se muestra el resultado de una
+predicci&#243;n al asociarle a ambas antenas el modelo de Okumura-Hata
+COST231 (considerando alturas efectivas) con una frecuencia de
+transmisi&#243;n de 900 MHz. Observando dicha figura y tomando en
+consideraci&#243;n los par&#225;metros involucrados en el c&#225;lculo de la
+p&#233;rdida de camino del modelo de Okumura-Hata COST231, se puede
+verificar que es notoria la dependencia del valor de la potencia
+mediana de se&#241;al con la distancia, con la altura del terreno y con
+las alturas del transmisor y receptor. La antena ubicada en la
+figura a la derecha se encuentra a una mayor altura respecto a la
+otra y esto se refleja en la obtenci&#243;n de mayores valores de se&#241;al
+en la zona de estudio, los cuales decrecen a medida que se alejan de
+las radiobases. Se puede observar tambi&#233;n que en aquellos puntos
+donde existe intersecci&#243;n entre los radios de c&#225;lculo de ambas
+antenas, el valor de potencia desplegado es el mayor. Un valor
+aproximado de la potencia puede estimarse al observar la barra
+superior que muestra la escala en dB.
+
+Como se describi&#243; en la secci&#243;n <A HREF="node56.html#otrasHerr">7.5</A>, otros c&#225;lculos
+pueden resultar &#250;tiles al trabajar con m&#225;s de un antena, como ser la
+interferencia co-canal entre ellas o el &#225;rea de cobertura conformada
+por la totalidad de las antenas involucradas en la predicci&#243;n.
+Tomando el mismo ejemplo que se describi&#243; anteriormente, se muestra
+en la figura <A HREF="node108.html#CIRycobertura">11.2</A> la CIR resultante entre las dos
+antenas luego de realizada la predicci&#243;n.
+
+<DIV ALIGN="CENTER"><A NAME="interferencia"></A><A NAME="CIRycobertura"></A><A NAME="2994"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 11.2:</STRONG>
+CIR y cobertura</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="316" HEIGHT="240" ALIGN="BOTTOM" BORDER="0"
+ SRC="img384.png"
+ ALT="\includegraphics[width=7cm]{Conclusion/interferencia2.eps}">
+<IMG
+ WIDTH="316" HEIGHT="240" ALIGN="BOTTOM" BORDER="0"
+ SRC="img385.png"
+ ALT="\includegraphics[width=7cm]{Conclusion/cobertura2.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+En la imagen derecha de la figura <A HREF="node108.html#CIRycobertura">11.2</A> se despliegan
+aquellos valores de potencia que quedaron por encima del umbral
+definido en la sensibilidad del receptor (color naranja) y de
+acuerdo al valor de C/I m&#237;nima definida previamente en el perfil de
+usuario. A esta regi&#243;n es a lo que se considera &#225;rea de servicio, y
+tambi&#233;n se despliegan aquellos valores donde se considera que el
+m&#243;vil no captar&#225; se&#241;al (color amarillo).
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1816"
+  HREF="node109.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1812"
+  HREF="node107.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1806"
+  HREF="node107.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1814"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1817"
+  HREF="node109.html">Variación de las características</A>
+<B> Subir:</B> <A NAME="tex2html1813"
+  HREF="node107.html">Ejemplos de aplicación</A>
+<B> Anterior:</B> <A NAME="tex2html1807"
+  HREF="node107.html">Ejemplos de aplicación</A>
+ &nbsp <B>  <A NAME="tex2html1815"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

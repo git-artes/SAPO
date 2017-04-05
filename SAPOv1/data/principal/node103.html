@@ -1,0 +1,464 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Método QMC</TITLE>
+<META NAME="description" CONTENT="Método QMC">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node104.html">
+<LINK REL="previous" HREF="node102.html">
+<LINK REL="up" HREF="node102.html">
+<LINK REL="next" HREF="node104.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1760"
+  HREF="node104.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1756"
+  HREF="node102.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1750"
+  HREF="node102.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1758"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1761"
+  HREF="node104.html">Método RQMC</A>
+<B> Subir:</B> <A NAME="tex2html1757"
+  HREF="node102.html">Estimación Numérica: Métodos QMC</A>
+<B> Anterior:</B> <A NAME="tex2html1751"
+  HREF="node102.html">Estimación Numérica: Métodos QMC</A>
+ &nbsp <B>  <A NAME="tex2html1759"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION04581100000000000000">
+M&#233;todo QMC</A>
+</H3>
+
+Supongamos que queremos estimar la siguiente integral:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="136" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img330.png"
+ ALT="$\displaystyle \mu = \int_{\left[0,1\right)^t}f(u)du$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Este es un caso bastante general, pues casi cualquier regi&#243;n de
+integraci&#243;n se puede llevar f&#225;cilmente al cubo unitario de dimensi&#243;n
+<IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.png"
+ ALT="$ t$"> con alg&#250;n cambio de variable.
+
+La primer idea ser&#237;a utilizar m&#233;todos num&#233;ricos de integraci&#243;n
+cl&#225;sicos como una aproximaci&#243;n de Riemman. El problema es que la
+mayor&#237;a de estos se vuelven poco pr&#225;cticos cuando la dimensi&#243;n <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.png"
+ ALT="$ t$">
+se vuelve m&#225;s grande que, por poner un ejemplo, cuatro o cinco. El
+estimador cl&#225;sico para realizar integrales de mayor dimensi&#243;n es el
+promedio de <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$ f$"> evaluado en alg&#250;n conjunto
+<!-- MATH
+ $P_n=\{u_0,\ldots,u_{n-1}\}\subset[0,1)^t$
+ -->
+<IMG
+ WIDTH="223" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img332.png"
+ ALT="$ P_n=\{u_0,\ldots,u_{n-1}\}\subset[0,1)^t$">,
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="134" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img333.png"
+ ALT="$\displaystyle Q_n=\frac{1}{n}\sum\limits^{n-1}\limits_{i=0}f(u_i)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER">Y el error de estimaci&#243;n resulta:&nbsp;<IMG
+ WIDTH="104" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img334.png"
+ ALT="$\displaystyle E_n=Q_n-\mu$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+El m&#233;todo de <I>Monte Carlo</I> (MC) consta en elegir el conjunto
+<IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img335.png"
+ ALT="$ P_n$"> aleatoriamente con distribuci&#243;n uniforme en <IMG
+ WIDTH="47" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img336.png"
+ ALT="$ [0,1)^t$">. Esto es
+una aplicaci&#243;n directa de la <I>Ley Fuerte de los Grandes
+N&#250;meros</I>: <IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img337.png"
+ ALT="$ \mu$"> es la esperanza de <!-- MATH
+ $f\left(X\right)$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img338.png"
+ ALT="$ f\left(X\right)$">, siendo <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img303.png"
+ ALT="$ X$"> una
+variable aleatoria uniforme en el cubo unitario. Si estamos en las
+hip&#243;tesis de dicho teorema (VA iid de varianza finita), entonces se
+cumple que la media converger&#225; casi seguramente a la esperanza.
+Adem&#225;s, utilizando el <I>teorema central del l&#237;mite</I> se tiene que
+<!-- MATH
+ $\sqrt{n}\left(Q_n-\mu\right)/\sigma \rightarrow N(0,1)$
+ -->
+<IMG
+ WIDTH="203" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img339.png"
+ ALT="$ \sqrt{n}\left(Q_n-\mu\right)/\sigma \rightarrow N(0,1)$"> en
+distribuci&#243;n a medida que <!-- MATH
+ $n\rightarrow \infty$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img340.png"
+ ALT="$ n\rightarrow \infty$">, por lo que el error
+de estimaci&#243;n converge como <!-- MATH
+ $|E_n|=O_p\left(\sigma/\sqrt{n}\right)$
+ -->
+<IMG
+ WIDTH="140" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img341.png"
+ ALT="$ \vert E_n\vert=O_p\left(\sigma/\sqrt{n}\right)$">,
+sin importar <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.png"
+ ALT="$ t$">.
+
+&#191;Pero es lo m&#225;s inteligente elegir los puntos de la secuencia de
+manera aleatoria? Los m&#233;todos QMC (<I>Quasi Monte Carlo</I>) son
+aqu&#233;llos que utilizan secuencias <IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img335.png"
+ ALT="$ P_n$"> cuyos puntos est&#225;n ``m&#225;s
+regularmente'' distribuidos en <!-- MATH
+ $\left[0,1\right)^t$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img342.png"
+ ALT="$ \left[0,1\right)^t$"> para intentar
+disminuir el error <IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img343.png"
+ ALT="$ \vert E_n\vert$"> y mejorar la convergencia de
+<!-- MATH
+ $O_p\left(1/\sqrt{n}\right)$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img344.png"
+ ALT="$ O_p\left(1/\sqrt{n}\right)$"> (ver figuras <A HREF="node103.html#halton">10.8</A> y
+<A HREF="node103.html#aleatorio">10.9</A>). La definici&#243;n de ``m&#225;s regularmente'' se hace
+utilizando la noci&#243;n de <I>discrepancia</I> (<IMG
+ WIDTH="52" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img345.png"
+ ALT="$ D(P_n)$">) entre la
+distribuci&#243;n emp&#237;rica de los puntos de <IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img335.png"
+ ALT="$ P_n$"> y la distribuci&#243;n
+uniforme en <IMG
+ WIDTH="47" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img336.png"
+ ALT="$ [0,1)^t$">. Existen varias formulaciones para la medida
+de esta discrepancia, aunque aqu&#237; s&#243;lo se introducir&#225; una de ellas,
+la denominada <I>Star-Discrepancy</I>. &#201;sta es la m&#225;s sencilla,
+pues no es m&#225;s que la distancia de Kolmogorov-Smirnov entre la
+distribuci&#243;n emp&#237;rica de <IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img335.png"
+ ALT="$ P_n$"> (<!-- MATH
+ $\widehat{F}_n(x)$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img346.png"
+ ALT="$ \widehat{F}_n(x)$">) y la
+distribuci&#243;n de una VA uniforme en el hipercubo unitario (<IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img347.png"
+ ALT="$ F(x)$">).
+Es decir:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="191" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img348.png"
+ ALT="$\displaystyle \widehat{F}_n(x)=\frac{1}{n}\sum\limits_{i=0}\limits^{n-1}I\left(x_i\leqslant x\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="320" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img349.png"
+ ALT="$\displaystyle F(x)=F(x_1,\ldots ,x_t) = min(1,x_1,\ldots ,x_t)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+La <I>Star-Discrepancy</I> se define como:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="195" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img350.png"
+ ALT="$\displaystyle D_n^*=\underset{x}{sup} \left\vert\widehat{F}_n(x)-F(x) \right\vert$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Adem&#225;s, a partir de la discrepancia y alguna medida de la
+regularidad de <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$ f$"> se pueden establecer cotas m&#225;ximas para el error
+de integraci&#243;n de la forma:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="145" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img351.png"
+ ALT="$\displaystyle \left\vert E_n\right\vert\leqslant V(f)D(P_n)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Donde <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.png"
+ ALT="$ V(f)$"> mide la variabilidad de la funci&#243;n. Un ejemplo de estas
+desigualdades es la de Koksma-Hlawka, donde <IMG
+ WIDTH="52" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img345.png"
+ ALT="$ D(P_n)$"> es la
+<I>star-discrepancy</I> y <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.png"
+ ALT="$ V(f)$"> es la variaci&#243;n total de <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$ f$"> en
+el sentido de Hardy y Krause (que intuitivamente es el largo de los
+segmentos mon&#243;tonos de <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$ f$">). De todas formas, estas desigualdades
+tienen el problema de ser muy dif&#237;ciles de calcular y aunque dan
+cotas muy precisas para el peor caso, para las funciones m&#225;s
+``t&#237;pica'' la cota est&#225; muy por encima del error real
+[<A
+ HREF="node130.html#Lecuyer">48</A>]. De todas formas, en la mayor&#237;a de los problemas se
+reduce el error <IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img343.png"
+ ALT="$ \vert E_n\vert$">, y en ocasiones por grandes cantidades,
+comparado con el caso de MC.
+
+Existen dos grandes familias de construcci&#243;n de secuencias de baja
+discrepancia<A NAME="tex2html61"
+  HREF="footnode.html#foot2792"><SUP>10.1</SUP></A>: <I>digital nets</I> e <I>integration lattices</I>.
+Las primeras construyen las denominadas <!-- MATH
+ $(t,m,s)-nets$
+ -->
+<IMG
+ WIDTH="117" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img353.png"
+ ALT="$ (t,m,s)-nets$">, y su
+principal caracter&#237;stica es que si una secuencia de <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img354.png"
+ ALT="$ n$"> puntos tiene
+baja discrepancia, entonces tambi&#233;n la tendr&#225; la misma secuencia con
+<IMG
+ WIDTH="44" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img355.png"
+ ALT="$ n-1$"> puntos. Ejemplos de estas secuencias son las de Halton, Sobol,
+Faure y la de Niederreiter&nbsp;[<A
+ HREF="node130.html#finance">49</A>]. Con estas secuencias se
+logran velocidades de convergencia del orden de <!-- MATH
+ $O\left(n^{-1}(\ln
+n)^t\right)$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img356.png"
+ ALT="$ O\left(n^{-1}(\ln
+n)^t\right)$">, que mejora asint&#243;ticamente la performance en relaci&#243;n
+al m&#233;todo de MC.
+
+<DIV ALIGN="CENTER"><A NAME="halton"></A><A NAME="2680"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 10.8:</STRONG>
+Secuencia de Halton.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="362" HEIGHT="253" ALIGN="BOTTOM" BORDER="0"
+ SRC="img357.png"
+ ALT="\includegraphics[width=8cm]{Software/halton.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV ALIGN="CENTER"><A NAME="aleatorio"></A><A NAME="2687"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 10.9:</STRONG>
+Secuencia de n&#250;meros aleatorios.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="362" HEIGHT="256" ALIGN="BOTTOM" BORDER="0"
+ SRC="img358.png"
+ ALT="\includegraphics[width=8cm]{Software/aleatorio.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Las <I>lattice rule</I> son secuencias construidas por la
+intersecci&#243;n entre el cubo unitario y una <I>integration
+lattice</I> (subconjunto de <!-- MATH
+ $\mathbb{R}^t$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img359.png"
+ ALT="$ \mathbb{R}^t$"> cerrado en la suma y la
+resta y que contiene a <!-- MATH
+ $\mathbb{Z}^t$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img360.png"
+ ALT="$ \mathbb{Z}^t$"> como subconjunto). Un caso
+especial de ellas es la secuencia de Korobov, donde el i-&#233;simo punto
+se construye de la siguiente manera:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="240" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img361.png"
+ ALT="$\displaystyle u_i=\frac{i}{n}(1,a,a^2,\ldots,a^{t-1}) \: mod \: 1$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img354.png"
+ ALT="$ n$"> es la cantidad de puntos y <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img165.png"
+ ALT="$ a$"> es un valor entero arbitrario. El
+valor de <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img165.png"
+ ALT="$ a$"> es muy importante; por ejemplo, el m&#225;ximo com&#250;n divisor
+entre <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img354.png"
+ ALT="$ n$"> y <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img165.png"
+ ALT="$ a$"> debe ser 1 para evitar valores repetidos en la
+secuencia. Pero adem&#225;s, es conveniente que la proyecci&#243;n de la
+secuencia sobre distintos subespacios de <!-- MATH
+ $\mathbb{R}^t$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img359.png"
+ ALT="$ \mathbb{R}^t$"> de menor
+dimensi&#243;n tenga tambi&#233;n la mayor cantidad posible de puntos y la
+menor discrepancia posible. L'Ecuyer y Lemieux construyeron tablas
+con valores de <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img354.png"
+ ALT="$ n$"> y <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img165.png"
+ ALT="$ a$"> que cumplen dichas propiedades
+[<A
+ HREF="node130.html#Lecuyer">48</A>].
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1760"
+  HREF="node104.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1756"
+  HREF="node102.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1750"
+  HREF="node102.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1758"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1761"
+  HREF="node104.html">Método RQMC</A>
+<B> Subir:</B> <A NAME="tex2html1757"
+  HREF="node102.html">Estimación Numérica: Métodos QMC</A>
+<B> Anterior:</B> <A NAME="tex2html1751"
+  HREF="node102.html">Estimación Numérica: Métodos QMC</A>
+ &nbsp <B>  <A NAME="tex2html1759"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

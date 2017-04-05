@@ -1,0 +1,280 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Método de Vogler</TITLE>
+<META NAME="description" CONTENT="Método de Vogler">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node22.html">
+<LINK REL="up" HREF="node22.html">
+<LINK REL="next" HREF="node24.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html639"
+  HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html635"
+  HREF="node22.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html631"
+  HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html637"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html640"
+  HREF="node24.html">Modelos de propagación</A>
+<B> Subir:</B> <A NAME="tex2html636"
+  HREF="node22.html">Atenuación por múltiples cuchillos</A>
+<B> Anterior:</B> <A NAME="tex2html632"
+  HREF="node22.html">Atenuación por múltiples cuchillos</A>
+ &nbsp <B>  <A NAME="tex2html638"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION03231000000000000000"></A><A NAME="vogler"></A>
+<BR>
+M&#233;todo de Vogler
+</H2>
+
+El m&#233;todo presentado en esta secci&#243;n, por las caracter&#237;sticas
+enumeradas a continuaci&#243;n, es el elegido para el c&#225;lculo de la
+atenuaci&#243;n por difracci&#243;n en m&#250;ltiples cuchillos.
+
+Como se vio anteriormente, todos los m&#233;todos sufren del problema de
+poder tomar en cuenta s&#243;lo una cantidad limitada de cuchillos en el
+perfil, cuando no padecen ciertas inexactitudes. Adem&#225;s, son todas
+aproximaciones heur&#237;sticas y no tienen rigor ni fundamento de ning&#250;n
+tipo, salvo la emp&#237;rica. El primer m&#233;todo que logr&#243; subsanar todos
+estos problemas (una soluci&#243;n te&#243;rica exacta para una cantidad
+arbitraria de obst&#225;culos) es el desarrollado por Vogler
+[<A
+ HREF="node130.html#Vogler_nuevo">11</A>][<A
+ HREF="node130.html#Vogler_viejo">12</A>] basado en un trabajo anterior
+de Furutsu [<A
+ HREF="node130.html#Furutsu">13</A>], quien llega a resultados acerca de la
+propagaci&#243;n sobre terrenos irregulares y en particular sobre
+obst&#225;culos romos<A NAME="tex2html15"
+  HREF="footnode.html#foot894"><SUP>4.1</SUP></A>, caracterizados por
+su radio de curvatura y constantes el&#233;ctricas del suelo. Vogler toma
+dichos resultados y calcula la atenuaci&#243;n en el caso particular en
+que los radios de curvatura tienden a cero. La atenuaci&#243;n (relativa
+a la atenuaci&#243;n en espacio vac&#237;o) as&#237; obtenida se calcula de la
+siguiente forma (la geometr&#237;a se define en la figura
+<A HREF="node23.html#perfilVogler">4.6</A>):
+
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="502" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.png"
+ ALT="$\displaystyle A_N = \frac{1}{2^N}C_N e^{\sigma_N}\left(\frac{2}{\pi^{1/2}}\rig...
+...\int_{\beta_N}^\infty e^{2f -\left(x_1^2+ \ldots +x_N^2\right)}dx_1\ldots dx_N$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="integralVogler">(4.3)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="394" HEIGHT="90" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$\displaystyle f= \begin{cases} \: 0 &amp; \quad N=1\  \sum\limits_{m=1}\limits^...
+...ta_m\right)\left(x_{m+1}-\beta_{m+1}\right) &amp; \quad N \geqslant 2 \end{cases}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="105" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.png"
+ ALT="$\displaystyle \sigma_N = \sum\limits_{m=1}\limits^{N}\beta_m^2$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="368" HEIGHT="79" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$\displaystyle C_N= \begin{cases} \: 1 &amp; \quad N=1\  \left[ \frac{r_2 r_3 \c...
+... \left(r_N+r_{N+1}\right)} \right]^{1/2} &amp; \quad N \geqslant 2\  \end{cases}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="99" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.png"
+ ALT="$\displaystyle r_T = \sum\limits_{m=1}\limits^{N+1}r_m$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="298" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img127.png"
+ ALT="$\displaystyle \alpha_m = \left[ \frac{r_m r_{m+2}}{(r_m+r_{m+1})(r_{m+1}+r_{m+2})} \right]^{1/2}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="237" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.png"
+ ALT="$\displaystyle \beta_m=\theta_m \left[ jk\frac{r_mr_{m+1}}{2(r_m+r_{m+1})} \right]^{1/2}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<DIV ALIGN="CENTER"><A NAME="perfilVogler"></A><A NAME="941"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 4.6:</STRONG>
+Representaci&#243;n de un perfil de cuchillos</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="451" HEIGHT="237" ALIGN="BOTTOM" BORDER="0"
+ SRC="img129.png"
+ ALT="\includegraphics[width=10cm]{Teorico/perfil_vogler.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Dado que uno de los extremos de integraci&#243;n es complejo, cabe la
+pregunta de cu&#225;l es la curva por donde se debe integrar. Como esta
+f&#243;rmula se basa en la definici&#243;n de la <I>error function</I>
+[<A
+ HREF="node130.html#abramowitz+stegun">7</A>], las restricciones son las mismas;
+entonces:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="145" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.png"
+ ALT="$\displaystyle arg(x_m) \xrightarrow{x_m\rightarrow \infty} \alpha$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER">donde&nbsp;<IMG
+ WIDTH="62" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.png"
+ ALT="$\displaystyle \vert\alpha\vert&lt;\frac{\pi}{4}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Vogler contin&#250;a luego transformando la integral en una serie cuyos
+t&#233;rminos dependen ahora de la <I>repeated error integral</I>
+[<A
+ HREF="node130.html#abramowitz+stegun">7</A>]. Esto lo justifica por un mero tema
+computacional, pues sostiene que la integral as&#237; planteada era en
+ese momento, de muy dif&#237;cil resoluci&#243;n.
+
+Vale la pena destacar que los par&#225;metros <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$ \alpha$"> y <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.png"
+ ALT="$ \beta$"> son
+fundamentales pues dan una idea somera del perfil en cuesti&#243;n. El
+primero mide qu&#233; tan apareados est&#225;n dos cuchillos sucesivos. Si
+<!-- MATH
+ $r_{m+1} << r_{m},r_{m+2}$
+ -->
+<IMG
+ WIDTH="144" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.png"
+ ALT="$ r_{m+1} &#171; r_{m},r_{m+2}$">, <!-- MATH
+ $\alpha_m \simeq 1$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.png"
+ ALT="$ \alpha_m \simeq 1$">, lo cual indica que
+los cuchillos <IMG
+ WIDTH="49" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.png"
+ ALT="$ m+1$"> y <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.png"
+ ALT="$ m$"> est&#225;n muy pr&#243;ximos entre s&#237; en comparaci&#243;n
+con el resto y podr&#237;an ser sustituidos por uno equivalente. La parte
+real de <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.png"
+ ALT="$ \beta$"> mide qu&#233; tan significativo es el cuchillo en
+cuesti&#243;n. Cuanto m&#225;s grande sea (menos negativo), mayor es la
+importancia del cuchillo en el perfil dado que cuanto mayor sea
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img137.png"
+ ALT="$ \theta$"> m&#225;s alto ser&#225; el cuchillo respecto al siguiente.
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html639"
+  HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html635"
+  HREF="node22.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html631"
+  HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html637"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html640"
+  HREF="node24.html">Modelos de propagación</A>
+<B> Subir:</B> <A NAME="tex2html636"
+  HREF="node22.html">Atenuación por múltiples cuchillos</A>
+<B> Anterior:</B> <A NAME="tex2html632"
+  HREF="node22.html">Atenuación por múltiples cuchillos</A>
+ &nbsp <B>  <A NAME="tex2html638"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

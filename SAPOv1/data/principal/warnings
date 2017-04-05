@@ -1,0 +1,17 @@
+No implementation found for style `hyperref'
+No implementation found for style `fancyhdr'
+
+principal.tex is newer than principal.aux: Please rerun latex.
+
+Substitution of arg to newlabelxx delayed.
+couldn't convert character =dot into available encodings
+
+ ...set $ACCENT_IMAGES  to get an image 
+couldn't convert character @cedil into available encodings
+couldn't convert character inodot into available encodings
+
+No number for "Lasmedidasenlaruta0ylapredicci&#243;nseg&#250;nelmodelodeVogler-Ikegamicon0.95demargendeseguridady10%detolerancia"
+
+No number for "Lasmedidasenlastresrutasysurespectivaestimaci&#243;nseg&#250;n<I>SAPO</I>paraelmodelodeVogler-Ikegamicon0.99demargendeseguridady1%detolerancia"
+
+principal.tex is newer than principal.bbl: Please rerun latex and bibtex.

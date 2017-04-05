@@ -1,0 +1,385 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Modelo de Erceg-SUI</TITLE>
+<META NAME="description" CONTENT="Modelo de Erceg-SUI">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node34.html">
+<LINK REL="previous" HREF="node25.html">
+<LINK REL="up" HREF="node24.html">
+<LINK REL="next" HREF="node33.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html766"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html762"
+  HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html756"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html764"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html767"
+  HREF="node33.html">Factores correctivos</A>
+<B> Subir:</B> <A NAME="tex2html763"
+  HREF="node24.html">Modelos de propagación</A>
+<B> Anterior:</B> <A NAME="tex2html757"
+  HREF="node31.html">Modelo de Okumura-Hata COST231</A>
+ &nbsp <B>  <A NAME="tex2html765"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION03320000000000000000"></A><A NAME="erceg"></A>
+<BR>
+Modelo de Erceg-SUI
+</H1>
+
+Este modelo, presentado por Vinko Erceg <I>et al.</I> en 1999
+[<A
+ HREF="node130.html#erceg">17</A>], es un modelo emp&#237;rico de predicci&#243;n de p&#233;rdida de
+camino basado en exhaustivas mediciones realizadas por <I>AT&amp;T
+Wireless Services</I> a lo largo del territorio de Estados Unidos,
+cubriendo 95 macroceldas de 1.9 GHz (por detalles de la campa&#241;a de
+medidas ver [<A
+ HREF="node130.html#erceg">17</A>]).
+
+Se aplica a entornos suburbanos, y a su vez distingue entre tres
+diferentes categor&#237;as de terreno. La caracterizaci&#243;n consiste en una
+curva lineal de potencia en funci&#243;n de distancia (ambos ejes en
+escala logar&#237;tmica), con una variaci&#243;n gaussiana entorno a dicha
+recta debida al efecto de <I>shadowing</I>, variaciones de
+potencia provocadas principalmente por la vegetaci&#243;n. El aspecto m&#225;s
+novedoso del modelo es que tanto el exponente de p&#233;rdida de camino
+<IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$ \gamma$"> (pendiente de la recta), como la desviaci&#243;n est&#225;ndar del
+shadowing, <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.png"
+ ALT="$ \sigma$">, var&#237;an aleatoriamente de una celda a otra, y
+esto es modelado estad&#237;sticamente mediante variables aleatorias
+gaussianas cuyos par&#225;metros dependen expl&#237;citamente de la altura del
+m&#243;vil y del tipo de terreno.
+
+Con este modelo se intentan cubrir algunas carencias de los modelos
+de predicci&#243;n ya existentes, de cara a los nuevos sistemas de
+comunicaci&#243;n (como servicios de telefon&#237;a fija inal&#225;mbrica) que
+tienen una mayor exigencia en el tipo de tr&#225;fico, y han motivado
+ciertas tendencias en los sistemas celulares como ser reducci&#243;n del
+tama&#241;o de las celdas, disminuci&#243;n de la altura de las radiobases y
+aumento de las frecuencias. Por ejemplo, el modelo de Okumura-Hata,
+que es el m&#225;s usado para entornos suburbanos de macroceldas, no da
+buenos resultados para los casos de altura de radiobase baja (menor
+a 30 m), altura de m&#243;vil alta (mayor que 2 m), terrenos ondulados o
+con alta densidad de vegetaci&#243;n; limitaciones que se corrigen en
+este nuevo modelo, de creciente popularidad en la actualidad. El
+mismo es parte de la caracterizaci&#243;n de los canales inal&#225;mbricos
+denominados <I>SUI channels</I>, desarrollados por el grupo de
+trabajo de la Stanford University Interim, que incluyen adem&#225;s el
+modelado del <I>mutipath delay spread</I>, las variaciones de
+se&#241;al (<I>fading</I>), el <I>Doppler spread</I> e interferencia
+[<A
+ HREF="node130.html#sui">18</A>].
+
+Como se dijo anteriormente, distingue dentro del entorno suburbano
+tres categor&#237;as diferentes de terreno. Las condiciones de mayor
+p&#233;rdida de camino se engloban en la categor&#237;a A, terreno ondulado
+con densidad de vegetaci&#243;n media a alta. Le sigue la categor&#237;a B,
+que incluye tanto terrenos ondulados con baja densidad de vegetaci&#243;n
+como terrenos llanos pero densamente arbolados. Finalmente, la
+categor&#237;a de condiciones m&#225;s favorables para la propagaci&#243;n
+(categor&#237;a C) es aqu&#233;lla caracterizada por terrenos llanos que a su
+vez poseen baja densidad de &#225;rboles. Ha dado tambi&#233;n buenos
+resultados la aplicaci&#243;n de este modelo en entornos urbanos
+[<A
+ HREF="node130.html#ercegComparacion">19</A>][<A
+ HREF="node130.html#sui">18</A>]; lo m&#225;s apropiado parecer&#237;a ser
+utilizar los par&#225;metros del terreno tipo B, aunque de acuerdo a las
+caracter&#237;sticas del entorno podr&#237;a tambi&#233;n usarse el A.
+
+La p&#233;rdida de camino en decibeles puede escribirse como:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="338" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="$\displaystyle PL (dB) = A+10\gamma\log(d/d_0)+s \qquad d\geqslant d_0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="PLerceg">(5.1)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.png"
+ ALT="$ A$"> est&#225; dado por la f&#243;rmula de espacio libre
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="152" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$\displaystyle A = 20\log(4\pi d_0/\lambda)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="Aerceg">(5.2)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+siendo <IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.png"
+ ALT="$ d_0=$">100 m la distancia de referencia y <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$ \lambda$"> la
+longitud de onda en metros.
+
+El exponente de p&#233;rdida de camino, <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$ \gamma$">, es una variable
+aleatoria gaussiana, que puede expresarse de la siguiente manera:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="208" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img162.png"
+ ALT="$\displaystyle \gamma = (a-bh_t+c/h_t)+x\sigma_\gamma$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+El t&#233;rmino entre par&#233;ntesis corresponde a la media y <!-- MATH
+ $\sigma_\gamma$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.png"
+ ALT="$ \sigma_\gamma$">
+a la desviaci&#243;n est&#225;ndar (<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img101.png"
+ ALT="$ x$"> es una v.a. <IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.png"
+ ALT="$ N[0,1]$">). <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$ h_t$"> es la
+altura (sobre el terreno) de la radiobase en metros; <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img165.png"
+ ALT="$ a$">, <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img166.png"
+ ALT="$ b$"> y <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img167.png"
+ ALT="$ c$">,
+con sus respectivas unidades, son constantes ajustadas
+emp&#237;ricamente, que al igual que <!-- MATH
+ $\sigma_\gamma$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.png"
+ ALT="$ \sigma_\gamma$"> dependen de la
+categor&#237;a de terreno y est&#225;n dadas por el cuadro <A HREF="node32.html#tabla:erceg">5.1</A>.
+
+El t&#233;rmino <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.png"
+ ALT="$ s$"> de la ecuaci&#243;n (<A HREF="node32.html#PLerceg">5.1</A>) representa el efecto
+de <I>shadowing</I> y se modela como una variable aleatoria
+lognormal de media nula, cuya desviaci&#243;n est&#225;ndar tambi&#233;n es una
+variable aleatoria gaussiana que puede escribirse como:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="106" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img169.png"
+ ALT="$\displaystyle \sigma = \mu_\sigma+z\sigma_\sigma$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+en donde <!-- MATH
+ $\mu_\sigma$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img170.png"
+ ALT="$ \mu_\sigma$"> es la media, <!-- MATH
+ $\sigma_\sigma$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img171.png"
+ ALT="$ \sigma_\sigma$"> la varianza y <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img172.png"
+ ALT="$ z$">
+una v.a. <IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.png"
+ ALT="$ N[0,1]$">. Los valores num&#233;ricos de estas contantes para las
+diferentes categor&#237;as de terreno pueden encontrarse tambi&#233;n en el
+cuadro <A HREF="node32.html#tabla:erceg">5.1</A>.
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="1132"></A>
+<TABLE>
+<CAPTION><STRONG>Tabla 5.1:</STRONG>
+Valores num&#233;ricos de los par&#225;metros del modelo de
+Erceg</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER" COLSPAN=3><I>Categor&#237;a de terreno</I></TD>
+</TR>
+<TR><TD ALIGN="CENTER">Par&#225;metro</TD>
+<TD ALIGN="CENTER">A</TD>
+<TD ALIGN="CENTER">B</TD>
+<TD ALIGN="CENTER">C</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img165.png"
+ ALT="$ a$"></TD>
+<TD ALIGN="CENTER">4.6</TD>
+<TD ALIGN="CENTER">4.0</TD>
+<TD ALIGN="CENTER">3.6</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><!-- MATH
+ $b\left(\text{m}^{-1}\right)$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img173.png"
+ ALT="$ b\left(\text{m}^{-1}\right)$"></TD>
+<TD ALIGN="CENTER">0.0075</TD>
+<TD ALIGN="CENTER">0.0065</TD>
+<TD ALIGN="CENTER">0.0050</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><!-- MATH
+ $c\text{(m)}$
+ -->
+<IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img167.png"
+ ALT="$ c$">(m)</TD>
+<TD ALIGN="CENTER">12.6</TD>
+<TD ALIGN="CENTER">17.1</TD>
+<TD ALIGN="CENTER">20.0</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><!-- MATH
+ $\sigma_\gamma$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.png"
+ ALT="$ \sigma_\gamma$"></TD>
+<TD ALIGN="CENTER">0.57</TD>
+<TD ALIGN="CENTER">0.75</TD>
+<TD ALIGN="CENTER">0.59</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><!-- MATH
+ $\mu_\sigma$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img170.png"
+ ALT="$ \mu_\sigma$"></TD>
+<TD ALIGN="CENTER">10.6</TD>
+<TD ALIGN="CENTER">9.6</TD>
+<TD ALIGN="CENTER">8.2</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><!-- MATH
+ $\sigma_\sigma$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img171.png"
+ ALT="$ \sigma_\sigma$"></TD>
+<TD ALIGN="CENTER">2.3</TD>
+<TD ALIGN="CENTER">3.0</TD>
+<TD ALIGN="CENTER">1.6</TD>
+</TR>
+</TABLE>
+<A NAME="tabla:erceg"></A>
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL>
+<LI><UL>
+<LI><A NAME="tex2html768"
+  HREF="node33.html">Factores correctivos</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html766"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html762"
+  HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html756"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html764"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html767"
+  HREF="node33.html">Factores correctivos</A>
+<B> Subir:</B> <A NAME="tex2html763"
+  HREF="node24.html">Modelos de propagación</A>
+<B> Anterior:</B> <A NAME="tex2html757"
+  HREF="node31.html">Modelo de Okumura-Hata COST231</A>
+ &nbsp <B>  <A NAME="tex2html765"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Archivos de entrada para generar manzanas</TITLE>
+<META NAME="description" CONTENT="Archivos de entrada para generar manzanas">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node82.html">
+<LINK REL="previous" HREF="node79.html">
+<LINK REL="up" HREF="node75.html">
+<LINK REL="next" HREF="node82.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1474"
+  HREF="node82.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1470"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1464"
+  HREF="node80.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1472"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1475"
+  HREF="node82.html">Archivos de entrada para</A>
+<B> Subir:</B> <A NAME="tex2html1471"
+  HREF="node75.html">Formato de archivos</A>
+<B> Anterior:</B> <A NAME="tex2html1465"
+  HREF="node80.html">SHP</A>
+ &nbsp <B>  <A NAME="tex2html1473"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04430000000000000000"></A><A NAME="formatoManzanas"></A>
+<BR>
+Archivos de entrada para generar manzanas
+</H1>
+
+En la secci&#243;n <A HREF="node57.html#funcGenEdif">7.5.1</A> se detall&#243; el funcionamiento del
+generador de datos de disposici&#243;n y tama&#241;o de edificios. Para
+utilizar dicha herramienta es necesario tener la disposici&#243;n y forma
+de las manzanas. Esta misma herramienta cuenta con la posibilidad de
+generar las manzanas a partir de un archivo de texto. La idea es
+especificar las coordenadas de las manzanas y el ancho de las
+calles, o directamente las coordenadas de las esquinas de las
+mismas.
+
+En el primer caso, se especifica las coordenadas de las manzanas (es
+decir, del cruce de las calles que la conforman) y el ancho de la
+calle correspondiente. Por ejemplo, la especificaci&#243;n de una manzana
+puede ser: <TT>
+<DIV ALIGN="LEFT">
+manzana
+<BR>
+0 0 100 0 100 100 0 100 0 0
+<BR>
+anchos
+<BR>
+10 10 10 10
+<BR>
+
+</DIV></TT>
+
+Lo anterior resulta en una manzana de cuatro esquinas ubicadas en
+las coordenadas (5, 5), (95, 5), (95, 95) y (5, 95). Por lo tanto el
+formato es: la palabra clave <TT>manzana</TT> al comienzo de cada
+una de las que se quiera crear, en la siguiente l&#237;nea las
+coordenadas de los cruce de las calles que la conforman finalizando
+con la que comenz&#243;, todas separadas por un espacio. Vale la pena
+aclarar que el orden de las esquinas debe ser tal que si se unen los
+puntos en el que orden que aparecen, se forme la manzana que se est&#225;
+intentando crear. En la siguiente l&#237;nea la palabra clave
+<TT>anchos</TT>, luego de la cual se especifican los anchos de las
+calles.
+
+Ahora bien, si se cuenta con las coordenadas de las esquinas, se
+puede especificar dichas coordenadas e ingresar anchos todos iguales
+a cero. Por ejemplo, si se quiere obtener lo mismo que en el ejemplo
+anterior basta con escribir: <TT>
+<DIV ALIGN="LEFT">
+manzana
+<BR>
+5 5 95 5 95 95 5 95 5 5
+<BR>
+anchos
+<BR>
+0 0 0 0
+
+</DIV></TT>
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1474"
+  HREF="node82.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1470"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1464"
+  HREF="node80.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1472"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1475"
+  HREF="node82.html">Archivos de entrada para</A>
+<B> Subir:</B> <A NAME="tex2html1471"
+  HREF="node75.html">Formato de archivos</A>
+<B> Anterior:</B> <A NAME="tex2html1465"
+  HREF="node80.html">SHP</A>
+ &nbsp <B>  <A NAME="tex2html1473"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Comportamiento dinámico</TITLE>
+<META NAME="description" CONTENT="Comportamiento dinámico">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node74.html">
+<LINK REL="previous" HREF="node63.html">
+<LINK REL="up" HREF="node62.html">
+<LINK REL="next" HREF="node74.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1368"
+  HREF="node74.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1364"
+  HREF="node62.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1358"
+  HREF="node72.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1366"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1369"
+  HREF="node74.html">Manejo de errores</A>
+<B> Subir:</B> <A NAME="tex2html1365"
+  HREF="node62.html">Arquitectura de software</A>
+<B> Anterior:</B> <A NAME="tex2html1359"
+  HREF="node72.html">El paquete archivos</A>
+ &nbsp <B>  <A NAME="tex2html1367"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04320000000000000000">
+Comportamiento din&#225;mico</A>
+</H1>
+
+En la figura <A HREF="node73.html#cu">8.13</A> se puede ver los casos de uso m&#225;s relevantes
+de <I>SAPO</I>. En los diagramas siguientes se muestra a grandes
+rasgos la interacci&#243;n entre los principales paquetes que intervienen
+en dichos casos de uso. El caso de estimaci&#243;n de una predicci&#243;n, por
+ser de especial importancia es representado m&#225;s en detalle, mediante
+un diagrama parcial de colaboraci&#243;n de clases (figura
+<A HREF="node73.html#unaPrediccion">8.18</A>).
+
+<DIV ALIGN="CENTER"><A NAME="cu"></A><A NAME="2059"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 8.13:</STRONG>
+Diagrama parcial de casos de uso</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="304" HEIGHT="385" ALIGN="BOTTOM" BORDER="0"
+ SRC="img262.png"
+ ALT="\includegraphics[width=6.9cm]{Software/diagramaCUs.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV ALIGN="CENTER"><A NAME="2066"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 8.14:</STRONG>
+Creaci&#243;n de un proyecto</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="398" HEIGHT="323" ALIGN="BOTTOM" BORDER="0"
+ SRC="img263.png"
+ ALT="\includegraphics[width=9cm]{Software/diagramaCU1.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV ALIGN="CENTER"><A NAME="2072"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 8.15:</STRONG>
+Importaci&#243;n de datos de entorno</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="512" HEIGHT="438" ALIGN="BOTTOM" BORDER="0"
+ SRC="img264.png"
+ ALT="\includegraphics[width=11.5cm]{Software/diagramaCU2.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV ALIGN="CENTER"><A NAME="2078"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 8.16:</STRONG>
+Creaci&#243;n de un modelo de propagaci&#243;n</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="556" HEIGHT="242" ALIGN="BOTTOM" BORDER="0"
+ SRC="img265.png"
+ ALT="\includegraphics[width=12.5cm]{Software/diagramaCU3.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV ALIGN="CENTER"><A NAME="2084"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 8.17:</STRONG>
+Creaci&#243;n de la red</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="556" HEIGHT="263" ALIGN="BOTTOM" BORDER="0"
+ SRC="img266.png"
+ ALT="\includegraphics[width=12.5cm]{Software/diagramaCU4.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV ALIGN="CENTER"><A NAME="unaPrediccion"></A><A NAME="2090"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 8.18:</STRONG>
+Diagrama de colaboraci&#243;n de una
+predicci&#243;n</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="633" HEIGHT="502" ALIGN="BOTTOM" BORDER="0"
+ SRC="img267.png"
+ ALT="\includegraphics[width=14cm]{Software/una_prediccion2.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV ALIGN="CENTER"><A NAME="2097"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 8.19:</STRONG>
+Guardado de un proyecto</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="444" HEIGHT="292" ALIGN="BOTTOM" BORDER="0"
+ SRC="img268.png"
+ ALT="\includegraphics[width=10cm]{Software/diagramaCU7.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1368"
+  HREF="node74.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1364"
+  HREF="node62.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1358"
+  HREF="node72.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1366"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1369"
+  HREF="node74.html">Manejo de errores</A>
+<B> Subir:</B> <A NAME="tex2html1365"
+  HREF="node62.html">Arquitectura de software</A>
+<B> Anterior:</B> <A NAME="tex2html1359"
+  HREF="node72.html">El paquete archivos</A>
+ &nbsp <B>  <A NAME="tex2html1367"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

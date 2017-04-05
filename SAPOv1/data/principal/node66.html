@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>El paquete capas</TITLE>
+<META NAME="description" CONTENT="El paquete capas">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node67.html">
+<LINK REL="previous" HREF="node65.html">
+<LINK REL="up" HREF="node63.html">
+<LINK REL="next" HREF="node67.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1286"
+  HREF="node67.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1282"
+  HREF="node63.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1276"
+  HREF="node65.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1284"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1287"
+  HREF="node67.html">El paquete raster</A>
+<B> Subir:</B> <A NAME="tex2html1283"
+  HREF="node63.html">Arquitectura de paquetes</A>
+<B> Anterior:</B> <A NAME="tex2html1277"
+  HREF="node65.html">El paquete proyecto</A>
+ &nbsp <B>  <A NAME="tex2html1285"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION04313000000000000000">
+El paquete capas</A>
+</H2>
+
+Como se vio en la secci&#243;n <A HREF="node44.html#gis">6.2</A>, las aplicaciones GIS manejan el
+concepto de capas (<I>layers</I>). En el caso de <I>SAPO</I>, se
+definen diferentes capas que se superponen para formar el denominado
+<I>Mapa</I>, una entidad de suma importancia pues engloba los datos
+de la topolog&#237;a del terreno junto con la informaci&#243;n de la ubicaci&#243;n
+de los sitios, haciendo posible el despliegue en pantalla de toda
+esa informaci&#243;n bajo un &#250;nico sistema de coordenadas.
+
+Para implementar dichas capas se crearon las clases
+<I>CapaRaster</I> y <I>CapaVectorial</I>, con algunos m&#233;todos &#250;tiles
+para el manejo de cada uno de los tipos de datos GIS explicados en
+la secci&#243;n <A HREF="node45.html#rasterYvectorial">6.2.1</A>(ver diagrama <A HREF="node66.html#paqCapas">8.4</A>). Cada
+capa est&#225; constituida por una
+<I>org.geotools.feature.FeatureCollection</I>, es decir, un conjunto
+de features, y debe tener un estilo asociado a fin de poder ser
+desplegada en pantalla.
+
+El estilo (<I>org.geotools.styling.Style</I>) define las reglas que
+deben seguirse en la representaci&#243;n de los componentes de la capa.
+Por ejemplo si los mismos son pol&#237;gonos, establece el color del &#225;rea
+interior as&#237; como el color y el grosor de las l&#237;neas que componen el
+borde. Los estilos de cada una de las diferentes capas est&#225;n
+definidos en un sub-paquete llamado <I>capas.estilos</I>.
+
+<DIV ALIGN="CENTER"><A NAME="paqCapas"></A><A NAME="1898"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 8.4:</STRONG>
+Diagrama parcial de clases del paquete
+capas</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="361" HEIGHT="432" ALIGN="BOTTOM" BORDER="0"
+ SRC="img249.png"
+ ALT="\includegraphics[width=8cm]{Software/capas.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Se cre&#243; la interfaz <I>ElementoCapa</I> que deber&#225;n implementar
+todos aquellos objetos que pretendan ser a&#241;adidos a una capa. Dicha
+interfaz contiene el m&#233;todo <I>getFeature</I>, que debe devolver un
+feature, capaz de ser agregado a la FeatureCollection que constituye
+la capa. Las clases que implementan dicha interfaz son: Grilla,
+Manzana, Edificio y Sitio.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1286"
+  HREF="node67.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1282"
+  HREF="node63.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1276"
+  HREF="node65.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1284"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1287"
+  HREF="node67.html">El paquete raster</A>
+<B> Subir:</B> <A NAME="tex2html1283"
+  HREF="node63.html">Arquitectura de paquetes</A>
+<B> Anterior:</B> <A NAME="tex2html1277"
+  HREF="node65.html">El paquete proyecto</A>
+ &nbsp <B>  <A NAME="tex2html1285"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

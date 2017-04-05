@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Cálculo del ángulo de orientación y ancho de la calle</TITLE>
+<META NAME="description" CONTENT="Cálculo del ángulo de orientación y ancho de la calle">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node98.html">
+<LINK REL="previous" HREF="node94.html">
+<LINK REL="up" HREF="node89.html">
+<LINK REL="next" HREF="node96.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1658"
+  HREF="node96.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1654"
+  HREF="node89.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1648"
+  HREF="node94.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1656"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1659"
+  HREF="node96.html">Ángulo de orientación de</A>
+<B> Subir:</B> <A NAME="tex2html1655"
+  HREF="node89.html">Algoritmos y cálculos implementados</A>
+<B> Anterior:</B> <A NAME="tex2html1649"
+  HREF="node94.html">Cálculo de alturas efectivas</A>
+ &nbsp <B>  <A NAME="tex2html1657"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04540000000000000000"></A><A NAME="orientacion"></A>
+<BR>
+C&#225;lculo del &#225;ngulo de orientaci&#243;n y ancho de la calle
+</H1>
+
+Como se vio en el cap&#237;tulo <A HREF="node24.html#cap:modelos">5</A>, hay algunos modelos de
+propagaci&#243;n (COST231-WI, MOPEM, etc.) que consideran la orientaci&#243;n
+y el ancho de las calles como unos de los tantos factores que
+inciden en el an&#225;lisis de predicci&#243;n. Por tal motivo, se incluy&#243;
+dentro de la herramienta de software un algoritmo para
+determinar el &#225;ngulo que forma la calle donde est&#225; ubicado el m&#243;vil
+con la recta que une a &#233;ste con la radiobase, y a su vez el ancho de
+dicha calle.
+
+El algoritmo planteado requiere la capa de manzanas debido a que se
+considera una calle al espacio entre dos manzanas adyacentes. Como
+se vio en la secci&#243;n <A HREF="node68.html#paqueteVectorial">8.1.5</A>, una manzana es
+representada como una geometr&#237;a (pol&#237;gono) y esto permite utilizar
+las operaciones geom&#233;tricas disponibles en la biblioteca JTS.
+
+Dada la ubicaci&#243;n del m&#243;vil, el primer paso consiste en establecer
+algunas restricciones para aumentar la eficiencia del algoritmo en
+lo que se refiere a tiempos de c&#225;lculo. Una de ellas es descartar
+aquellas posiciones del m&#243;vil que se encuentren dentro de la
+superficie de una manzana, teniendo en cuenta que el posterior
+c&#225;lculo de atenuaci&#243;n en dichos puntos no agrega valor a la
+predicci&#243;n ya que &#250;nicamente se consideran ambientes outdoor. Para
+ello, se determina si el m&#243;vil est&#225; contenido dentro de una
+manzana o no; en el caso de estarlo, no se procede a realizar el
+c&#225;lculo de la orientaci&#243;n y del ancho de la calle en dicho punto.
+
+Otra de las hip&#243;tesis consiste en, dada la ubicaci&#243;n del m&#243;vil,
+considerar &#250;nicamente las manzanas que se encuentren cercanas a
+&#233;l, dado que si el mismo se halla muy lejos de la calle pierde
+sentido tomar la misma como referencia para el c&#225;lculo de la
+orientaci&#243;n y del ancho. Para obtener las manzanas m&#225;s pr&#243;ximas al
+m&#243;vil, se crea un c&#237;rculo con centro en la ubicaci&#243;n del mismo y
+radio fijo y se calcula la intersecci&#243;n entre la manzana y el
+c&#237;rculo. En todos los casos en que la intersecci&#243;n no sea nula, es
+decir, que la manzana est&#233; contenida en el &#225;rea de inter&#233;s, se
+considera la respectiva manzana como ``cercana al m&#243;vil'', y luego
+es considerada para el c&#225;lculo de la orientaci&#243;n y del ancho de la
+calle.
+
+Tomando como base las hip&#243;tesis anteriormente descritas, se
+procede a buscar la cuadra que est&#233; a una menor distancia del
+m&#243;vil dentro de todas las que forman parte de las manzanas
+cercanas a &#233;l. Para realizar esta medida el algoritmo recorre
+todas las cuadras de las manzanas ``cercanas'' hasta quedarse con
+la que diste en una menor medida de la ubicaci&#243;n del m&#243;vil. Si se
+observa la figura <A HREF="node95.html#orientacion">10.4</A>, la menor distancia desde el
+m&#243;vil a alguna de las manzanas cercanas a &#233;l est&#225; dada por
+<I>d</I>.
+
+<DIV ALIGN="CENTER"><A NAME="orientacion"></A><A NAME="2430"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 10.4:</STRONG>
+Orientaci&#243;n de la calle donde se encuentra el m&#243;vil
+respecto a la radiobase</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="271" HEIGHT="265" ALIGN="BOTTOM" BORDER="0"
+ SRC="img302.png"
+ ALT="\includegraphics[width=6cm]{Software/orientacioncalles.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL>
+<LI><UL>
+<LI><A NAME="tex2html1660"
+  HREF="node96.html">Ángulo de orientación de la calle</A>
+<LI><A NAME="tex2html1661"
+  HREF="node97.html">Ancho de la calle</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1658"
+  HREF="node96.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1654"
+  HREF="node89.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1648"
+  HREF="node94.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1656"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1659"
+  HREF="node96.html">Ángulo de orientación de</A>
+<B> Subir:</B> <A NAME="tex2html1655"
+  HREF="node89.html">Algoritmos y cálculos implementados</A>
+<B> Anterior:</B> <A NAME="tex2html1649"
+  HREF="node94.html">Cálculo de alturas efectivas</A>
+ &nbsp <B>  <A NAME="tex2html1657"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

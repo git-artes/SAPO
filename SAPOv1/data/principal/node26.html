@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Modelo de Okumura</TITLE>
+<META NAME="description" CONTENT="Modelo de Okumura">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node27.html">
+<LINK REL="previous" HREF="node25.html">
+<LINK REL="up" HREF="node25.html">
+<LINK REL="next" HREF="node27.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html695"
+  HREF="node27.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html691"
+  HREF="node25.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html685"
+  HREF="node25.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html693"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html696"
+  HREF="node27.html">Modelo de Okumura-Hata</A>
+<B> Subir:</B> <A NAME="tex2html692"
+  HREF="node25.html">Modelo de Okumura-Hata</A>
+<B> Anterior:</B> <A NAME="tex2html686"
+  HREF="node25.html">Modelo de Okumura-Hata</A>
+ &nbsp <B>  <A NAME="tex2html694"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION03311000000000000000">
+Modelo de Okumura</A>
+</H2>
+Okumura <I>et al.</I>&nbsp;[<A
+ HREF="node130.html#okumura">14</A>] desarrollaron en 1968 un
+m&#233;todo para predecir el valor mediano de la p&#233;rdida de camino en
+base a una serie de medidas en y alrededor de la ciudad de Tokio.
+Aunque fue de los primeros trabajos en tratar la propagaci&#243;n en
+entornos urbanos y proponer un modelo para predecir la p&#233;rdida de
+camino, hasta el d&#237;a de hoy contin&#250;a siendo uno de los modelos m&#225;s
+usados (en su versi&#243;n anal&#237;tica y mejorada, que se ver&#225; m&#225;s
+adelante) por su sencillez, razonable precisi&#243;n y versatilidad.
+
+El m&#233;todo consiste en hallar la p&#233;rdida de camino (relativa a la
+atenuaci&#243;n en vac&#237;o) mediante curvas creadas por los autores. Est&#225;
+conformado por varios t&#233;rminos, donde el que podr&#237;a denominarse
+``principal'' depende de la distancia entre el m&#243;vil y la radiobase
+y de la frecuencia de transmisi&#243;n (<!-- MATH
+ $A_{mu}(f,d)$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$ A_{mu}(f,d)$">, ver figura
+<A HREF="node26.html#curvaOkumura">5.1</A>). &#201;sta es la p&#233;rdida relativa al vac&#237;o para
+entornos urbanos sobre terrenos suavemente ondulados con altura
+efectiva de 200 m y 3 m de antena trasmisora y receptora
+respectivamente; para el probable caso en que las condiciones
+mencionadas no se cumplan existen factores correctivos.
+
+<DIV ALIGN="CENTER"><A NAME="curvaOkumura"></A><A NAME="1000"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.1:</STRONG>
+Representaci&#243;n gr&#225;fica de la mediana de la p&#233;rdida de
+camino en funci&#243;n de la frecuencia y la distancia seg&#250;n el m&#233;todo de
+Okumura</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="271" HEIGHT="283" ALIGN="BOTTOM" BORDER="0"
+ SRC="img139.png"
+ ALT="\includegraphics[width=6cm]{Teorico/curvaOkuPrin.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Por ejemplo, de las curvas que se pueden apreciar en la figura <A HREF="node26.html#OkumuraCorrecciones">5.2</A> se
+pueden obtener correcciones al valor de la p&#233;rdida de camino debidas
+a otras alturas de transmisor y receptor (<IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img140.png"
+ ALT="$ H_{tu}$"> y <IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.png"
+ ALT="$ H_{ru}$">).
+La p&#233;rdida de camino resulta:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="287" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.png"
+ ALT="$\displaystyle L_{Okumura} = L_{EL}+A_{mu}+H_{tu}+H_{ru}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde <IMG
+ WIDTH="36" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img143.png"
+ ALT="$ L_{EL}$"> es la atenuaci&#243;n por la propagaci&#243;n en vac&#237;o vista en
+la secci&#243;n <A HREF="node12.html#vacio">3.1</A>.
+
+<DIV ALIGN="CENTER"><A NAME="OkumuraCorrecciones"></A><A NAME="1020"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.2:</STRONG>
+Correcciones para altura del transmisor y receptor seg&#250;n el
+m&#233;todo de Okumura</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="271" HEIGHT="228" ALIGN="BOTTOM" BORDER="0"
+ SRC="img144.png"
+ ALT="\includegraphics[width=6cm]{Teorico/curvaOkuRec.eps}">
+<IMG
+ WIDTH="271" HEIGHT="275" ALIGN="BOTTOM" BORDER="0"
+ SRC="img145.png"
+ ALT="\includegraphics[width=6cm]{Teorico/curvaOkuTrans.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+&#201;stas no son las &#250;nicas correcciones disponibles. Existen tambi&#233;n
+factores correctivos que toman en cuenta el entorno (urbano,
+suburbano y rural), la regularidad del terreno y la orientaci&#243;n de las
+calles, todos en forma gr&#225;fica.
+
+El modelo tiene algunos problemas no menores. Es casi puramente
+gr&#225;fico, lo que lo hace muy dif&#237;cil de implementar en software. En
+el momento en que se desarroll&#243; se ten&#237;an en mente &#250;nicamente
+macroceldas donde la antena transmisora estuviera por encima de las
+edificaciones circundantes, dando resultados err&#243;neos en caso
+contrario. Hoy en d&#237;a, con el uso muy frecuente de micro y
+picoceldas el modelo se vuelve en esos casos inaplicable. Otro
+factor a tener en cuenta es que, dado que las medidas se tomaron en
+Tokio, la correlaci&#243;n entre las medidas reales y la predicci&#243;n es
+muy dependiente de que el entorno sea similar al de dicha ciudad. El
+m&#233;todo no especifica qu&#233; hacer cuando alg&#250;n par&#225;metro queda por
+fuera del dominio de las funciones que aparecen en las gr&#225;ficas, se
+puede extrapolar pero no se asegura que eso sea lo m&#225;s correcto.
+Tambi&#233;n algunas definiciones pueden devolver valores inutilizables
+(por ejemplo, si la antena trasmisora es m&#225;s baja que el terreno
+circundante su altura efectiva tal cual la define Okumura resultar&#237;a
+negativa).
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html695"
+  HREF="node27.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html691"
+  HREF="node25.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html685"
+  HREF="node25.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html693"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html696"
+  HREF="node27.html">Modelo de Okumura-Hata</A>
+<B> Subir:</B> <A NAME="tex2html692"
+  HREF="node25.html">Modelo de Okumura-Hata</A>
+<B> Anterior:</B> <A NAME="tex2html686"
+  HREF="node25.html">Modelo de Okumura-Hata</A>
+ &nbsp <B>  <A NAME="tex2html694"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

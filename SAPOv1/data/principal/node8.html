@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>El concepto celular</TITLE>
+<META NAME="description" CONTENT="El concepto celular">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html425"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html421"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html415"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html423"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html426"
+  HREF="node9.html">Caracterización de las radiobases</A>
+<B> Subir:</B> <A NAME="tex2html422"
+  HREF="node7.html">Conceptos preliminares</A>
+<B> Anterior:</B> <A NAME="tex2html416"
+  HREF="node7.html">Conceptos preliminares</A>
+ &nbsp <B>  <A NAME="tex2html424"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION02210000000000000000">
+El concepto celular</A>
+</H1>
+
+El dise&#241;o de red para las comunicaciones m&#243;viles est&#225; basado en el
+concepto celular, concepto introducido por <I>Bell Laboratories</I>
+en la d&#233;cada de 1970. El sistema celular divide la regi&#243;n en celdas,
+cubiertas cada una por un sistema de radio (radiobase) que hace
+posible la conexi&#243;n de los terminales m&#243;viles a la red, y un sistema
+de conmutaci&#243;n (central m&#243;vil celular, MSC/MTSO) que permite la
+interconexi&#243;n entre las estaciones base y la conexi&#243;n a la red
+conmutada de telefon&#237;a p&#250;blica (PSTN). En la figura <A HREF="node8.html#celdas">2.1</A> se
+puede ver un esquema t&#237;pico de una red celular, las celdas suelen
+representarse como un &#225;rea hexagonal a fin de facilitar el an&#225;lisis.
+
+<DIV ALIGN="CENTER"><A NAME="celdas"></A><A NAME="132"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 2.1:</STRONG>
+Esquema de una red celular</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="408" HEIGHT="188" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="\includegraphics[width=9cm]{Introduccion/celdas.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Los principales elementos que diferencian al sistema celular de
+otros sistemas radio usados anteriormente son el uso de varias
+radiobases con relativa poca cobertura, y la capacidad de reutilizar
+en distintas zonas geogr&#225;ficas separadas una determinada distancia
+las frecuencias que fueran asignadas para los canales de
+comunicaci&#243;n del sistema. Esto se traduce en:
+
+<UL>
+<LI>Aumento en la capacidad del sistema
+</LI>
+<LI>Reducci&#243;n en el uso de potencia
+</LI>
+<LI>Mejor cobertura
+</LI>
+</UL>
+La reutilizaci&#243;n de frecuencias permite un uso m&#225;s eficiente del
+espectro radioel&#233;ctrico, que es un recurso escaso y caro. A la hora
+de planificar el sistema es necesario estimar el &#225;rea que habr&#225;n de
+cubrir las radiobases, as&#237; como tambi&#233;n los canales que se le debe
+asignar a cada una de ellas, generando as&#237; los llamados
+<I>patrones de reutilizaci&#243;n</I> de las celdas. Esto debe hacerse
+minimizando los efectos de interferencia co-canal (se&#241;ales
+interferentes con la misma portadora que la se&#241;al &#250;til), para
+cumplir con determinados requerimientos de calidad de se&#241;al, m&#225;s
+espec&#237;ficamente con un nivel m&#237;nimo de relaci&#243;n portadora/se&#241;al
+interferente (C/I o CIR).
+
+Como se dijo anteriormente, el elemento responsable de la
+transmisi&#243;n de la se&#241;al en la comunicaci&#243;n bidireccional con el
+terminal es la radiobase (RBS o ERB). Se denomina <I>&#225;rea de
+cobertura</I> de una radiobase al &#225;rea geogr&#225;fica en la cual un
+terminal m&#243;vil puede establecer una comunicaci&#243;n usando esa
+radiobase como interfase con la red. Depende de la se&#241;al emitida por
+la propia radiobase, y tiene una fuerte dependencia de la geograf&#237;a
+y edificaci&#243;n de la zona. La cobertura continua se logra mediante el
+mecanismo de <I>handover</I>, esto es, el proceso de pasar una
+comunicaci&#243;n de un canal en una celda a un nuevo canal en otra celda
+o en la misma sin que se corte la comunicaci&#243;n. El manejo de estas
+transiciones es un factor vital en un sistema celular, si bien le
+agrega cierta complejidad.
+
+Seg&#250;n la capacidad y cobertura requeridas en el &#225;rea de influencia
+de las redes, su dise&#241;o implicar&#225; la utilizaci&#243;n de celdas de
+diferentes radios y las antenas de las radiobases presentar&#225;n
+diferentes alturas y potencias de transmisi&#243;n. De all&#237; surge la
+clasificaci&#243;n de las celdas en tres tipos:
+
+<UL>
+<LI><I>Macroceldas</I>. Son los tipos de celdas m&#225;s comunes
+para operaci&#243;n celular, proveen un &#225;rea de cobertura de radio entre
+1 km y 30 km. Las antenas se montan sobre el nivel medio de las
+edificaciones y tienen una potencia de salida que ronda en el
+entorno de las decenas de Watts. Se utilizan en ambientes
+<I>outdoor</I> (exteriores).
+</LI>
+<LI><I>Microceldas</I>. Tienen un radio de cobertura que est&#225; entre 100 m y
+1000 m. Incrementan la capacidad de la red, ya que permiten hacer un
+mayor manejo de tr&#225;fico y hacen posible la utilizaci&#243;n de potencias
+de transmisi&#243;n muy bajas (unos pocos Watts). A diferencias de las
+macroceldas, las antenas se montan debajo del nivel medio de
+edificaciones. Al igual que &#233;stas se utilizan en ambientes
+<I>outdoor</I>.
+</LI>
+<LI><I>Picoceldas</I>. Proveen una cobertura a&#250;n m&#225;s localizada que
+las microceldas, con un radio de cobertura t&#237;pico menor a 100 m. Se
+utilizan generalmente para brindar cobertura en ambientes <I>indoor</I>
+(cerrados) identificados como de muy alto tr&#225;fico, tales como centros
+comerciales y aeropuertos, donde existe una alta densidad de usuarios con
+un patr&#243;n de comportamiento de baja movilidad.
+</LI>
+</UL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html425"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html421"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html415"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html423"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html426"
+  HREF="node9.html">Caracterización de las radiobases</A>
+<B> Subir:</B> <A NAME="tex2html422"
+  HREF="node7.html">Conceptos preliminares</A>
+<B> Anterior:</B> <A NAME="tex2html416"
+  HREF="node7.html">Conceptos preliminares</A>
+ &nbsp <B>  <A NAME="tex2html424"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

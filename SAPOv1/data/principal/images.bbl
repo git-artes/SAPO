@@ -1,0 +1,293 @@
+\providecommand{\url}[1]{#1}
+\begin{thebibliography}{10}
+
+\bibitem{swEricsson}
+{Ericsson TEMS Cellplanner Universal 6.0}.
+\newblock {http://www.ericsson.com/products/
+  hp/TEMS\_Cellplanner\_Universal\_6\_0\_pos.shtml [visitada en marzo de
+  2005]}.
+
+\bibitem{swAWE}
+{AWE Communications ProMan}.
+\newblock http://www.awe-communications.com [visitada en marzo de 2005].
+
+\bibitem{swTeleworx}
+{Teleworx Xcalibur}.
+\newblock http://www.teleworx.com/produx/xcalibur.html [visitada en marzo de
+  2005].
+
+\bibitem{swMaXPlan}
+{Expert Wireless Solutions MaXPlan}.
+\newblock http://www.expertwireless.com/prod03.htm [visitada en marzo de 2005].
+
+\bibitem{fading}
+{G. Jorcín, A. Jorge y J. Zavodnikoff}.
+\newblock ``{C}aracterización del fading en {M}ontevideo''.
+\newblock {\em Proyecto de fin de carrera, Facultad de Ingeniería, UDELAR},
+  Julio 2002.
+
+\bibitem{parsonsLibro}
+J.D. Parsons.
+\newblock {\em {T}he Mobile Radio Propagation Channel}.
+\newblock John Wiley \& Sons Ltd, second edition, 2000.
+
+\bibitem{abramowitz+stegun}
+M.~Abramowitz e~I.~A.~Stegun.
+\newblock {\em {H}andbook of Mathematical Functions with Formulas, Graphs, and
+  Mathematical Tables}.
+\newblock Dover, New York, ninth dover printing, tenth gpo printing edition,
+  1964.
+\newblock ISBN 0-486-61272-4.
+
+\bibitem{Bullington}
+K.~Bullington.
+\newblock ``{R}adio propagation at frequencies above 30 mc.''.
+\newblock {\em Proc IRE}, 35(10):1122--1136, 1947.
+
+\bibitem{Epstein+Peterson}
+J.~Epstein y~D.W.~Peterson.
+\newblock ``{A}n experimental study of wave propagation at 850 mc''.
+\newblock {\em Proc IRE}, 41(5):595--611, 1953.
+
+\bibitem{Deygout}
+J.~Deygout.
+\newblock ``{M}ultiple knife-edge diffraction of microwaves''.
+\newblock {\em IEEE Transaction on Antennas and Propagation''}, 14(4):480--489,
+  1966.
+
+\bibitem{Vogler_nuevo}
+L.~E. Vogler.
+\newblock ``{A}n attenuation function for multiple knife-edge diffraction''.
+\newblock {\em Radio Science}, 17(6):1541--1546, Noviembre-Diciembre 1982.
+
+\bibitem{Vogler_viejo}
+L.~E. Vogler.
+\newblock ``{T}he attenuation of electromagnetic waves by multiple knife-edge
+  diffraction''.
+\newblock {\em NTIA Rep. 81-86}, 1981.
+
+\bibitem{Furutsu}
+K.~Furutsu.
+\newblock ``{O}n the theory of radio wave propagation over inhomogeneous
+  earth''.
+\newblock {\em Journal of Research}, 67D(1):39--62, Enero-Febrero 1963.
+
+\bibitem{okumura}
+{Y. Okumura, E. Ohmori, T. Kawano y K. Fukuda}.
+\newblock ``{F}ield strength and its variability in the {VHF} and {UHF} land
+  mobile radio service''.
+\newblock {\em Review of the Electrical Communications Laboratory},
+  44(1):825--873, {S}etiembre-{O}ctubre 1968.
+
+\bibitem{hata}
+M.~Hata.
+\newblock ``{E}mpirical formula for propagation loss in land mobile radio
+  services''.
+\newblock {\em IEEE Trans. on Vehicular Tech.}, 29(3):317--325, {A}gosto 1980.
+
+\bibitem{cost231Hata}
+COST 231.
+\newblock ``{D}igital mobile radio towards future generation systems''.
+\newblock Technical report, 1999.
+
+\bibitem{erceg}
+{V. Erceg, L.J. Greenstein, S.Y. Tjandra, S.R. Parkoff, A. Gupta, B. Culik,
+  A.A. Julius y R. Bianchi}.
+\newblock ``{A}n empirically based path loss model for wireless chanels in
+  suburban enviroments''.
+\newblock {\em IEEE Journal on Selected Areas of Communications},
+  17(7):1205--1211, Julio 1999.
+
+\bibitem{sui}
+{V. Erceg, K.V.S. Hari, M.S. Smith, D.S. Baum, K.P. Sheikh, C. Tappenden, J.M.
+  Costa, C. Bushue, A. Sarajedini, R. Schwartz, D. Branlund, T. Kaitz y D.
+  Trinkwon}.
+\newblock ``{C}hannel models for fixed wireless applications''.
+\newblock {\em IEEE 802.16 Broadband Wireless Access Working Group}, Julio
+  2001.
+
+\bibitem{ercegComparacion}
+{V.S. Abhayawardhana, I.J. Wassell, D. Crosby, M.P. Sellars y M.G. Brown}.
+\newblock ``{C}omparison of empirical propagation path loss models for fixed
+  wireless access systems''.
+\newblock {\em 61st IEEE Vehicular Technology Conference}, 1:73--77, Mayo-Junio
+  2005.
+
+\bibitem{ercegFC1}
+T.S.~Chu y~L.J.Greenstein.
+\newblock ``{A} quantification of link budget differences between the cellular
+  and {PCS} bands''.
+\newblock {\em IEEE Trans. Veh. Technol.}, 48(1):60--65, Enero 1999.
+
+\bibitem{ercegFC2}
+W.C.~Jakes y~D.O.~Reudink.
+\newblock ``{C}omparison of mobile radio transmission at {UHF} and {X-band}''.
+\newblock {\em IEEE Trans. Veh. Technol.}, VT-16:10--13, Octubre 1967.
+
+\bibitem{ercegFC3}
+Sprint {Stanford University} {G2 MMDS} channel models.
+\newblock {\em Stanford University Seminar, CA.}, Agosto 2000.
+
+\bibitem{walfischbertoni}
+{J. Walfisch y H.L. Bertoni}.
+\newblock ``{A} theoretical model of {UHF} propagation in urban environments''.
+\newblock {\em IEEE Trans. on Antennas Propagat.}, 36(12):1788--1796,
+  {D}iciembre 1988.
+
+\bibitem{kosono}
+{S. Kosono y K. Watanabe}.
+\newblock ``{I}nfluence of environmental buildings on {UHF} land mobile radio
+  propagation''.
+\newblock {\em IEEE Trans. Commun.}, {COM}(25):1133--1145, 1977.
+
+\bibitem{ikegami}
+{F. Ikegami, D. Yoshida, T. Takeuchi y M. Umehira}.
+\newblock ``{P}ropagation factors controlling mean field strength on urban
+  streets''.
+\newblock {\em IEEE Trans. Antennas Propagat.}, {AP}(32):822--829, 1984.
+
+\bibitem{mopemproy}
+{J.Casaravilla, G.Dutra y N. Pignataro}.
+\newblock ``{M}odelo de propagación para entornos urbanos de pequeñas
+  macroceldas''.
+\newblock {\em Proyecto de fin de carrera, Facultad de Ingeniería, UDELAR},
+  2002.
+
+\bibitem{GIS}
+{Geographic Information System}.
+\newblock http://www.gis.com [visitada en noviembre de 2004].
+
+\bibitem{GML4J}
+{GML4J Home Page}.
+\newblock http://gml4j.sourceforge.net [visitada en diciembre de 2004].
+
+\bibitem{WKB4J}
+{WKB4J}.
+\newblock http://wkb4j.sourceforge.net [visitada en diciembre de 2004].
+
+\bibitem{GeoServer}
+{GeoServer}.
+\newblock http://docs.codehaus.org/display/GEOS/Home [visitada en diciembre de
+  2004].
+
+\bibitem{DeeGree}
+{DeGree}.
+\newblock http://deegree.sourceforge.net [visitada en diciembre de 2004].
+
+\bibitem{uDig}
+{uDig. User-friendly Desktop Internet GIS}.
+\newblock http://udig.refractions.net [visitada en diciembre de 2004].
+
+\bibitem{jump}
+{The Jump Project}.
+\newblock http://www.jump-project.org [visitada en diciembre de 2004].
+
+\bibitem{OpenMap}
+{OpenMap. Open Systems Mapping Technology}.
+\newblock http://openmap.bbn.com [visitada en diciembre de 2004].
+
+\bibitem{mapobjects}
+{MapObjects - Java Edition. Mapping and GIS Components for the Java Developer}.
+\newblock http://www.esri.com/software/mojava/ [visitada en diciembre de 2004].
+
+\bibitem{geotools}
+{GeoTools, The open source Java GIS toolkit}.
+\newblock http://www.geotools.org [visitada en diciembre de 2004].
+
+\bibitem{JTS}
+{JTS Topology Suite}.
+\newblock http://www.vividsolutions.com/jts/main.htm [visitada en diciembre de
+  2004].
+
+\bibitem{openGIS}
+{Open Geospatial Consortium specifications}.
+\newblock http://www.opengis.org [visitada en noviembre de 2004].
+
+\bibitem{specJTS}
+``{JTS Topology Suite Technical Specifications.'' Version 1.4}.
+\newblock {\em Vivid Solutions}, Octubre 2003.
+
+\bibitem{eckel}
+B.~Eckel.
+\newblock {\em Thinking in {J}ava}.
+\newblock Prentice-Hall, second edition, Junio 2000.
+\newblock ISBN 0-13-027363-5.
+
+\bibitem{uml}
+C.~Larman.
+\newblock {\em {UML} y {P}atrones: Introducción al análisis y diseño orientado
+  a objetos}.
+\newblock ISBN 970-17-0261-1.
+
+\bibitem{esri}
+{ESRI. The GIS Software Leader}.
+\newblock http://www.esri.com [visitada en diciembre de 2004].
+
+\bibitem{specSHP}
+``{ESRI Shapefile Technical Description}''.
+\newblock {\em An ESRI White Paper}, Julio 1998.
+
+\bibitem{recomendacionXML}
+{``Extensible Markup Language (XML) 1.0''. Third edition}.
+\newblock {\em W3C Recommendation}, Febrero 2004.
+
+\bibitem{parsersXML}
+Elliote~Rusty Harold.
+\newblock {\em Processing {XML} with {JAVA}}.
+
+\bibitem{hybrid}
+R.~Faub y A.~Wasch T.~Kurner.
+\newblock ``{A} hybrid propagation modelling approach for {DCS}1800 macro
+  cells''.
+\newblock {\em IEEE VTC'96}, pages 1628--1632, Abril-Mayo 1996.
+
+\bibitem{Saunder+Bonar}
+S.~R.~Saunders y~F.~R.~Bonar.
+\newblock ``{P}rediction of mobile radio wave propagation over buildings of
+  irregular heights and spacings''.
+\newblock {\em IEEE Transactions on Antennas and Propagation}, 42(2):137--144,
+  Febrero 1994.
+
+\bibitem{Lecuyer}
+P.~L'Ecuyer y~C.~Lemieux.
+\newblock ``{V}ariance reduction via lattice rules''.
+\newblock {\em Management Science}, 46(9):1214--1235, Setiembre 2000.
+
+\bibitem{finance}
+McIeish.
+\newblock ``{C}omputer intensive methods for stochastic models in finance''.
+\newblock {\em Course Notes}, 2004.
+
+\bibitem{FastVogler}
+S.~R.~Saunders y~C.~Tzaras.
+\newblock ``{R}apid, uniform computation of multiple knife-edge diffraction''.
+\newblock {\em Electronic Letters}, 35(3):237--239, Febrero 1999.
+
+\bibitem{screen}
+L.~Piazzi y~H.L.~Bertoni.
+\newblock ``{O}n screen placement for building representation in urban
+  environments considering 2{D} multiple diffraction problems''.
+\newblock {\em IEEE VTC'99}, 4:1977--1981, Setiembre 1999.
+
+\bibitem{medidasMunich}
+{COST231 - Vector Building and GSM Measurement Data of Munich}.
+\newblock {Mannesmann Mobilfunk GmbH, Germany};
+  http://www.ihe.uni-karlsruhe.de/forschung/cost231/cost231.en.html [visitada
+  en Noviembre de 2005].
+
+\bibitem{valencia1}
+P.~Möller y F.~Alonso N.~Cardona.
+\newblock {``Applicability of Walfisch-type urban propagation models''}.
+\newblock {\em Electronics Letters}, 31(23), Noviembre 1995.
+
+\bibitem{valencia2}
+F.~Navarro y P.~Möller N.~Cardona.
+\newblock {``{Applicability of Walfisch-type urban propagation models}''}.
+\newblock {\em COST 231 TD}, 94(134), Setiembre 1994.
+
+\bibitem{valencia3}
+N.~Cardona y D. J.~Cichon P.~Möller.
+\newblock {``{Investigations in a new developed urban propagation model}''}.
+\newblock {\em COST 231 TD}, 94(135), Setiembre 1994.
+
+\end{thebibliography}

@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Caso NLOS</TITLE>
+<META NAME="description" CONTENT="Caso NLOS">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node37.html">
+<LINK REL="up" HREF="node36.html">
+<LINK REL="next" HREF="node39.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html842"
+  HREF="node39.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html838"
+  HREF="node36.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html834"
+  HREF="node37.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html840"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html843"
+  HREF="node39.html">Modelo MOPEM</A>
+<B> Subir:</B> <A NAME="tex2html839"
+  HREF="node36.html">Modelo COST231 Walfisch-Ikegami</A>
+<B> Anterior:</B> <A NAME="tex2html835"
+  HREF="node37.html">Caso LOS</A>
+ &nbsp <B>  <A NAME="tex2html841"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION03332200000000000000">
+Caso NLOS</A>
+</H3>
+En el caso de que no haya LOS la p&#233;rdida b&#225;sica de transmisi&#243;n se
+compone de la p&#233;rdida en espacio libre <!-- MATH
+ $L_{B_{EL}}$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.png"
+ ALT="$ L_{B_{EL}}$">
+((<A HREF="node35.html#propvacio">5.4</A>)), la p&#233;rdida por difracci&#243;n en m&#250;ltiples
+cuchillos (<IMG
+ WIDTH="42" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.png"
+ ALT="$ L_{msd}$">) y la p&#233;rdida por difracci&#243;n desde el techo de
+los edificios a la calle (<IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img203.png"
+ ALT="$ L_{rst}$">). De esta forma:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="488" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.png"
+ ALT="$\displaystyle L_{WI_{NLOS}}(dB) = \left\{ \begin{array}{cc} L_{B_{EL}} + L_{rt...
+...{msd} &gt; 0 \  L_{B_{EL}} &amp; \qquad L_{rts} + L_{msd} &lt; 0\  \end{array}\right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+La determinaci&#243;n de <IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img205.png"
+ ALT="$ L_{rts}$"> se basa en el principio dado por el
+modelo de Ikegami [<A
+ HREF="node130.html#ikegami">25</A>] pero con una funci&#243;n distinta de la
+orientaci&#243;n de la calle. La geometr&#237;a se muestra en las figuras
+<A HREF="node35.html#perfilWI">5.3</A> y <A HREF="node36.html#orientacionWI">5.4</A>.
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="438" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img206.png"
+ ALT="$\displaystyle L_{rts} = -16.9-10\log w +10 \log f + 20\log(h-h_r) + L_{ori}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="Lb">(5.11)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="396" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img207.png"
+ ALT="$\displaystyle L_{ori} = \left\{ \begin{array}{cc} -10 +0.354 \varphi &amp; \qquad ...
+...(\varphi-55) &amp; \qquad 55\text{°} \leq \varphi &lt; 90\text{°} \end{array}\right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Cabe aclarar que <IMG
+ WIDTH="35" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.png"
+ ALT="$ L_{ori}$"> es un factor que fue estimado de un
+n&#250;mero peque&#241;o de medidas.
+
+La p&#233;rdida por difracci&#243;n en m&#250;ltiples cuchillos fue estimada por
+Walfisch y Bertoni para el caso en que la radiobase est&#225; por encima
+de los techos (<IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img209.png"
+ ALT="$ h_t&gt;h$">). Esto fue extendido por COST para el caso en
+que la antena est&#225; por debajo de la altura media de edificaciones,
+usando una funci&#243;n emp&#237;rica basada en medidas. Las ecuaciones
+relevantes son:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="355" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.png"
+ ALT="$\displaystyle L_{msd} = L_{bsh}+k_a+k_d \log d + k_f\log f-9\log b$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="Lb">(5.12)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="347" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img211.png"
+ ALT="$\displaystyle L_{bsh} = \left\{ \begin{array}{ll} -18\log[1+(h_t-h)] &amp; \qquad h_t&gt;h \  0 &amp; \qquad h_t\leq h \end{array}\right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="425" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img212.png"
+ ALT="$\displaystyle k_a = \left\{ \begin{array}{ll} 54 &amp; \qquad h_t&gt;h \  54-0.8(h_...
+...frac{d}{0.5} &amp; \qquad h_t\leq h \text{ y } d&lt;0.5\text{ km} \end{array}\right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="241" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img213.png"
+ ALT="$\displaystyle k_d = \left\{ \begin{array}{ll} 18 &amp; h_t&gt;h \  18-15\frac{(h_t-h)}{h} &amp; h_t\leq h \end{array}\right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="623" HEIGHT="82" ALIGN="MIDDLE" BORDER="0"
+ SRC="img214.png"
+ ALT="$\displaystyle k_f = \left\{ \begin{array}{ll} -4 + 0.7 \left(f/925-1\right) &amp; ...
+...t(f/925-1\right) &amp; \qquad \text{para áreas metropolitanas} \end{array}\right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+El t&#233;rmino <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img215.png"
+ ALT="$ k_a$"> representa el aumento en la p&#233;rdida de
+propagaci&#243;n cuando la radiobase est&#225; por debajo de la altura de los
+techos. Los t&#233;rminos <IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img216.png"
+ ALT="$ k_d$"> y <IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img217.png"
+ ALT="$ k_f$"> consideran la dependencia de la
+p&#233;rdida de difracci&#243;n con la distancia y la frecuencia,
+respectivamente. Si no se dispone de datos exactos se recomienda
+tomar:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="46" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img218.png"
+ ALT="$\displaystyle h = 3$"> m<IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img219.png"
+ ALT="$\displaystyle \times$">(n&#250;mero de pisos)<IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.png"
+ ALT="$\displaystyle +$">altura del techo</TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER">altura del techo<IMG
+ WIDTH="302" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img221.png"
+ ALT="$\displaystyle = \left\{ \begin{array}{l} 3\text{ m} \qquad \text{para techos p...
+...agudos} \  0\text{ m} \qquad \text{para techos planos}\  \end{array}\right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img222.png"
+ ALT="$\displaystyle b = 20$">&nbsp; &nbsp; a&nbsp;<IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.png"
+ ALT="$\displaystyle 50$"> m</TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img224.png"
+ ALT="$\displaystyle w= b/2$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="56" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img225.png"
+ ALT="$\displaystyle \varphi = 90$">^&cir#circ;</TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+La aplicaci&#243;n del modelo de COST se restringe a los siguientes
+rangos de par&#225;metros:
+<BR>
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="469" HEIGHT="93" ALIGN="BOTTOM" BORDER="0"
+ SRC="img226.png"
+ ALT="\begin{gather*}\begin{array}{cl} 800 \text{ MHz}\leqslant f \leqslant 2000 \tex...
+...text{ km} &amp; \text{distancia entre el móvil y la base} \end{array}\end{gather*}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Da buenos resultados cuando la antena de la radiobase est&#225; por
+encima de los techos, produciendo errores con una media de 3dB y
+desviaciones est&#225;ndar en el rango de 4-8 dB. Sin embargo, la
+performance se deteriora cuando <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$ h_t$"> se aproxima a <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.png"
+ ALT="$ h$"> y es
+bastante pobre cuando <IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img227.png"
+ ALT="$ h_t\ll h$">.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html842"
+  HREF="node39.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html838"
+  HREF="node36.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html834"
+  HREF="node37.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html840"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html843"
+  HREF="node39.html">Modelo MOPEM</A>
+<B> Subir:</B> <A NAME="tex2html839"
+  HREF="node36.html">Modelo COST231 Walfisch-Ikegami</A>
+<B> Anterior:</B> <A NAME="tex2html835"
+  HREF="node37.html">Caso LOS</A>
+ &nbsp <B>  <A NAME="tex2html841"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

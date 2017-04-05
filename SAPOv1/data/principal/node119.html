@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>COST231-Walfisch-Ikegami</TITLE>
+<META NAME="description" CONTENT="COST231-Walfisch-Ikegami">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node120.html">
+<LINK REL="previous" HREF="node118.html">
+<LINK REL="up" HREF="node116.html">
+<LINK REL="next" HREF="node120.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1972"
+  HREF="node120.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1968"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1962"
+  HREF="node118.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1970"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1973"
+  HREF="node120.html">MOPEM</A>
+<B> Subir:</B> <A NAME="tex2html1969"
+  HREF="node116.html">Performance de los modelos</A>
+<B> Anterior:</B> <A NAME="tex2html1963"
+  HREF="node118.html">Erceg-SUI</A>
+ &nbsp <B>  <A NAME="tex2html1971"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION05133000000000000000">
+COST231-Walfisch-Ikegami</A>
+</H2>
+
+El siguiente modelo a analizar es el de Walfisch-Ikegami. A
+diferencia del modelo de Okumura-Hata-Cost231, este modelo s&#237;
+incluye correcciones para tomar en cuenta el caso en que la antena
+transmisora se encuentre por debajo de las edificaciones
+circundantes. De todas formas, en el informe de COST231 se advierte
+acerca de la inexactitud del modelo en dicho caso, y si adem&#225;s
+se toma en cuenta que fue dise&#241;ado para altura de edificaciones
+regular, es de esperar que la predicci&#243;n no sea la m&#225;s exacta. Los
+resultados para una implementaci&#243;n del modelo con los par&#225;metros por
+defecto para el caso de centro metropolitano se pueden apreciar en
+el cuadro <A HREF="node119.html#tablaComp:wi">12.3</A>. Para una mejor evaluaci&#243;n del error
+cometido por el modelo, se puede apreciar en la figura
+<A HREF="node119.html#figCompWI">12.5</A> la comparaci&#243;n entre las medidas y la estimaci&#243;n
+para el caso de la ruta 2.
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="3194"></A>
+<TABLE>
+<CAPTION><STRONG>Tabla 12.3:</STRONG>
+Media y desviaci&#243;n est&#225;ndar del error para el modelo de Walfisch-Ikegami</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">Ruta</TD>
+<TD ALIGN="CENTER"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img337.png"
+ ALT="$ \mu$"> (dB)</TD>
+<TD ALIGN="CENTER"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.png"
+ ALT="$ \sigma$"> (dB)</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route00</I></TD>
+<TD ALIGN="CENTER">-2.16</TD>
+<TD ALIGN="CENTER">9.06</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route01</I></TD>
+<TD ALIGN="CENTER">-7.48</TD>
+<TD ALIGN="CENTER">9.67</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route02</I></TD>
+<TD ALIGN="CENTER">-6.02</TD>
+<TD ALIGN="CENTER">10.91</TD>
+</TR>
+</TABLE>
+<A NAME="tablaComp:wi"></A>
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<DIV ALIGN="CENTER"><A NAME="figCompWI"></A><A NAME="3200"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 12.5:</STRONG>
+Comparaci&#243;n entre las medidas y las estimaciones para la ruta 2 del modelo de Walfisch-Ikegami</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="408" HEIGHT="287" ALIGN="BOTTOM" BORDER="0"
+ SRC="img405.png"
+ ALT="\includegraphics[width=9cm]{Conclusion/compWI.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Comparando lo obtenido con los resultados del modelo de
+Okumura-Hata-COST231, en cuanto a la media se mejora en la primera
+ruta, aunque en las dos siguientes es mayor en valor absoluto. Esto
+se explica por el hecho que el modelo de Okumura en algunas
+secciones de dichos caminos subestima la p&#233;rdida y en otros la
+sobreestima. Esto hace que el error se compense y resulte menor en
+esos caminos, y en el caso del camino 0, donde siempre subestima
+(ver figura <A HREF="node117.html#figCompOH">12.3</A>), el error medio es mucho mayor. Si se
+hace este an&#225;lisis con el valor absoluto del error en cada punto, la
+media en la ruta 0 sigue siendo mejor con el modelo de Walfisch-Ikegami y en
+el resto de las rutas son muy similares.
+
+En cuanto a la varianza, el modelo de Walfisch-Ikegami tiene una
+performance apenas mejor en el camino 0 y algo peor en el resto.
+Esto es debido al hecho que depende no s&#243;lo de la distancia, sino
+del ancho y orientaci&#243;n de la calle, alto de los edificios y
+separaci&#243;n entre los mismos. Estos par&#225;metros se calculan en cada
+punto con los algoritmos ya comentados (ver el cap&#237;tulo
+<A HREF="node89.html#cap:implementacion">10</A>) y puede que var&#237;en de un punto a otro.
+
+En el informe final de COST231 [<A
+ HREF="node130.html#cost231Hata">16</A>] se presentan
+valores de la media y la varianza del error cometido por este modelo
+para las tres rutas, as&#237; como gr&#225;ficas comparativas. Sin embargo, el
+modelo que se utiliz&#243; para las comparaciones difiere en el utilizado
+en <I>SAPO</I> pues supone valores constantes para el ancho de
+calles, separaci&#243;n entre edificios y altura de los mismos en todos
+los puntos (altura de edificios 20 m, ancho de calles 13 m y
+separaci&#243;n entre edificios 26 m). Adem&#225;s, no verifica la existencia
+de l&#237;nea de vista y supone que el terreno es de altura constante.
+Por ello, para la validaci&#243;n del modelo se incluy&#243; en el software
+otra versi&#243;n del mismo que mantiene los par&#225;metros topogr&#225;ficos
+fijos. En la tabla <A HREF="node119.html#tablaComp:wiCOST231">12.4</A> se puede apreciar como
+la media result&#243; muy similar en todos los casos, aunque la varianza
+resulta un poco mayor en las predicciones de <I>SAPO</I> que las
+que aparecen en el informe. Esto es debido a dos factores
+principalmente: <I>SAPO</I> toma en cuenta la altura del terreno y
+tambi&#233;n toma en cuenta la existencia de l&#237;nea de vista.
+
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="3336"></A>
+<TABLE>
+<CAPTION><STRONG>Tabla 12.4:</STRONG>
+Media y desviaci&#243;n est&#225;ndar del error para el modelo de Walfisch-Ikegami seg&#250;n <I>SAPO</I> y y el informe de la COST231</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">Ruta</TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\mu_{SAPO}$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img406.png"
+ ALT="$ \mu_{SAPO}$"> (dB)</TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\sigma_{SAPO}$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img407.png"
+ ALT="$ \sigma_{SAPO}$"> (dB)</TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\mu_{COST231}$
+ -->
+<IMG
+ WIDTH="76" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img408.png"
+ ALT="$ \mu_{COST231}$"></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\sigma_{COST231}$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img409.png"
+ ALT="$ \sigma_{COST231}$"></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route00</I></TD>
+<TD ALIGN="CENTER">-8.97</TD>
+<TD ALIGN="CENTER">8.99</TD>
+<TD ALIGN="CENTER">-10.8</TD>
+<TD ALIGN="CENTER">7.7</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route01</I></TD>
+<TD ALIGN="CENTER">-15.94</TD>
+<TD ALIGN="CENTER">8.02</TD>
+<TD ALIGN="CENTER">-15.4</TD>
+<TD ALIGN="CENTER">5.9</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route02</I></TD>
+<TD ALIGN="CENTER">-15.39</TD>
+<TD ALIGN="CENTER">9.54</TD>
+<TD ALIGN="CENTER">-16.3</TD>
+<TD ALIGN="CENTER">7.3</TD>
+</TR>
+</TABLE>
+<A NAME="tablaComp:wiCOST231"></A>
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+Adem&#225;s, las gr&#225;ficas comparativas entre las medidas reales y lo
+obtenido seg&#250;n el modelo que aparecen en el informe son muy
+similares a las gr&#225;ficas de la figura <A HREF="node119.html#figComp:wi2">12.6</A>. Los datos
+exactos de la predicci&#243;n en cada punto no est&#225;n disponibles en el
+informe, por lo que un an&#225;lisis m&#225;s detallado de las diferencias no
+es posible.
+
+<DIV ALIGN="CENTER"><A NAME="figComp:wi2"></A><A NAME="3337"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 12.6:</STRONG>
+Las medidas en las tres rutas y su respectiva estimaci&#243;n
+seg&#250;n <I>SAPO</I> para el modelo de Walfisch-Ikegami
+simplificado</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="213" HEIGHT="150" ALIGN="BOTTOM" BORDER="0"
+ SRC="img410.png"
+ ALT="\includegraphics[width=4.7cm]{Conclusion/compWIruta0.eps}">
+<IMG
+ WIDTH="212" HEIGHT="150" ALIGN="BOTTOM" BORDER="0"
+ SRC="img411.png"
+ ALT="\includegraphics[width=4.7cm]{Conclusion/compWIruta1.eps}">
+<IMG
+ WIDTH="213" HEIGHT="150" ALIGN="BOTTOM" BORDER="0"
+ SRC="img412.png"
+ ALT="\includegraphics[width=4.7cm]{Conclusion/compWIruta2.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Otra conclusi&#243;n que puede surgir del an&#225;lisis de esta implementaci&#243;n
+simplificada del modelo, es que el c&#225;lculo de los par&#225;metros
+topogr&#225;ficos en todos los puntos, aunque aumenta el tiempo que
+consume realizar una predicci&#243;n, es un factor importante en la
+exactitud.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1972"
+  HREF="node120.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1968"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1962"
+  HREF="node118.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1970"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1973"
+  HREF="node120.html">MOPEM</A>
+<B> Subir:</B> <A NAME="tex2html1969"
+  HREF="node116.html">Performance de los modelos</A>
+<B> Anterior:</B> <A NAME="tex2html1963"
+  HREF="node118.html">Erceg-SUI</A>
+ &nbsp <B>  <A NAME="tex2html1971"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

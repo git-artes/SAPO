@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>SHP</TITLE>
+<META NAME="description" CONTENT="SHP">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node79.html">
+<LINK REL="up" HREF="node79.html">
+<LINK REL="next" HREF="node81.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1462"
+  HREF="node81.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1458"
+  HREF="node79.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1454"
+  HREF="node79.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1460"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1463"
+  HREF="node81.html">Archivos de entrada para</A>
+<B> Subir:</B> <A NAME="tex2html1459"
+  HREF="node79.html">Archivos de entrada de</A>
+<B> Anterior:</B> <A NAME="tex2html1455"
+  HREF="node79.html">Archivos de entrada de</A>
+ &nbsp <B>  <A NAME="tex2html1461"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION04421000000000000000">
+SHP</A>
+</H2>
+
+Este formato [<A
+ HREF="node130.html#specSHP">43</A>] creado por la ESRI, almacena informaci&#243;n
+de un conjunto de <I>features</I> geo-referenciados, esto es,
+geometr&#237;as y atributos. Consiste en un archivo principal (.shp), un
+archivo &#237;ndice (.shx) y una tabla dBASE<A NAME="tex2html51"
+  HREF="footnode.html#foot2164"><SUP>9.2</SUP></A> (.dbf). El archivo principal
+puede tener una cantidad variable de registros, en donde cada uno de
+ellos describe una geometr&#237;a (punto, l&#237;nea o &#225;rea) mediante las
+coordenadas de sus v&#233;rtices. El archivo &#237;ndice contiene las
+posiciones de los registros en el archivo principal y la tabla dBASE
+almacena los atributos, cada uno de ellos tiene una relaci&#243;n un&#237;voca
+con la geometr&#237;a a la cual est&#225; asociado.
+
+Para ser reconocidos correctamente por <I>SAPO</I>, los SHP deben
+estar compuestos por features con los atributos que se muestran en
+la tabla <A HREF="node80.html#atributosEdif">9.1</A>.
+
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="2177"></A>
+<TABLE>
+<CAPTION><STRONG>Tabla 9.1:</STRONG>
+Atributos de los features para representar edificios y manzanas</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">&nbsp;</TD>
+<TH ALIGN="CENTER"><B>Nombre</B></TH>
+<TH ALIGN="CENTER"><B>Tipo</B></TH>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=170>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>Descripci&#243;n</B></TD>
+</TR>
+<TR><TD ALIGN="CENTER">Datos de edificios</TD>
+<TD ALIGN="CENTER">``the_geom''</TD>
+<TD ALIGN="CENTER">Polygon</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=170>Figura en dos dimensiones que representa la base del edificio. Se define mediante las coordenadas de sus v&#233;rtices, en metros. Es la <I>default geometry</I>.</TD>
+</TR>
+<TR><TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">``altura''</TD>
+<TD ALIGN="CENTER">double</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=170>Valor num&#233;rico que representa la altura del edificio en metros.</TD>
+</TR>
+<TR><TD ALIGN="CENTER">Datos de manzanas</TD>
+<TD ALIGN="CENTER">``the_geom''</TD>
+<TD ALIGN="CENTER">Polygon</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=170>Figura que representa la manzana. Se define mediante las coordenadas de sus v&#233;rtices, en metros. Es la <I>default geometry</I>.</TD>
+</TR>
+</TABLE><A NAME="atributosEdif"></A>
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1462"
+  HREF="node81.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1458"
+  HREF="node79.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1454"
+  HREF="node79.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1460"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1463"
+  HREF="node81.html">Archivos de entrada para</A>
+<B> Subir:</B> <A NAME="tex2html1459"
+  HREF="node79.html">Archivos de entrada de</A>
+<B> Anterior:</B> <A NAME="tex2html1455"
+  HREF="node79.html">Archivos de entrada de</A>
+ &nbsp <B>  <A NAME="tex2html1461"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

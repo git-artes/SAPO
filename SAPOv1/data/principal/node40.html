@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Modelo propuesto: Vogler-Ikegami</TITLE>
+<META NAME="description" CONTENT="Modelo propuesto: Vogler-Ikegami">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node34.html">
+<LINK REL="up" HREF="node24.html">
+<LINK REL="next" HREF="node41.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html862"
+  HREF="node41.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html858"
+  HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html854"
+  HREF="node39.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html860"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html863"
+  HREF="node41.html">Desarrollo de Software</A>
+<B> Subir:</B> <A NAME="tex2html859"
+  HREF="node24.html">Modelos de propagación</A>
+<B> Anterior:</B> <A NAME="tex2html855"
+  HREF="node39.html">Modelo MOPEM</A>
+ &nbsp <B>  <A NAME="tex2html861"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION03340000000000000000"></A><A NAME="vi"></A>
+<BR>
+Modelo propuesto: Vogler-Ikegami
+</H1>
+Como se vio en la secci&#243;n <A HREF="node34.html#wi">5.3</A>, el modelo de Walfisch-Ikegami
+toma algunas hip&#243;tesis que muchas veces no son ciertas y por ende
+repercuten negativamente en la exactitud de sus resultados. Son
+destacables las hip&#243;tesis ya mencionadas sobre la regularidad en las
+alturas de las edificaciones y una cantidad suficiente para que la
+aproximaci&#243;n asint&#243;tica en el c&#225;lculo de la atenuaci&#243;n por m&#250;ltiples
+pantallas (<IMG
+ WIDTH="42" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.png"
+ ALT="$ L_{msd}$">) sea confiable. Que la cantidad de edificios
+entre el m&#243;vil y la base sea alta es en general verdad en
+macroceldas, donde la cobertura de cada celda es suficientemente
+grande para que en la mayor&#237;a de los puntos de cobertura s&#237; se
+cumpla dicha hip&#243;tesis. En las microceldas utilizadas hoy en d&#237;a,
+donde la cobertura de cada celda no sobrepasa el kil&#243;metro de
+distancia, esa hip&#243;tesis es falsa. En cuanto a la regularidad en las
+edificaciones, ocurre en muchas zonas urbanas, aunque obviamente
+tambi&#233;n debe haber una regularidad en el terreno subyacente, pues
+&#233;sta tambi&#233;n debe ser considerada en la altura edil&#237;cea (ver secci&#243;n
+<A HREF="node39.html#mopem">5.3.3</A>).
+
+Adem&#225;s, aunque el grupo COST231 agreg&#243; factores correctivos para
+contemplar el caso en que la antena transmisora estuviera a la
+misma altura o por debajo de las edificaciones circundantes (como
+es el caso en microceldas), en la pr&#225;ctica el modelo falla y tiene
+errores que hacen que en tales ambientes no se utilice para
+realizar predicciones [<A
+ HREF="node130.html#cost231Hata">16</A>].
+
+Por lo tanto, la falla del modelo se encuentra en el c&#225;lculo de
+<IMG
+ WIDTH="42" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.png"
+ ALT="$ L_{msd}$">. Con el objeto de mejorar la exactitud del modelo en
+general, pero principalmente pensando en los casos ya mencionados,
+en este proyecto se decidi&#243; proponer un nuevo modelo h&#237;brido que
+calcule la atenuaci&#243;n hasta la &#250;ltima edificaci&#243;n con el m&#233;todo de
+Vogler (ver secci&#243;n <A HREF="node23.html#vogler">4.3.1</A>) y desde all&#237; hasta el m&#243;vil
+mediante el modelo de Ikegami (en la formulaci&#243;n del modelo
+Walfisch-Ikegami). Es decir, la formula resulta:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="251" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img237.png"
+ ALT="$\displaystyle L_{VI} = L_{B_{EL}} + L_{rts} + L_{msd\_vogler}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Esta corresponde a la misma formulaci&#243;n que en el caso de
+Walfisch-Ikegami, pero ahora el t&#233;rmino <!-- MATH
+ $L_{msd\_vogler}$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img238.png"
+ ALT="$ L_{msd\_vogler}$"> se calcula
+con la integral (<A HREF="node23.html#integralVogler">4.3</A>) que se vio en la secci&#243;n
+<A HREF="node23.html#vogler">4.3.1</A>. En la figura <A HREF="node40.html#perfilVI">5.5</A> se ilustra el camino de
+propagaci&#243;n correspondiente a cada t&#233;rmino de la ecuaci&#243;n.
+
+<DIV ALIGN="CENTER"><A NAME="perfilVI"></A><A NAME="1642"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.5:</STRONG>
+El perfil de edificios y los diferentes t&#233;rminos de la
+ecuaci&#243;n del modelo propuesto Vogler-Ikegami</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="452" HEIGHT="111" ALIGN="BOTTOM" BORDER="0"
+ SRC="img239.png"
+ ALT="\includegraphics[width=10cm]{Teorico/perfil_vi.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Lo &#250;nico que resta especificar es cu&#225;les edificios se considerar&#225;n
+para crear el perfil necesario, dada la ubicaci&#243;n del transmisor,
+receptor y la disposici&#243;n y tama&#241;o de todas las edificaciones
+presentes. El criterio utilizado fue que un edificio formar&#225; parte
+del perfil siempre que tenga alguna influencia significativa en la
+atenuaci&#243;n. Esto es, siempre que la edificaci&#243;n se introduzca en el
+primer elipsoide de Fresnel m&#225;s de determinado porcentaje del primer
+radio del mismo (ver secci&#243;n <A HREF="node21.html#fresnel">4.2</A>). En particular se tom&#243;
+un porcentaje del 50% (edificios sombreados en la figura
+<A HREF="node40.html#perfilVI2">5.6</A>).
+
+<DIV ALIGN="CENTER"><A NAME="perfilVI2"></A><A NAME="1651"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 5.6:</STRONG>
+Consideraci&#243;n del perfil de edificios en el modelo
+propuesto Vogler-Ikegami</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="453" HEIGHT="134" ALIGN="BOTTOM" BORDER="0"
+ SRC="img240.png"
+ ALT="\includegraphics[width=10cm]{Teorico/perfil_vi2.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Los resultados concretos de este modelo se ver&#225;n en las secciones
+siguientes, pero es de esperar una exactitud mayor en el caso que
+las edificaciones sean irregulares en su altura. De todas formas, la
+hip&#243;tesis subyacente de que el mecanismo de propagaci&#243;n dominante es
+por encima de los techos (y por lo tanto, hasta el m&#243;vil la mayor&#237;a
+de los rayos llegan sobre los edificios) sigue manteni&#233;ndose. Esto
+quiere decir que en aquellos casos donde la antena transmisora se
+encuentre por debajo de los techos circundantes, donde puede haber
+caminos entre el m&#243;vil y la base entre los edificios, este modelo
+sobreestimar&#225;  la atenuaci&#243;n de camino pues no tomar&#225; en cuenta
+dichos caminos. Lo mismo sucede en las inmediaciones de la
+radiobase, pues all&#237; tambi&#233;n son importantes.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html862"
+  HREF="node41.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html858"
+  HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html854"
+  HREF="node39.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html860"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html863"
+  HREF="node41.html">Desarrollo de Software</A>
+<B> Subir:</B> <A NAME="tex2html859"
+  HREF="node24.html">Modelos de propagación</A>
+<B> Anterior:</B> <A NAME="tex2html855"
+  HREF="node39.html">Modelo MOPEM</A>
+ &nbsp <B>  <A NAME="tex2html861"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

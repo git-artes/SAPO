@@ -1,0 +1,796 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Aplicación al problema de línea de vista</TITLE>
+<META NAME="description" CONTENT="Aplicación al problema de línea de vista">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node128.html">
+<LINK REL="up" HREF="node126.html">
+<LINK REL="next" HREF="node130.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2088"
+  HREF="node130.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2084"
+  HREF="node126.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2080"
+  HREF="node128.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2086"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html2089"
+  HREF="node130.html">Bibliograf&#237;a</A>
+<B> Subir:</B> <A NAME="tex2html2085"
+  HREF="node126.html">Intersección de una elipsoide</A>
+<B> Anterior:</B> <A NAME="tex2html2081"
+  HREF="node128.html">Intersección entre una elipsoide</A>
+ &nbsp <B>  <A NAME="tex2html2087"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION06130000000000000000">
+Aplicaci&#243;n al problema de l&#237;nea de vista</A>
+</H1>
+
+<P>
+Hasta ahora, se ha trabajado con una elipsoide de dimensiones
+gen&#233;ricas, aunque alineada con los ejes. El problema original era
+con una elipse de revoluci&#243;n (es decir, sus dos ejes menores
+iguales) y orientada arbitrariamente. La primer diferencia
+simplifica el problema, pues la elipsoide puede rotarse seg&#250;n el eje
+mayor sin que la misma sufra cambios. Como se ver&#225; m&#225;s adelante, se
+aprovech&#243; esta propiedad para colocar el plano intersectante en una
+posici&#243;n conveniente. Por el contario, la segunda diferencia obliga
+a redefinir el sistema de coordenadas de manera que los dos focos
+pertenezcan a uno de los ejes, y el centro de la elipsoide sea el
+origen. Dado que la elipse de revoluci&#243;n puede rotarse seg&#250;n el eje
+mayor sin que sufra cambios, los otros dos ejes pueden fijarse
+arbitrariamente. Lo que se hizo, fue colocar uno de ellos paralelo
+al plano intersectante (y por ende el otro eje queda fijado), que
+como se ver&#225; simplifica much&#237;simo la determinaci&#243;n de las
+dimensiones, y por lo tanto la parametrizaci&#243;n de la elipse
+resultado de la intersecci&#243;n.
+
+<P>
+Por lo tanto se necesita expresar el plano intersectante y los
+puntos que conforman la pared del edificio en este nuevo sistema de
+coordenadas. Una manera de hacer esto es aplicarle a los puntos las
+mismas operaciones que llevaron de la elipsoide original a la nueva
+elipsoide alineada. En la implementaci&#243;n del algoritmo, se aline&#243; el
+eje mayor de la elipsoide con el eje <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$ y$"> (la elecci&#243;n fue
+completamente arbitraria). Veamos entonces como llevar una elipsoide
+de focos <!-- MATH
+ $(x_1,y_1,z_1)$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img458.png"
+ ALT="$ (x_1,y_1,z_1)$"> y <!-- MATH
+ $(x_2,y_2,z_2)$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img459.png"
+ ALT="$ (x_2,y_2,z_2)$"> a otra con centro en el
+origen y focos <!-- MATH
+ $(0,\hat{y}_1,0)$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img460.png"
+ ALT="$ (0,\hat{y}_1,0)$"> y <!-- MATH
+ $(0,\hat{y}_2,0)$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img461.png"
+ ALT="$ (0,\hat{y}_2,0)$">.
+
+<P>
+El primer paso es trasladar la elipsoide de manera tal que su centro
+coincida con el origen de coordenadas. Para ello, se halla el centro
+de la elipsoide:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="352" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img462.png"
+ ALT="$\displaystyle c=\left( x_0, y_0, z_0\right)=\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2},\frac{z_1+z_2}{2}\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Luego se debe rotar <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$ \alpha$"> seg&#250;n el eje <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img172.png"
+ ALT="$ z$"> de manera tal que
+los focos queden dentro del plano <IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img463.png"
+ ALT="$ z-y$">. <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$ \alpha$"> se puede
+calcular proyectando los polos al plano <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img450.png"
+ ALT="$ x-y$"> como (forzando al
+notaci&#243;n, llamaremos <!-- MATH
+ $(x_1,y_1,z_1)$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img458.png"
+ ALT="$ (x_1,y_1,z_1)$"> y <!-- MATH
+ $(x_2,y_2,z_2)$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img459.png"
+ ALT="$ (x_2,y_2,z_2)$"> a los focos
+luego de haber sido trasladados):
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="163" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img464.png"
+ ALT="$\displaystyle \alpha = atan \left(\frac{x_2-x_1}{y_2-y_1}\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Cualquier rotaci&#243;n puede expresarse como la multiplicaci&#243;n del
+vector de coordenadas por una matriz. En este caso, el vector
+resultado de dicha operaci&#243;n es:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="428" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img465.png"
+ ALT="$\displaystyle \left( \begin{array}{ccc} \cos \alpha &amp; -\sin \alpha &amp; 0 \ \sin\...
+...s \alpha - y\sin \alpha \ x\sin \alpha + y\cos \alpha \ z \end{array} \right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+El tercer paso es rotar <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.png"
+ ALT="$ \beta$"> seg&#250;n el eje <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img101.png"
+ ALT="$ x$"> de manera que
+finalmente los focos pertenzcan al eje <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$ y$">. El &#225;ngulo <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.png"
+ ALT="$ \beta$">
+puede obtenerse del resultado de haber rotado los focos:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="357" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img466.png"
+ ALT="$\displaystyle \beta = - atan \left(\frac{z_2-z_1}{(x_2-x_1)\sin \alpha + (y_2-y_1)\cos \alpha}\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Nuevamente, obtengamos el resultado de dicha rotaci&#243;n sobre el vector reci&#233;n obtenido:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="651" HEIGHT="82" ALIGN="MIDDLE" BORDER="0"
+ SRC="img467.png"
+ ALT="$\displaystyle \left( \begin{array}{ccc} 1 &amp; 0 &amp; 0 \ 0 &amp; \cos \beta &amp; -\sin \be...
+...ta \ (x\sin \alpha + y\cos \alpha)\sin \beta + z\cos \beta \end{array} \right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Con estas tres transformaciones ya se logra alinear la elipsoide con
+los ejes. Como se dijo, ahora se puede rotar seg&#250;n el eje <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$ y$">, que
+la elipsoide no sufrir&#237;a cambios. Para obtener cu&#225;l es el valor m&#225;s
+conveniente para la rotaci&#243;n, se obtendr&#225; primeramente el resultado
+de estas operaciones sobre el plano.
+
+<P>
+El plano original es aqu&#233;l que contiene la pared del edificio (o la
+recta que pasa por una de las bases de dicha pared) y es
+perpendicular al plano <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img450.png"
+ ALT="$ x-y$">. El resultado de trasladar dicho plano,
+ser&#225; otro perpendicular al plano <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img450.png"
+ ALT="$ x-y$"> pero que contiene a la recta
+trasladada. La recta original se puede parametrizar como:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="99" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img468.png"
+ ALT="$\displaystyle y=mx+N$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Y la traslaci&#243;n de dicha recta se puede escribir como:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="190" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img469.png"
+ ALT="$\displaystyle y = mx+N+y_0-mx_0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+La traslaci&#243;n en el eje <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img172.png"
+ ALT="$ z$"> es ignorada, pues el plano es paralelo
+a &#233;ste. La nueva recta la reescribiremos de la forma:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="94" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img470.png"
+ ALT="$\displaystyle y = mx+n$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER">donde:&nbsp;<IMG
+ WIDTH="144" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img471.png"
+ ALT="$\displaystyle n = N+y_0-mx_0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Cualquier plano puede caracterizarse por el vector normal que
+parte del origen (salvo el caso particular en que el plano pase
+por el origen) y para hallar el plano resultante de rotar con
+centro en el origen el plano original, basta realizar las mismas
+operaciones sobre dicho vector. En este caso en particular, el
+vector normal al plano es tambi&#233;n el normal a la recta. Por lo
+tanto, sus coordenadas se pueden hallar resolviendo el siguiente
+sistema:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="127" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img472.png"
+ ALT="$\displaystyle \left\{ \begin{array}{l} y=mx+n\ y=-\frac{1}{m}x\ z=0 \end{array} \right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Lo que resulta en el vector normal:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="337" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img473.png"
+ ALT="$\displaystyle \left(\frac{-n}{m²+1}m, \frac{n}{m²+1}, 0\right) = \frac{n}{m²+1}(-m,1,0)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+En el caso particular en que la recta sea paralela al eje <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$ y$">, <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.png"
+ ALT="$ m$">
+tiende a infinito. El vector normal en ese caso resulta:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="100" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img474.png"
+ ALT="$\displaystyle \left(x+x_0,0,0\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img101.png"
+ ALT="$ x$"> es la coordenada <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img101.png"
+ ALT="$ x$"> de cualquier punto de la pared en cuesti&#243;n.
+
+<P>
+Ahora se puede hallar el vector normal del plano rotado seg&#250;n los
+&#225;ngulos ya vistos:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="575" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img475.png"
+ ALT="$\displaystyle \frac{n}{m²+1}\left(-m\cos \alpha - \sin \alpha, \cos \beta\left(...
+...alpha+\cos \alpha \right), \sin\beta\left(-m\sin\alpha+\cos\alpha\right)\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Que en el caso particular en que <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.png"
+ ALT="$ m$"> sea infinito resulta:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="318" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img476.png"
+ ALT="$\displaystyle \left((x+x_0)\cos\alpha, x\sin\alpha\cos\beta, x\sin\alpha\sin\beta)\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Pero intersectar este plano con la elipsoide resultar&#237;a una elipse
+demasiado gen&#233;rica. Lo conveniente es utilizar la rotaci&#243;n seg&#250;n el
+eje <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$ y$"> (que como se vio no afecta la elipsoide) para que el plano
+quede paralelo a uno de los ejes. En esta implementaci&#243;n en
+particular, se escogi&#243; el eje <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img101.png"
+ ALT="$ x$"> arbitrariamente para dicho eje.
+Veamos entonces qu&#233; &#225;ngulo <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$ \gamma$"> debe ser rotado el plano para
+que el resultado sea paralelo al eje <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img101.png"
+ ALT="$ x$">, o sea, la coordenada <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img101.png"
+ ALT="$ x$">
+de su vector normal se anule.
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="484" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img477.png"
+ ALT="$\displaystyle \frac{n}{m²+1}\left( \begin{array}{ccc} \cos\gamma &amp; 0 &amp; -\sin\ga...
+...a\right) \ \sin\beta\left(-m\sin\alpha+\cos\alpha\right) \end{array} \right) =$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="538" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img478.png"
+ ALT="$\displaystyle =\frac{n}{m²+1}\left( \begin{array}{c} \cos\gamma(-m\cos\alpha-\s...
+...pha-\sin\alpha)+\cos\gamma\sin\beta(-m\sin\alpha+\cos\alpha) \end{array}\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Para que la primera coordenada se anule, se debe cumplir lo siguiente:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="302" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img479.png"
+ ALT="$\displaystyle \frac{\sin\gamma}{\cos\gamma} = \tan\gamma = \frac{-m\cos\alpha-\sin\alpha}{-m\sin\alpha+\cos\alpha}\;\frac{1}{\sin\beta}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+y en el caso que <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.png"
+ ALT="$ m$"> valga infinito:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="143" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img480.png"
+ ALT="$\displaystyle \tan\gamma = \frac{\cos\alpha}{\sin\alpha\sin\beta}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+En definitiva, el vector normal al plano resulta:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="701" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img481.png"
+ ALT="$\displaystyle \left(0,\cos\beta(-m\sin\alpha+\cos\alpha),\sin\gamma(-m\cos\alph...
+...alpha)+\cos\gamma\sin\beta(-m\sin\alpha+\cos\alpha)\right) = \left(0,j,k\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+La ecuaci&#243;n de dicho plano resulta:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="181" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img482.png"
+ ALT="$\displaystyle (y-j)j+(z-k)k = 0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="165" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img483.png"
+ ALT="$\displaystyle \Rightarrow\; jy + kz = j^2+k^2$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="324" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img484.png"
+ ALT="$\displaystyle \Rightarrow\; \frac{j}{\sqrt{j^2+k^2}}\:y+\frac{k}{\sqrt{j^2+k^2}}\:z = \sqrt{j^2+k^2}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Sustituyendo en la ecuaci&#243;n (<A HREF="node127.html#planoNormalizado">A.5</A>) se obtienen
+los siguientes valores:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="443" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img485.png"
+ ALT="$\displaystyle \lambda = 0, \quad \mu = \frac{j}{\sqrt{j^2+k^2}}, \quad \nu = \frac{k}{\sqrt{j^2+k^2}}, \quad h=\sqrt{j^2+k^2}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+La ecuaci&#243;n de la elipse de revoluci&#243;n con su eje mayor alineado
+al eje <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$ y$"> es:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="141" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img486.png"
+ ALT="$\displaystyle \frac{x^2}{b^2}+\frac{y^2}{a^2}+\frac{z^2}{b^2} = 1$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Supongamos que la normal forma el menor &#225;ngulo con el eje <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img172.png"
+ ALT="$ z$"> (o
+sea, que abs<!-- MATH
+ $\left(\frac{j}{k}\right)<1$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img487.png"
+ ALT="$ \left(\frac{j}{k}\right)&lt;1$">). Sustituyendo en
+(<A HREF="node128.html#ecuacionesParametros">A.6</A>) resulta:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="601" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img488.png"
+ ALT="$\displaystyle A=\nu\frac{b^2}{b^2}+\lambda^2=\frac{k^2}{j^2+k^2} \qquad B=0 \qq...
+...2\frac{b^2}{a^2}+\mu^2=\frac{k^2}{j^2+k^2}\;\frac{b^2}{a^2}+\frac{j^2}{j^2+k^2}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="533" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img489.png"
+ ALT="$\displaystyle D=0 \qquad E=-2h\mu=-2j \qquad F=h^2-\nu^2b^2=j^2+k^2-\frac{k^2}{j^2+k^2}b^2$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Para el caso que la normal forme el menor &#225;ngulo con el eje <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$ y$">,
+las cuentas resultan bastante similares, por lo que no vale la
+pena reproducirlas aqu&#237;. De todas formas, <IMG
+ WIDTH="50" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img490.png"
+ ALT="$ B=0$"> y <IMG
+ WIDTH="50" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img491.png"
+ ALT="$ D=0$"> por lo que
+lo formulado de aqu&#237; en adelante es exactamente igual para ese
+caso, sustituyendo la variable <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$ y$"> por <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img172.png"
+ ALT="$ z$">.
+
+<P>
+Por lo tanto la ecuaci&#243;n de la elipsoide se reduce a:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="198" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img492.png"
+ ALT="$\displaystyle Ax^2+Cy^2+Ey+F=0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+con centro en <!-- MATH
+ $\left(0,\frac{-E}{2C}\right)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img493.png"
+ ALT="$ \left(0,\frac{-E}{2C}\right)$">. Esta es la ecuaci&#243;n
+de una elipse con uno de sus ejes alineado con el eje <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$ y$">. Para
+encontrar el largo de los ejes hace falta resolver las siguientes
+dos ecuaciones:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="461" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img494.png"
+ ALT="$\displaystyle x=0 \Rightarrow Cy^2+Ey+F=0 \Rightarrow b_E=y+\frac{E}{2C} = \frac{\sqrt{E^2-4CF}}{2C}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="471" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img495.png"
+ ALT="$\displaystyle y=-\frac{E}{2C} \Rightarrow Ax^2+C\frac{E^2}{4C^2}-E\frac{E}{2C}+F=0 \Rightarrow Ax^2-\frac{E^2}{4C}-F$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="228" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img496.png"
+ ALT="$\displaystyle \Rightarrow a_E=x=\sqrt{\frac{1}{A}\left(\frac{E^2}{4C}-F\right)}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Por lo que ya se puede parametrizar la elipse resultado de la
+intersecci&#243;n como:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="190" HEIGHT="82" ALIGN="MIDDLE" BORDER="0"
+ SRC="img497.png"
+ ALT="$\displaystyle \left\{ \begin{array}{l} x=a_E\sin(t)\ y=-\frac{E}{2C}+b_E\cos(t)\ t\in [0,2\pi) \end{array}\right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Lo que resta hacer es encontrar las coordenadas de un punto
+arbitrario en esta base, para poder hallar las coordenadas de los
+v&#233;rtices de las paredes:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="529" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img498.png"
+ ALT="$\displaystyle \left( \begin{array}{c} \cos\gamma(\hat{x}\cos\alpha-\hat{y}\sin\...
+...n\alpha+\hat{y}\cos\alpha)\sin\beta+\hat{z}\cos\beta\right] \end{array} \right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+donde
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="312" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img499.png"
+ ALT="$\displaystyle \hat{x} = x+x_0 \qquad \hat{y} = y+y_0 \qquad \hat{z} = z+z_0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+En definitiva, habiendo calculado los par&#225;metros de la elipse de
+revoluci&#243;n original (<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img165.png"
+ ALT="$ a$">, <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img166.png"
+ ALT="$ b$"> y focos), se halla el centro y se
+calculan <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$ \alpha$"> y <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.png"
+ ALT="$ \beta$">. Luego, con cada pared de cada edificio,
+se halla <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.png"
+ ALT="$ m$"> y <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img354.png"
+ ALT="$ n$"> y con ellos calculamos <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$ \gamma$">. Despu&#233;s, se
+encuentran <IMG
+ WIDTH="13" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img500.png"
+ ALT="$ j$"> y <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img501.png"
+ ALT="$ k$">. Dependiendo de la relaci&#243;n entre ellos, se
+proyecta al plano <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img450.png"
+ ALT="$ x-y$"> o al plano <IMG
+ WIDTH="44" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img502.png"
+ ALT="$ x-z$">. Por &#250;ltimo, se hallan los
+par&#225;metros <IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img503.png"
+ ALT="$ a_E$"> y <IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img504.png"
+ ALT="$ b_E$"> y el centro de la elipse de intersecci&#243;n en
+el plano correspondiente. Por &#250;ltimo, se halla la proyecci&#243;n de la
+pared expresada en las nuevas coordenadas sobre el plano
+correspondiente. Como la pared y la la elipse pertenecen al mismo
+plano, la pared y la elipse se intersectaran si y s&#243;lo si se
+intersectan sus intersecciones. &#201;ste es el algoritmo utilizado para
+verificar si hay l&#237;nea de vista.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2088"
+  HREF="node130.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2084"
+  HREF="node126.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2080"
+  HREF="node128.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2086"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html2089"
+  HREF="node130.html">Bibliograf&#237;a</A>
+<B> Subir:</B> <A NAME="tex2html2085"
+  HREF="node126.html">Intersección de una elipsoide</A>
+<B> Anterior:</B> <A NAME="tex2html2081"
+  HREF="node128.html">Intersección entre una elipsoide</A>
+ &nbsp <B>  <A NAME="tex2html2087"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

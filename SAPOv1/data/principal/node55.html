@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Estimación de potencia mediana de señal</TITLE>
+<META NAME="description" CONTENT="Estimación de potencia mediana de señal">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node56.html">
+<LINK REL="previous" HREF="node54.html">
+<LINK REL="up" HREF="node51.html">
+<LINK REL="next" HREF="node56.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1132"
+  HREF="node56.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1128"
+  HREF="node51.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1122"
+  HREF="node54.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1130"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1133"
+  HREF="node56.html">Otras herramientas</A>
+<B> Subir:</B> <A NAME="tex2html1129"
+  HREF="node51.html">Descripción general de SAPO</A>
+<B> Anterior:</B> <A NAME="tex2html1123"
+  HREF="node54.html">Creación de una red</A>
+ &nbsp <B>  <A NAME="tex2html1131"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04240000000000000000"></A><A NAME="estimacionPot"></A>
+<BR>
+Estimaci&#243;n de potencia mediana de se&#241;al
+</H1>
+
+Una vez armada la red celular, se est&#225; en condiciones de hacer c&#225;lculos
+de potencia mediana de se&#241;al. Para ello el usuario debe elegir entre todas las
+antenas de la red, cu&#225;les desea involucrar en el c&#225;lculo; <I>SAPO</I> no tiene limitaciones
+en cuanto a la cantidad de antenas, aunque es necesario tener en cuenta que
+cuanto mayor sea el n&#250;mero de antenas involucradas m&#225;s tiempo de c&#225;lculo se requerir&#225;.
+Otros factores que inciden en el tiempo de c&#225;lculo son la precisi&#243;n y el radio m&#225;ximo
+(en torno al sitio de la antena en cuesti&#243;n), par&#225;metros configurables por el usuario
+al momento de correr la predicci&#243;n. Cuanto menor sea la precisi&#243;n m&#225;s resoluci&#243;n
+tendr&#225;n los resultados (se arrojar&#225; un mayor n&#250;mero de valores de potencia) pero m&#225;s
+tiempo requerir&#225; su obtenci&#243;n. Vale la pena aclarar que pierde sentido utilizar un radio
+excesivamente grande, ya que si los valores de potencia se vuelven muy peque&#241;os pierde
+inter&#233;s conocerlos. La evoluci&#243;n de los c&#225;lculos en el tiempo es informada al usuario mediante una
+barra de progreso; una vez finalizados, se despliegan los datos resultantes en el mapa.
+En las regiones donde se intersecta el &#225;rea de c&#225;lculo de diferentes antenas,
+se desplegar&#225; el valor de potencia mayor, pues el m&#243;vil por lo general establecer&#225;
+comunicaci&#243;n con la antena de la que reciba una mejor se&#241;al. El valor de la potencia en un
+punto aparece en pantalla cuando el usuario posiciona el rat&#243;n en el mismo.
+Las predicciones podr&#225;n ser guardadas a disco (el formato de los archivos ser&#225; explicado
+en <A HREF="node83.html#formatoPredicciones">9.5</A>), quedando disponibles para ser visualizadas posteriormente.
+Cuando los resultados de una predicci&#243;n est&#225;n cargados, el usuario tiene la posibilidad
+de desplegar el resumen de las antenas que participaron en la misma.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1132"
+  HREF="node56.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1128"
+  HREF="node51.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1122"
+  HREF="node54.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1130"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1133"
+  HREF="node56.html">Otras herramientas</A>
+<B> Subir:</B> <A NAME="tex2html1129"
+  HREF="node51.html">Descripción general de SAPO</A>
+<B> Anterior:</B> <A NAME="tex2html1123"
+  HREF="node54.html">Creación de una red</A>
+ &nbsp <B>  <A NAME="tex2html1131"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

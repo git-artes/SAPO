@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>XML y SAPO</TITLE>
+<META NAME="description" CONTENT="XML y SAPO">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node87.html">
+<LINK REL="up" HREF="node86.html">
+<LINK REL="next" HREF="node89.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1557"
+  HREF="node89.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1553"
+  HREF="node86.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1549"
+  HREF="node87.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1555"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1558"
+  HREF="node89.html">Algoritmos y cálculos implementados</A>
+<B> Subir:</B> <A NAME="tex2html1554"
+  HREF="node86.html">XML</A>
+<B> Anterior:</B> <A NAME="tex2html1550"
+  HREF="node87.html">XML y JAVA</A>
+ &nbsp <B>  <A NAME="tex2html1556"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION04471200000000000000">
+XML y <I>SAPO</I></A>
+</H3>
+
+<I>SAPO</I> le brinda al usuario en todo momento la posibilidad de
+guardar los cambios efectuados sobre un nuevo proyecto o un proyecto
+abierto. Para lograr esto, cuando el usuario opta por guardar los
+cambios, se crea en forma autom&#225;tica un archivo XML que refleja los
+cambios ingresados.
+
+El documento estar&#225; organizado siguiendo una estructura jer&#225;rquica
+yendo del concepto m&#225;s general que ser&#237;a un proyecto a lo m&#225;s
+particular como podr&#237;an ser las caracter&#237;sticas de una antena o los
+par&#225;metros de un modelo. Tambi&#233;n se guardar&#225;n en el archivo XML los
+URLs de los archivos con la informaci&#243;n de las distintas capas
+(alturas, manzanas, edificios, predicciones) que el usuario vaya
+agregando al programa de manera que est&#233;n disponibles en forma
+autom&#225;tica al abrir un proyecto. A continuaci&#243;n se muestra un
+ejemplo de la composici&#243;n de un documento XML utilizado para guardar
+un proyecto muy sencillo.
+
+<PRE>
+&lt;?xml version="1.0"?&gt;
+&lt;Proyecto&gt;
+    &lt;Nombre&gt;Munich&lt;/Nombre&gt;
+    &lt;Autor&gt;Juan Perez&lt;/Autor&gt;
+    &lt;Observaciones&gt;Este es un proyecto para pruebas.&lt;/Observaciones&gt;
+    &lt;Fecha&gt;Tue Feb 28 13:16:19 ART 2006&lt;/Fecha&gt;
+    &lt;LinkCapaAlturas&gt;file:/C:/altMunich30m16II.arc&lt;/LinkCapaAlturas&gt;
+    &lt;LinkCapaEdificios&gt;file:/C:/edifMunich.shp&lt;/LinkCapaEdificios&gt;
+    &lt;LinkCapaManzanas&gt;file:/C:/manzanasMunich.shp&lt;/LinkCapaManzanas&gt;
+    &lt;PerfilUsuario&gt;&lt;Altura&gt;1.5&lt;/Altura&gt;
+        &lt;Sensibilidad&gt;-110.0&lt;/Sensibilidad&gt;
+        &lt;CI&gt;0.0&lt;/CI&gt;
+    &lt;/PerfilUsuario&gt;
+    &lt;Sitio&gt;
+        &lt;Nombre&gt;sitio&lt;/Nombre&gt;
+        &lt;CoordenadaX&gt;1281.36&lt;/CoordenadaX&gt;
+        &lt;CoordenadaY&gt;1381.27&lt;/CoordenadaY&gt;
+        &lt;Radiobase&gt;
+            &lt;Nombre&gt;torre&lt;/Nombre&gt;
+            &lt;Altura&gt;13.0&lt;/Altura&gt;
+            &lt;Antena&gt;
+                &lt;Nombre&gt;antena&lt;/Nombre&gt;
+                &lt;Potencia&gt;8&lt;/Potencia&gt;
+                &lt;Tilt&gt;0.0&lt;/Tilt&gt;
+                &lt;Azimut&gt;0&lt;/Azimut&gt;
+                &lt;ModeloAntena&gt;espacioLibre&lt;/ModeloAntena&gt;
+                &lt;CanalFrecuenciaAntena&gt;munich&lt;/CanalFrecuenciaAntena&gt;
+                &lt;TipoDeAntena&gt;simple&lt;/TipoDeAntena&gt;
+            &lt;/Antena&gt;
+        &lt;/Radiobase&gt;
+    &lt;/Sitio&gt;
+    &lt;Modelo&gt;
+        &lt;NombreImplementacion&gt;espacioLibre&lt;/NombreImplementacion&gt;
+        &lt;Nombre&gt;Propagacion en Vacio (L=A*r^n)&lt;/Nombre&gt;
+        &lt;ParametrosAjustables&gt;
+            &lt;Nombre&gt;n&lt;/Nombre&gt;
+            &lt;Valor&gt;2.0&lt;/Valor&gt;
+        &lt;/ParametrosAjustables&gt;
+        &lt;ParametrosAjustables&gt;
+            &lt;Nombre&gt;A&lt;/Nombre&gt;
+            &lt;Valor&gt;2.385672579618471E7&lt;/Valor&gt;
+        &lt;/ParametrosAjustables&gt;
+    &lt;/Modelo&gt;
+    &lt;CanalFrecuencia&gt;
+        &lt;Nombre&gt;munich&lt;/Nombre&gt;
+        &lt;Frecuencia&gt;
+            &lt;Valor&gt;947.0&lt;/Valor&gt;
+        &lt;/Frecuencia&gt;
+    &lt;/CanalFrecuencia&gt;
+    &lt;TipoAntena&gt;
+        &lt;NombreTipo&gt;simple&lt;/NombreTipo&gt;
+        &lt;Tipo&gt;isotropica&lt;/Tipo&gt;
+    &lt;/TipoAntena&gt;
+&lt;/Proyecto&gt;
+</PRE>
+<BR><HR>
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

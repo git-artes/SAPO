@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Atenuación por múltiples cuchillos</TITLE>
+<META NAME="description" CONTENT="Atenuación por múltiples cuchillos">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node21.html">
+<LINK REL="up" HREF="node18.html">
+<LINK REL="next" HREF="node23.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html628"
+  HREF="node23.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html624"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html620"
+  HREF="node21.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html626"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html629"
+  HREF="node23.html">Método de Vogler</A>
+<B> Subir:</B> <A NAME="tex2html625"
+  HREF="node18.html">Propagación sobre terrenos irregulares</A>
+<B> Anterior:</B> <A NAME="tex2html621"
+  HREF="node21.html">Elipsoides de Fresnel</A>
+ &nbsp <B>  <A NAME="tex2html627"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION03230000000000000000"></A><A NAME="cuchillos"></A>
+<BR>
+Atenuaci&#243;n por m&#250;ltiples cuchillos
+</H1>
+
+La ecuaci&#243;n (<A HREF="node21.html#eccuchillo">4.2</A>) es muy sencilla y utilizada cuando
+&#250;nicamente existe un obst&#225;culo importante y puede ser razonablemente
+aproximado por un cuchillo. En entornos urbanos los obst&#225;culos
+ser&#225;n casi exclusivamente edificaciones, que dadas sus dimensiones
+respecto a la longitud de onda pueden ser aproximados por un
+cuchillo. Ahora bien, en muchas ocasiones no es &#250;nica la edificaci&#243;n
+que obstruye significativamente el camino entre el receptor y el
+transmisor. Es por ello que es necesario contar con alg&#250;n m&#233;todo que
+permita calcular la atenuaci&#243;n debida a la difracci&#243;n en varios
+cuchillos.
+
+La extensi&#243;n de dicho an&#225;lisis al caso de m&#225;s de un cuchillo trae
+complicaciones desde el punto de vista matem&#225;tico y es por eso que
+se han desarrollado y utilizado varias aproximaciones desde hace ya
+unos a&#241;os. Algunos de los m&#233;todos m&#225;s usados son los siguientes:
+
+<UL>
+<LI><B>Bullington:</B> Este m&#233;todo [<A
+ HREF="node130.html#Bullington">8</A>] s&#243;lo se
+aplica cuando se est&#225; ante dos cuchillos. Consiste b&#225;sicamente en
+sustituirlos por uno solo ``equivalente'' . Aunque muy sencillo,
+tiene algunos problemas como subestimar aquellos cuchillos que se
+encuentren por debajo de la l&#237;nea que une al transmisor y el
+receptor. Por lo general subestima la atenuaci&#243;n.
+
+</LI>
+<LI><B>Epstein-Peterson:</B> Epstein y Peterson
+[<A
+ HREF="node130.html#Epstein+Peterson">9</A>] intentaron corregir el m&#233;todo anterior, en
+cuanto a su falta de consideraci&#243;n respecto de algunos obst&#225;culos de
+importancia. En este caso todos los cuchillos aportan a la
+atenuaci&#243;n y se puede aplicar para una cantidad arbitraria de ellos.
+La atenuaci&#243;n total se calcula como la suma (en dB) de la atenuaci&#243;n
+que genera cada cuchillo entre el anterior y el siguiente. De todas
+formas es bastante inexacto, sobre todo cuando dos obst&#225;culos se
+encuentran demasiado juntos entre s&#237;.
+
+</LI>
+<LI><B>Deygout:</B> &#201;ste [<A
+ HREF="node130.html#Deygout">10</A>] es una variante del
+anterior. Primero se determina cu&#225;l es el cuchillo m&#225;s
+``importante'' del perfil, calculando el par&#225;metro de Fresnel para
+cada cuchillo como si el resto no existiera. Una vez identificado,
+se calcula la atenuaci&#243;n que genera (nuevamente como si los dem&#225;s no
+estuvieran) y finalmente se suman las atenuaciones debidas al resto
+en la misma forma que en el m&#233;todo de Epstein-Peterson. Presenta
+inexactitudes cuando algunos cuchillos est&#225;n muy pr&#243;ximos, y adem&#225;s
+ante la presencia de muchos obst&#225;culos tiende a sobreestimar la
+atenuaci&#243;n.
+</LI>
+</UL>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html630"
+  HREF="node23.html">Método de Vogler</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html628"
+  HREF="node23.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html624"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html620"
+  HREF="node21.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html626"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html629"
+  HREF="node23.html">Método de Vogler</A>
+<B> Subir:</B> <A NAME="tex2html625"
+  HREF="node18.html">Propagación sobre terrenos irregulares</A>
+<B> Anterior:</B> <A NAME="tex2html621"
+  HREF="node21.html">Elipsoides de Fresnel</A>
+ &nbsp <B>  <A NAME="tex2html627"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

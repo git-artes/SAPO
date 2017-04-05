@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Vogler-Ikegami</TITLE>
+<META NAME="description" CONTENT="Vogler-Ikegami">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node120.html">
+<LINK REL="up" HREF="node116.html">
+<LINK REL="next" HREF="node122.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1994"
+  HREF="node122.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1990"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1986"
+  HREF="node120.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1992"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1995"
+  HREF="node122.html">Conclusiones de la validación</A>
+<B> Subir:</B> <A NAME="tex2html1991"
+  HREF="node116.html">Performance de los modelos</A>
+<B> Anterior:</B> <A NAME="tex2html1987"
+  HREF="node120.html">MOPEM</A>
+ &nbsp <B>  <A NAME="tex2html1993"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION05135000000000000000">
+Vogler-Ikegami</A>
+</H2>
+
+El modelo m&#225;s complejo es el modelo propuesto que se denomin&#243;
+Vogler-Ikegami. El mismo &#250;nicamente hace una suposici&#243;n y es que el
+mecanismo dominante de propagaci&#243;n es sobre los techos de los
+edificios. Esta hip&#243;tesis, como se mencion&#243; en la secci&#243;n <A HREF="node40.html#vi">5.4</A>,
+es inherente a suponer que las edificaciones pueden ser sustituidas
+por pantallas infinitas, pues se est&#225; despreciando la propagaci&#243;n
+por difracci&#243;n en los lados de las mismas. Por ello, la atenuaci&#243;n
+en aquellos casos donde la radiobase est&#233; por debajo de las
+edificaciones ser&#225; sobreestimada, sobre todo en los puntos m&#225;s
+cercanos a la misma, pues all&#237; el aporte de la difracci&#243;n por los
+lados de las edificaciones es especialmente significativo al total
+de la potencia.
+
+Para el entorno de estudio, es de esperar que en el funcionamiento
+``normal'' del modelo, la atenuaci&#243;n sea sobreestimada. La
+implementaci&#243;n utilizada para la validaci&#243;n se realiz&#243; con los
+valores por defecto para los t&#233;rminos debidos a la atenuaci&#243;n desde
+la &#250;ltima edificaci&#243;n hasta el m&#243;vil (los pertenecientes a
+<IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img205.png"
+ ALT="$ L_{rts}$">), y se ir&#225;n variando los par&#225;metros para el c&#225;lculo de la
+integral de Vogler (ver secci&#243;n <A HREF="node105.html#algVogler">10.8.2</A>) de manera de ver
+los efectos que tienen los mismos sobre el resultado de la
+predicci&#243;n.
+
+Para comenzar, los par&#225;metros de la integral se asignaron en
+aquellos valores que dieron buenos resultados en el c&#225;lculo de la
+integral de Vogler (10 repeticiones, 0.95 de margen de seguridad,
+10% de tolerancia de error y una cantidad m&#225;xima de 8
+edificaciones). En este caso, la cantidad de cuchillos despreciados
+es m&#237;nima, por lo tanto, y por lo dicho anteriormente, la p&#233;rdida de
+camino ser&#225; sobreestimada. Ahora bien, como se puede apreciar en la
+figura <A HREF="node121.html#figComp:vi1">12.8</A>, la sobreestimaci&#243;n no es mayor cerca de la
+radiobase que lejos de la misma. De esto se puede concluir que la
+propagaci&#243;n por difracci&#243;n en los lados de las edificaciones es
+importante, tanto en la lejan&#237;a de la radiobase como cerca de la
+misma, en los casos en que la antena se encuentre por debajo de las
+edificaciones circundantes.
+
+<DIV ALIGN="CENTER"><A NAME="figComp:vi1"></A><A NAME="3265"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura:</STRONG>
+Las medidas en la ruta 0 y la predicci&#243;n seg&#250;n el modelo de
+Vogler-Ikegami con 0.95 de margen de seguridad y 10% de
+tolerancia</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="407" HEIGHT="290" ALIGN="BOTTOM" BORDER="0"
+ SRC="img414.png"
+ ALT="\includegraphics[width=9cm]{Conclusion/compVI_95_10_ruta0.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+En la tabla <A HREF="node121.html#tablaComp:vi1">12.6</A> se puede apreciar los valores de la
+media y la varianza del error para esta primera implementaci&#243;n del
+modelo de Vogler-Ikegami. Por lo dicho, la media result&#243; alta y
+negativa. La varianza result&#243; algo mayor que para los modelos
+anteriores, en este caso debido a que el c&#225;lculo determin&#237;stico de
+la atenuaci&#243;n por difracci&#243;n en m&#250;ltiples cuchillos resulta bastante
+variable de punto a punto.
+
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="3277"></A>
+<TABLE>
+<CAPTION><STRONG>Tabla 12.6:</STRONG>
+Media y desviaci&#243;n est&#225;ndar del error para el modelo de
+Vogler-Ikegami en una implementaci&#243;n inicial</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">Ruta</TD>
+<TD ALIGN="CENTER"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img337.png"
+ ALT="$ \mu$"> (dB)</TD>
+<TD ALIGN="CENTER"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.png"
+ ALT="$ \sigma$"> (dB)</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route00</I></TD>
+<TD ALIGN="CENTER">-9.99</TD>
+<TD ALIGN="CENTER">10.41</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route01</I></TD>
+<TD ALIGN="CENTER">-6.78</TD>
+<TD ALIGN="CENTER">10.33</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route02</I></TD>
+<TD ALIGN="CENTER">-10.16</TD>
+<TD ALIGN="CENTER">12.02</TD>
+</TR>
+</TABLE>
+<A NAME="tablaComp:vi1"></A>
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="3291"></A>
+<TABLE>
+<CAPTION><STRONG>Tabla 12.7:</STRONG>
+Media y desviaci&#243;n est&#225;ndar del error para el modelo de
+Vogler-Ikegami y Uni-Valencia</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">Ruta</TD>
+<TD ALIGN="CENTER"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img415.png"
+ ALT="$ \mu_{VI}$"> (dB)</TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\sigma_{VI}$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img416.png"
+ ALT="$ \sigma_{VI}$"> (dB)</TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\mu_{Uni-Valencia}$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img417.png"
+ ALT="$ \mu_{Uni-Valencia}$"></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\sigma_{Uni-Valencia}$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img418.png"
+ ALT="$ \sigma_{Uni-Valencia}$"></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route00</I></TD>
+<TD ALIGN="CENTER">0.98</TD>
+<TD ALIGN="CENTER">10.73</TD>
+<TD ALIGN="CENTER">0.2</TD>
+<TD ALIGN="CENTER">8.7</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route01</I></TD>
+<TD ALIGN="CENTER">-2.39</TD>
+<TD ALIGN="CENTER">8.17</TD>
+<TD ALIGN="CENTER">-6.6</TD>
+<TD ALIGN="CENTER">7.0</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><I>route02</I></TD>
+<TD ALIGN="CENTER">-3.17</TD>
+<TD ALIGN="CENTER">10.58</TD>
+<TD ALIGN="CENTER">-7.4</TD>
+<TD ALIGN="CENTER">10.3</TD>
+</TR>
+</TABLE>
+<A NAME="tablaComp:viCOST231"></A>
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<DIV ALIGN="CENTER"><A NAME="figComp:vi2"></A><A NAME="3338"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura:</STRONG>
+Las medidas en las tres rutas y su respectiva estimaci&#243;n
+seg&#250;n <I>SAPO</I> para el modelo de Vogler-Ikegami con 0.99 de
+margen de seguridad y 1% de tolerancia</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="212" HEIGHT="152" ALIGN="BOTTOM" BORDER="0"
+ SRC="img419.png"
+ ALT="\includegraphics[width=4.7cm]{Conclusion/compVI_99_1_ruta0.eps}">
+<IMG
+ WIDTH="213" HEIGHT="155" ALIGN="BOTTOM" BORDER="0"
+ SRC="img420.png"
+ ALT="\includegraphics[width=4.7cm]{Conclusion/compVI_99_1_ruta1.eps}">
+<IMG
+ WIDTH="212" HEIGHT="152" ALIGN="BOTTOM" BORDER="0"
+ SRC="img421.png"
+ ALT="\includegraphics[width=4.7cm]{Conclusion/compVI_99_1_ruta2.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Ahora bien, si asignamos valores de manera que la cantidad de
+cuchillos considerada sea menor, el resultado mejora. Se puede por
+ejemplo tomar un margen de seguridad m&#225;s cercano a uno, combinado
+con una tolerancia del error menor. Si por ejemplo los asignamos a
+0.99 y 1%, el resultado de la predicci&#243;n mejora tanto en media como
+en varianza.
+
+Para profundizar a&#250;n m&#225;s la validaci&#243;n de este modelo, se compararon
+las predicciones realizadas en la implementaci&#243;n con los valores
+reci&#233;n mencionados y el modelo Uni-Valencia, que tambi&#233;n utiliza el
+m&#233;todo de Vogler para calcular la atenuaci&#243;n por m&#250;ltiples
+cuchillos. Este modelo considera adem&#225;s la propagaci&#243;n por los lados
+de las edificaciones, aunque en las predicciones que se obtuvieron
+del mismo [<A
+ HREF="node130.html#cost231Hata">16</A>] no se utiliz&#243; esta capacidad, por lo
+que la comparaci&#243;n entre Vogler-Ikegami y &#233;ste es m&#225;s apropiada.
+Para la implementaci&#243;n de Vogler-Ikegami ya mencionada, la
+comparaci&#243;n entre la media y la varianza del error cometido por
+ambos modelos se puede apreciar en la tabla
+<A HREF="node121.html#tablaComp:viCOST231">12.7</A>. En todos los casos, tanto la media como
+la varianza son muy similares para ambos modelos. A su vez, en el
+informe de COST231 [<A
+ HREF="node130.html#cost231Hata">16</A>] tambi&#233;n se muestran las
+gr&#225;ficas de las predicciones con este modelo, las cuales son muy
+similares a las que se muestran en la figura (ver figura
+<A HREF="node121.html#figComp:vi2">12.9</A>).
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1994"
+  HREF="node122.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1990"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1986"
+  HREF="node120.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1992"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1995"
+  HREF="node122.html">Conclusiones de la validación</A>
+<B> Subir:</B> <A NAME="tex2html1991"
+  HREF="node116.html">Performance de los modelos</A>
+<B> Anterior:</B> <A NAME="tex2html1987"
+  HREF="node120.html">MOPEM</A>
+ &nbsp <B>  <A NAME="tex2html1993"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>El paquete predicciones</TITLE>
+<META NAME="description" CONTENT="El paquete predicciones">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node71.html">
+<LINK REL="previous" HREF="node69.html">
+<LINK REL="up" HREF="node63.html">
+<LINK REL="next" HREF="node71.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1334"
+  HREF="node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1330"
+  HREF="node63.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1324"
+  HREF="node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1332"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1335"
+  HREF="node71.html">El paquete ifusuario</A>
+<B> Subir:</B> <A NAME="tex2html1331"
+  HREF="node63.html">Arquitectura de paquetes</A>
+<B> Anterior:</B> <A NAME="tex2html1325"
+  HREF="node69.html">El paquete red</A>
+ &nbsp <B>  <A NAME="tex2html1333"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION04317000000000000000">
+El paquete predicciones</A>
+</H2>
+
+Dentro de este paquete se encuentra todo lo relativo al c&#225;lculo y
+an&#225;lisis de predicciones. Para la implementaci&#243;n de los modelos de
+predicci&#243;n se busc&#243; un dise&#241;o que facilite al desarrollador el
+agregado de nuevos modelos al programa. Es as&#237; que se cre&#243; la clase
+abstracta <I>Modelo</I>, de la cual heredan todas las
+implementaciones particulares (ver figura <A HREF="node70.html#claseModelo">8.8</A>). Dicha
+clase determina todos los atributos y m&#233;todos que debe implementar
+un modelo de propagaci&#243;n para poder integrarse con el resto de la
+arquitectura.
+
+<DIV ALIGN="CENTER"><A NAME="claseModelo"></A><A NAME="1947"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 8.8:</STRONG>
+Diagrama parcial de la clase Modelo</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="543" HEIGHT="412" ALIGN="BOTTOM" BORDER="0"
+ SRC="img255.png"
+ ALT="\includegraphics[width=12cm]{Software/modelo.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Cada modelo se define mediante dos tipos de par&#225;metros, los
+par&#225;metros <I>ajustables</I> y los <I>no ajustables</I>. Los
+primeros, son aqu&#233;llos que el desarrollador considera pueden ser
+ajustados mediante regresi&#243;n lineal en el caso de contar con medidas
+de campo. B&#225;sicamente son los que aparecen con una dependencia
+lineal en la ecuaci&#243;n de p&#233;rdida de camino (en dB), y se representan
+como un arreglo de <I>doubles</I>. Luego, el resto de los par&#225;metros
+son los no ajustables, como por ejemplo el tipo de entorno (urbano,
+suburbano, etc.), y se representan como un arreglo de <I>Objects</I>
+a fin de dar libertad de usar cualquier tipo de objeto. Se dise&#241;&#243; de
+esta manera, distinguiendo entre dos tipos de par&#225;metros para
+facilitar una futura implementaci&#243;n de ajuste de modelos en base a
+medidas.
+
+Todos los modelos deben disponer de los valores de los par&#225;metros
+por defecto; luego cada implementaci&#243;n en particular podr&#225; utilizar
+dichos valores u otros que especifique (siempre y cuando tengan el
+formato adecuado). Es por esto que existen dos constructores para la
+clase Modelo, uno para cada uno de estos casos. Adem&#225;s deben
+implementar la creaci&#243;n de la ventana que sirva como interfaz para
+especificar los par&#225;metros del mismo; dicha ventana debe heredar de
+la clase abstracta <I>PanelModelos</I>, en donde se especifican los
+m&#233;todos que debe implementar.
+
+El m&#233;todo encargado de realizar los c&#225;lculos de atenuaci&#243;n de se&#241;al
+es el m&#233;todo <I>predecir</I> de la clase Modelo. Previo a realizar
+ning&#250;n c&#225;lculo invoca al m&#233;todo <I>verificarDatos</I>, que se
+encarga de chequear que el mapa contenga las capas que necesita el
+modelo, y en ese caso obtiene el <I>areaCalculable</I> (regi&#243;n en el
+mapa sobre la cual pueden efectuarse los c&#225;lculos; depende del mapa
+y de la ubicaci&#243;n de la radiobase). Para el manejo de herramientas
+comunes a todos los modelos se cre&#243; la clase
+<I>UtilidadesModelos</I>, que implementa entre otras cosas el
+c&#225;lculo de distancia y de alturas efectivas. Si est&#225; habilitada la
+opci&#243;n de <I>usarInterpolaci&#243;n</I> los valores de altura de terreno
+se obtienen mediante interpolaci&#243;n bilineal en el GridCoverage.
+UtilidadesModelos debe tener en cuenta que existen dos niveles
+diferentes en los cuales se puede referenciar un punto: mediante su
+posici&#243;n <IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.png"
+ ALT="$ (i,j)$"> dentro de la grilla de datos o mediante sus
+coordenadas ``reales'' <IMG
+ WIDTH="44" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img257.png"
+ ALT="$ (x,y)$"> en el mapa; el pasaje de un sistema
+de referencia a otro lo hace mediante una transformaci&#243;n matem&#225;tica
+(<I>org.geotools.ct.MathTransform2D</I>).
+
+El m&#233;todo predecir necesita de los siguientes datos de entrada:
+
+<UL>
+<LI>El mapa, que contiene las diferentes capas con los datos del entorno
+</LI>
+<LI>La antena trasmisora, de la cual se obtienen los datos de potencia de trasmisi&#243;n,
+    ganancia y frecuencia.
+</LI>
+<LI>El proyecto, a fin de obtener el perfil de usuario, el sitio y la radiobase asociados a la
+    antena trasmisora
+</LI>
+<LI>El radio m&#225;ximo en torno a la antena
+</LI>
+<LI>La precisi&#243;n con la que se realizar&#225;n los c&#225;lculos
+</LI>
+</UL>
+
+Devuelve los resultados mediante un objeto del tipo
+<I>PrediccionUniAntena</I> (ver figura <A HREF="node70.html#clasesprediccionUniMultiAntena">8.9</A>), que contiene b&#225;sicamente una Grilla con
+los valores de potencia y los datos de la antena con que fue
+realizada. Quien llama a este m&#233;todo es la clase
+<I>ThreadCalculaAtenuacion</I>, creada para que el c&#225;lculo de
+predicci&#243;n pueda correr en paralelo con el <I>thread</I> que
+mantiene el avance de la barra de progreso de la interfaz gr&#225;fica.
+Esta clase va almacenando los resultados obtenidos con cada una de
+las antenas para formar una <I>PrediccionMultiAntena</I> (ver figura <A HREF="node70.html#clasesprediccionUniMultiAntena">8.9</A>).
+
+La clase PrediccionMultiAntena es la encargada de formar las grillas
+de potencia a desplegar en pantalla, eligiendo el valor de potencia
+m&#225;ximo en los puntos donde tenga informaci&#243;n de m&#225;s de una antena,
+as&#237; como tambi&#233;n de crear las grillas de cobertura y de
+interferencia co-canal.
+
+<DIV ALIGN="CENTER"><A NAME="clasesprediccionUniMultiAntena"></A><A NAME="1973"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 8.9:</STRONG>
+Diagrama parcial de clases del paquete
+predicciones</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="451" HEIGHT="320" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.png"
+ ALT="\includegraphics[width=10cm]{Software/prediccionantena.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Las clases <I>UtilidadesModelosManzanas</I> y
+<I>UtilidadesModelosEdificios</I> heredan de
+UtilidadesModelos y centralizan los m&#233;todos
+particulares requeridos en la implementaci&#243;n de algunos de los
+modelos de propagaci&#243;n disponibles en la herramienta (ver figura
+<A HREF="node70.html#clasesUtilidades">8.10</A>). UtilidadesModelosManzanas contiene los
+c&#225;lculos asociados a la capa de manzanas, como ser la
+orientaci&#243;n de las calles, el ancho de las mismas y las
+distancias a las esquinas. Por su parte, UtilidadesModelosEdificios
+contiene los m&#233;todos que necesitar&#225;n aquellos modelos que hagan uso
+de la capa de edificios y dentro de los m&#225;s importantes se hallan:
+altura promedio de edificios circundantes al m&#243;vil, determinaci&#243;n de
+obstrucci&#243;n de la primer elipsiode de Fresnel, y obtenci&#243;n del
+perfil de alturas entre el m&#243;vil y la antena transmisora. Es
+importante destacar que en caso de querer implementar un nuevo
+modelo que requiera alg&#250;n algoritmo particular, bastar&#237;a con agregar
+un m&#233;todo nuevo en las clases anteriormente detalladas.
+
+<DIV ALIGN="CENTER"><A NAME="clasesUtilidades"></A><A NAME="1983"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 8.10:</STRONG>
+Diagrama parcial de clases del paquete
+predicciones</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="452" HEIGHT="589" ALIGN="BOTTOM" BORDER="0"
+ SRC="img259.png"
+ ALT="\includegraphics[width=10cm]{Software/utilidades.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1334"
+  HREF="node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1330"
+  HREF="node63.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1324"
+  HREF="node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1332"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1335"
+  HREF="node71.html">El paquete ifusuario</A>
+<B> Subir:</B> <A NAME="tex2html1331"
+  HREF="node63.html">Arquitectura de paquetes</A>
+<B> Anterior:</B> <A NAME="tex2html1325"
+  HREF="node69.html">El paquete red</A>
+ &nbsp <B>  <A NAME="tex2html1333"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

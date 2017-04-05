@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Creación de una red celular</TITLE>
+<META NAME="description" CONTENT="Creación de una red celular">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="next" HREF="node55.html">
+<LINK REL="previous" HREF="node53.html">
+<LINK REL="up" HREF="node51.html">
+<LINK REL="next" HREF="node55.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1120"
+  HREF="node55.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1116"
+  HREF="node51.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1110"
+  HREF="node53.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1118"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1121"
+  HREF="node55.html">Estimación de potencia mediana</A>
+<B> Subir:</B> <A NAME="tex2html1117"
+  HREF="node51.html">Descripción general de SAPO</A>
+<B> Anterior:</B> <A NAME="tex2html1111"
+  HREF="node53.html">Ingreso de datos del</A>
+ &nbsp <B>  <A NAME="tex2html1119"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION04230000000000000000"></A><A NAME="creacionRed"></A>
+<BR>
+Creaci&#243;n de una red celular
+</H1>
+
+El segundo requerimiento para poder realizar un c&#225;lculo de
+atenuaci&#243;n es disponer de la topolog&#237;a y caracter&#237;sticas de la red
+celular. Las antenas trasmisoras dentro de una red pueden poseer similares
+caracter&#237;sticas, por ejemplo, muchas de ellas pueden tener el mismo
+patr&#243;n de radiaci&#243;n. Lo mismo sucede con los canales de frecuencia,
+se repetir&#225;n a lo largo de la red gracias al reuso de frecuencias.
+No ser&#237;a pr&#225;ctico tener que ingresar reiteradas veces la misma informaci&#243;n al sistema, sobre todo pensando en que
+<I>SAPO</I> pretende poder ser usado para redes de cualquier
+porte. Es por esto que el software est&#225; dise&#241;ado de forma que el
+usuario ingrese cierta informaci&#243;n y la tenga luego disponible para
+su uso dentro del proyecto. Esta informaci&#243;n incluye:
+
+<UL>
+<LI><B>Tipos de antena</B>. Pueden ingresarse antenas isotr&#243;picas o
+direccionales. En este &#250;ltimo caso, se especifica la ganancia en la
+direcci&#243;n de m&#225;xima propagaci&#243;n y los datos del patr&#243;n de radiaci&#243;n,
+tanto el horizontal como el vertical (tabla de &#225;ngulo y su
+respectiva ganancia, relativa a la ganancia m&#225;xima). Estos datos
+pueden ser tambi&#233;n importados desde un archivo de texto (ver secci&#243;n
+<A HREF="node82.html#formatoDatosPatron">9.4</A>). Para el c&#225;lculo de la ganancia en &#225;ngulos
+que no est&#225;n especificados en el patr&#243;n se utiliza interpolaci&#243;n
+lineal.
+</LI>
+<LI><B>Canales de frecuencia</B>. Se especifica el grupo de frecuencias
+asignado para los canales de comunicaci&#243;n. Si bien para los c&#225;lculos
+de atenuaci&#243;n se usar&#225; la frecuencia mayor (criterio conservador),
+es necesario conocer todas las portadoras a fin de hacer un an&#225;lisis
+de posible interferencia co-canal con otras radiobases (v&#225;lido para sistemas FDMA).
+</LI>
+<LI><B>Modelos de propagaci&#243;n</B>. El usuario es capaz de crear un
+modelo de p&#233;rdida de camino basado en una lista de modelos
+preestablecidos, a los cuales les puede asignar los valores de los
+par&#225;metros que los definen. Esto permite crear diferentes
+implementaciones de un mismo modelo, ajustando sus par&#225;metros a las
+necesidades del proyecto, aunque siempre est&#225; disponible la opci&#243;n
+de dejar los valores por defecto. Los modelos con los que cuenta
+<I>SAPO</I> son:
+
+<UL>
+<LI>P&#233;rdidas de vac&#237;o (ver secci&#243;n <A HREF="node12.html#vacio">3.1</A>)
+</LI>
+<LI>Propagaci&#243;n en tierra plana (ver secci&#243;n <A HREF="node15.html#plana">3.2.2</A>)
+</LI>
+<LI>Propagaci&#243;n en tierra plana aproximada (ver secci&#243;n <A HREF="node15.html#plana">3.2.2</A>)
+</LI>
+<LI>Modelo Okumura-Hata COST231 (ver secci&#243;n <A HREF="node31.html#oh_cost231">5.1.3</A>)
+</LI>
+<LI>Modelo de Erceg-SUI (ver secci&#243;n <A HREF="node32.html#erceg">5.2</A>)
+</LI>
+<LI>Modelo COST231 Walfisch-Ikegami (ver secci&#243;n <A HREF="node36.html#costwi">5.3.2</A>)
+</LI>
+<LI>Modelo MOPEM (ver secci&#243;n <A HREF="node39.html#mopem">5.3.3</A>)
+</LI>
+<LI>Modelo propuesto: Vogler-Ikegami (ver secci&#243;n <A HREF="node40.html#vi">5.4</A>)
+</LI>
+</UL>
+</LI>
+</UL>
+
+Los distintos modelos cubren la mayor&#237;a de los escenarios de
+propagaci&#243;n. Los tres primeros sirven principalmente para chequeos
+b&#225;sicos porque son modelos muy elementales. Luego, para casos de
+entornos preferentemente suburbanos en donde no se posea la
+informaci&#243;n de las edificaciones est&#225;n disponibles los modelos de
+Okumura-Hata y de Erceg. Los restantes modelos pueden aplicarse a
+regiones urbanas, si se dispone de la base de datos detallada del
+entorno. El usuario debe tener en cuenta las hip&#243;tesis que
+cualquiera de dichos modelos asumen y el rango de validez de los
+par&#225;metros, a fin de elegir el que m&#225;s se adec&#250;e a su caso
+particular de estudio. Por ejemplo, el modelo COST231
+Walfisch-Ikegami deber&#237;a aplicarse en un entorno urbano con pocas
+variaciones de altura de terreno, altura de edificaciones homog&#233;nea
+y radiobase por encima del nivel medio de edificaciones.
+
+<I>SAPO</I> permite crear una red celular de cualquier porte,
+es decir, compuesta por un n&#250;mero arbitrario de sitios. El concepto
+de <I>sitio</I> es el de un punto del mapa (identificado por sus
+coordenadas) capaz de alojar una o m&#225;s radiobases. Es necesario
+contar con los datos de altura de terreno para poder ingresar un sitio. El
+concepto de <I>radiobase</I> en este contexto vendr&#237;a a ser esencialmente
+el de una torre, que se caracteriza por tener una determinada altura y
+contener un sistema radiante. Cada radiobase puede albergar una cantidad
+cualquiera de antenas (sectores).
+
+Para ingresar una antena al proyecto es imprescindible disponer de al menos un tipo
+de antena, un canal de frecuencias y un modelo de propagaci&#243;n, para poder ser asociados
+a la nueva antena. Adem&#225;s se deben especificar otros par&#225;metros como es la potencia
+de trasmisi&#243;n y los &#225;ngulos de tilt y azimut. Vale la pena detenerse en el hecho de
+que cada antena de la red tenga asociado un modelo de propagaci&#243;n. Esto implica que
+se podr&#225;n realizar predicciones con varios modelos a la misma vez, lo que le da a
+<I>SAPO</I> una gran flexibilidad, a diferencia de la mayor&#237;a de los paquetes de
+software existentes que establecen un &#250;nico modelo de predicci&#243;n para toda la red. Esto
+es muy &#250;til por ejemplo, en casos donde las caracter&#237;sticas del entorno sean heterog&#233;neas
+a lo largo del territorio.
+
+<DIV ALIGN="CENTER"><A NAME="ramas"></A><A NAME="1803"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 7.2:</STRONG>
+Ubicaci&#243;n de una antena en el contexto de una red y
+par&#225;metros que la definen</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="181" HEIGHT="214" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="\includegraphics[width=4cm]{Software/rama1.eps}">
+<IMG
+ WIDTH="272" HEIGHT="242" ALIGN="BOTTOM" BORDER="0"
+ SRC="img245.png"
+ ALT="\includegraphics[width=6cm]{Software/rama2.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+A medida que el usuario va a&#241;adiendo elementos al proyecto, un
+listado de los mismos aparece en un panel ubicado en la parte
+izquierda de la pantalla, denominado <I>explorador</I> (ver figura
+<A HREF="node53.html#pantallaGral">7.1</A>). Consiste b&#225;sicamente en un grupo de nodos
+dispuestos en forma de &#225;rbol que permiten al usuario tener una
+visi&#243;n general de la informaci&#243;n ingresada y navegar a trav&#233;s de
+ella. Puede contener hasta tres pesta&#241;as, en la primera de ellas
+figura la estructura de sitios, radiobases y antenas que forman la
+red celular; en la segunda aparecen los tipos de antenas y los
+canales de frecuencia; y en la tercer pesta&#241;a se listan los modelos
+de propagaci&#243;n que han sido creados para el proyecto. Cada uno de
+los elementos anteriormente mencionados se representa en el
+explorador mediante un nodo con el nombre que asign&#243; el usuario al
+momento de crearlo; el nombre act&#250;a como identificador &#250;nico, por lo
+cual no debe repetirse dentro del proyecto (la interfaz no lo
+permite). Si el usuario posiciona el rat&#243;n en cualquier nodo y hace
+un <I>click</I> con el bot&#243;n derecho del mismo, se le abre una gama
+de posibilidades como por ejemplo la de editar la informaci&#243;n
+relativa al elemento asociado con dicho nodo o borrarlo. Por otro
+lado, en el mapa figura la disposici&#243;n de los sitios a lo largo del
+terreno.
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1120"
+  HREF="node55.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1116"
+  HREF="node51.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1110"
+  HREF="node53.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1118"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1121"
+  HREF="node55.html">Estimación de potencia mediana</A>
+<B> Subir:</B> <A NAME="tex2html1117"
+  HREF="node51.html">Descripción general de SAPO</A>
+<B> Anterior:</B> <A NAME="tex2html1111"
+  HREF="node53.html">Ingreso de datos del</A>
+ &nbsp <B>  <A NAME="tex2html1119"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>

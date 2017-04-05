@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Conclusiones</TITLE>
+<META NAME="description" CONTENT="Conclusiones">
+<META NAME="keywords" CONTENT="principal">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="principal.css">
+
+<LINK REL="previous" HREF="node113.html">
+<LINK REL="up" HREF="node112.html">
+<LINK REL="next" HREF="node124.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2014"
+  HREF="node124.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2010"
+  HREF="node112.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2006"
+  HREF="node122.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2012"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html2015"
+  HREF="node124.html">Líneas de trabajo futuro</A>
+<B> Subir:</B> <A NAME="tex2html2011"
+  HREF="node112.html">Validación y Conclusiones</A>
+<B> Anterior:</B> <A NAME="tex2html2007"
+  HREF="node122.html">Conclusiones de la validación</A>
+ &nbsp <B>  <A NAME="tex2html2013"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION05200000000000000000">
+Conclusiones</A>
+</H1>
+
+<P>
+En el presente proyecto se logr&#243; el desarrollo de una
+herramienta de software precisa que no solo abarca las
+funcionalidades originalmente planteadas, sino que se fueron
+implementando nuevas ideas a medida que se avanzaba en el proyecto.
+
+<P>
+Desde el punto de vista de la ingenier&#237;a de software, se destaca la
+flexibilidad, siendo muy sencilla la implementaci&#243;n de nuevos
+modelos, el agregado de nuevas funcionalidades o la incorporaci&#243;n de
+soporte de otros formatos de datos. A su vez, la validaci&#243;n
+realizada de la misma arroj&#243; resultados positivos, lo que permite
+garantizar su confiabilidad. Desde el punto de vista funcional, la
+herramienta es de muy sencillo uso y cuenta con una interfaz gr&#225;fica
+amigable al usuario que proporciona una visualizaci&#243;n clara de los
+datos ingresados y de los resultados obtenidos.
+
+<P>
+Una ventaja con la que cuenta <I>SAPO</I> con respecto a otros
+paquetes de software de predicci&#243;n, es que considera la mayor
+cantidad posible de informaci&#243;n del entorno (altura de terreno,
+edificaciones y trazado de manzanas) lo que le permite lograr una
+mayor exactitud en entornos heterog&#233;neos. Esto a su vez se ve
+reforzado por el hecho de tener la capacidad de asignarle modelos
+distintos a las diferentes antenas presentes en la red. Los modelos
+implementados en el software son variados, pudi&#233;ndose adem&#225;s crear
+diferentes implementaciones de un mismo modelo, redefiniendo los
+par&#225;metros que lo caracterizan. Esto trae como ventaja que todos los
+escenarios de propagaci&#243;n, desde los m&#225;s heterog&#233;neos a los m&#225;s
+sencillos, pueden ser analizados con la herramienta.
+
+<P>
+Otro elemento diferenciador de <I>SAPO</I> frente al resto de las
+herramientas disponibles a nivel comercial, es contar con el modelo
+Erceg-SUI (modelo reciente y actualmente muy difundido), el modelo
+MOPEM (resultado de un proyecto de fin de carrera de la UdelaR) y
+uno propuesto por el grupo de proyecto especialmente dise&#241;ado para
+entornos urbanos de caracter&#237;sticas heterog&#233;neas, denominado
+Vogler-Ikegami.
+
+<P>
+<I>SAPO</I> permite estimar la potencia de recepci&#243;n tomando en
+cuenta un n&#250;mero arbitrario de antenas a la misma vez y en aquellas
+zonas donde las predicciones se solapen calcula la interferencia
+co-canal. Toda esta informaci&#243;n es tomada en cuenta al momento de
+estimar el &#225;rea de servicio, otra de las funcionalidades
+disponibles. Los patrones de radiaci&#243;n de una antena pueden ser
+definidos por el usuario o importados de un archivo obtenido del
+fabricante.
+
+<P>
+Otra facilidad que enriquece al software es la verificaci&#243;n de la
+existencia de l&#237;nea de vista entre el m&#243;vil y la radiobase en caso
+de contar con edificios. Los datos de edificaciones son manejados
+por la herramienta de manera precisa, no solo para esto &#250;ltimo, sino
+tambi&#233;n por ejemplo para el calculo del perfil de alturas entre la
+radiobase y el m&#243;vil.
+
+<P>
+Una herramienta esencial que le permite al usuario el an&#225;lisis del
+error cometido en sus predicciones es la comparaci&#243;n con datos de
+medidas reales, las cuales se pueden importar de un archivo de
+texto. El an&#225;lisis consiste en mostrar el valor de la media y la
+varianza de la diferencia entre los valores predichos y las medidas
+y es posible tambi&#233;n obtener gr&#225;ficas comparativas.
+
+<P>
+Entre las ideas desarrolladas que no estaban en el planteo original
+del proyecto, que distinguen a <I>SAPO</I> y la hacen una
+herramienta m&#225;s completa, se destaca por un lado la posibilidad de
+crear y editar datos digitales de disposici&#243;n y forma de
+edificaciones mediante una interfaz gr&#225;fica espec&#237;fica para ello.
+Por otro lado, se propuso un nuevo modelo de propagaci&#243;n para
+entornos urbanos, h&#237;brido entre un m&#233;todo determin&#237;stico y uno
+semiemp&#237;rico, que levanta las hip&#243;tesis m&#225;s restrictivas del modelo
+de Walfisch-Ikegami. &#201;stas son la altura de edificaciones homog&#233;neas
+y la existencia de un gran n&#250;mero de las mismas entre el m&#243;vil y la
+radiobase. El resultado fue que las predicciones realizadas por este
+modelo son mucho m&#225;s exactas que las obtenidas con el modelo de
+Walfisch-Ikegami.
+
+<P>
+Finalmente, cabe mencionar que la realizaci&#243;n del presente proyecto
+signific&#243; un crecimiento personal y acad&#233;mico para sus integrantes.
+Uno de los principales desaf&#237;os fue, en la etapa inicial, tener que
+hacer un replanteo de los objetivos. Al comienzo, se consider&#243; la
+posibilidad de tomar medidas de potencia en una zona suburbana del
+pa&#237;s a fin de obtener un modelo de propagaci&#243;n que se ajuste lo m&#225;s
+posible a las mismas y su posterior implementaci&#243;n en software. Se
+realizaron gestiones con ANCEL para la realizaci&#243;n de la campa&#241;a de
+medidas, pero resultaron infructuosas por motivos puramente
+institucionales. Por ello es que se opt&#243;, en lugar del ajuste del
+modelo, centrar el proyecto en el desarrollo de una herramienta de
+software m&#225;s completa. El desaf&#237;o fue entonces enfrentar un problema
+amplio y ser capaces de dividirlo en problemas individuales m&#225;s
+tratables, a la vez resolvi&#233;ndolo dentro de un tiempo limitado. Fue
+fundamental para esto un buen trabajo en equipo, el manejo adecuado
+de los tiempos y la repartici&#243;n de tareas, lo cual llev&#243; a un buen
+t&#233;rmino del proyecto.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html2016"
+  HREF="node124.html">Líneas de trabajo futuro</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2014"
+  HREF="node124.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2010"
+  HREF="node112.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2006"
+  HREF="node122.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2012"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html2015"
+  HREF="node124.html">Líneas de trabajo futuro</A>
+<B> Subir:</B> <A NAME="tex2html2011"
+  HREF="node112.html">Validación y Conclusiones</A>
+<B> Anterior:</B> <A NAME="tex2html2007"
+  HREF="node122.html">Conclusiones de la validación</A>
+ &nbsp <B>  <A NAME="tex2html2013"
+  HREF="node1.html">&#205;ndice General</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+SAPO
+</ADDRESS>
+</BODY>
+</HTML>
